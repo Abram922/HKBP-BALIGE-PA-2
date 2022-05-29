@@ -46,9 +46,23 @@ Route::get('/author/{user}', [GuestBeritaController::class, 'authorpost']);
 Route::get('/guestshowberita/{berita}', [GuestBeritaController::class, 'show']);
 Route::resource('guestaula', AulaGuestController::class);
 
+Route::get('/', [NormalController::class, 'jadwalIbadah']);
+//GUEST TENTANG
+Route::get('/tingting', [NormalController::class, 'indexting']);
+Route::get('/jadwalIbadah', [NormalController::class, 'indexjadwalIbadah']);
+//GUEST KOINONIA
+Route::get('/remajaa', [NormalController::class, 'indexremaja']);
+Route::get('/sekolahminggu', [NormalController::class, 'indexsekolahminggu']);
+Route::get('/naposoo', [NormalController::class, 'indexnaposo']);
+Route::get('/parompuann', [NormalController::class, 'indexparompuan']);
+Route::get('/punguanama', [NormalController::class, 'indexpunguanama']);
+Route::get('/lansia', [NormalController::class, 'indexlansia']);
+//GUEST MARTURIA
+Route::get('/musikk', [NormalController::class, 'indexmusik']);
+Route::get('/sendingg', [NormalController::class, 'indexsending']);
 
 
-
+//ADMIN
 //MARTURIA REMAJA
 Route::resource('remaja', RemajaController::class);
 
@@ -92,6 +106,44 @@ Route::get('/berita', [UserBeritaController::class, 'index']);
 Route::get('/berita/{berita}', [UserBeritaController::class, 'show']);
 Route::get('/authors/{user}', [UserBeritaController::class, 'authorpost']);
 
+//GUEST KOINONIA
+Route::get('/remajaa', [UserKoinoniaController::class, 'userremaja']);
+Route::get('/remaja/{remaja}', [UserKoinoniaController::class, 'showremaja']);
+
+Route::get('/sekolahminggu', [UserKoinoniaController::class, 'usersekolahminggu']);
+Route::get('/sekolahminggu/{sekolah}', [UserKoinoniaController::class, 'showsekolahminggu']);
+
+Route::get('/naposoo', [UserKoinoniaController::class, 'usernaposo']);
+Route::get('/naposoo/{naposo}', [UserKoinoniaController::class, 'shownaposo']);
+
+Route::get('/parompuann', [UserKoinoniaController::class, 'userparompuan']);
+Route::get('/parompuann/{parompuan}', [UserKoinoniaController::class, 'showparompuan']);
+
+Route::get('/punguanama', [UserKoinoniaController::class, 'userpunguan']);
+Route::get('/punguanama/{punguan}', [UserKoinoniaController::class, 'showpunguan']);
+
+Route::get('/lansia', [UserKoinoniaController::class, 'userlansia']);
+Route::get('/lansia/{lanjut}', [UserKoinoniaController::class, 'showlansia']);
+
+//GUEST MARTURIA
+Route::get('/musikk', [UserKoinoniaController::class, 'usermusik']);
+Route::get('/musikk/{musik}', [UserKoinoniaController::class, 'showmusik']);
+
+Route::get('/sendingg', [UserKoinoniaController::class, 'usersending']);
+Route::get('/sendingg/{sending}', [UserKoinoniaController::class, 'showsending']);
+
+//GUEST DIAKONIA
+Route::get('/sosiall', [UserKoinoniaController::class, 'usersosial']);
+Route::get('/sosiall/{sosial}', [UserKoinoniaController::class, 'showsosial']);
+
+Route::get('/masyarakatt', [UserKoinoniaController::class, 'usermasyarakat']);
+Route::get('/masyarakatt/{masyarakat}', [UserKoinoniaController::class, 'showmasyarakat']);
+
+Route::get('/kesehatann', [UserKoinoniaController::class, 'userkesehatan']);
+Route::get('/kesehatann/{kesehatan}', [UserKoinoniaController::class, 'showkesehatan']);
+
+Route::get('/pendidikann', [UserKoinoniaController::class, 'userpendidikan']);
+Route::get('/pendidikann/{pendidikan}', [UserKoinoniaController::class, 'showpendidikan']);
 
 
 /*
