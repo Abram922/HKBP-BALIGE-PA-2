@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('layout.user')
 
 @section('container')
 
@@ -28,7 +28,7 @@
                 {{ $berita[0]->created_at->diffForHumans()}}
             </small>
         </p>
-        <p class="card-text">{{$berita[0]->excerpt}}</p>
+        <p class="card-text">{!!$berita[0]->excerpt!!}</p>
         <a class="btn btn-primary" href="/berita/{{$berita[0]->id}}">read more</a>
     </div>
 </div>
@@ -45,7 +45,7 @@
             <div class="card-body">
                 <h4>{{$berita -> title}}</h4>
                 <p class="card-title">Author <a href="/authors/{{$berita->user->id}}">{{$berita->user->name}}</a></p>
-                <p class="card-text">{{$berita -> excerpt}}</p>
+                <p class="card-text">{!!$berita -> excerpt!!}</p>
                 <a href="/berita/{{$berita->id}}">Baca Selengkapnya</a>
             </div>
         </div>

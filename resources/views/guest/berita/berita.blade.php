@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.user')
 
 @section('container')
 
@@ -35,7 +35,7 @@
                 </small>
             </p>
             <div style="max-width: 1100px;">
-                <p class="card-text">{{$berita[0]->body}}</p>
+                <p class="card-text">{!!$berita[0]->excerpt!!}</p>
                 <a href="/berita/{{$berita[0]->id}}">Baca Selengkapnya</a>
             </div>
 

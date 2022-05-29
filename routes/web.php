@@ -139,6 +139,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/dash_user', [AutentikasiController::class, 'dash_u']);
         Route::post('/logout', [AutentikasiController::class, 'logout']);
         Route::resource('aula', AulaController::class);
+        Route::resource('userberita', UserBeritaController::class);
         Route::put('/aula/cancel/{id}', [AulaController::class, 'cancelOrder']);
         // akun
     });

@@ -61,7 +61,7 @@
                         <a class="nav-link" href="/dash_u">Diakonia</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/berita">Berita</a>
+                        <a class="nav-link" href="{{ route('userberita.index') }}">Berita</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
