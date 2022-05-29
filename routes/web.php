@@ -106,6 +106,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/dash_pendeta', [AutentikasiController::class, 'dash_p']);
         Route::get('/berita-admin', [AdminBeritaController::class, 'index']);
         Route::get('/berita-admin/create', [AdminBeritaController::class, 'create']);
+        Route::post('/berita-admin/store', [AdminBeritaController::class, 'store']);
         Route::get('/berita-admin/edit/{adminberita}', [AdminBeritaController::class, 'edit']);
         Route::get('/berita-admin/show/{adminberita}', [AdminBeritaController::class, 'show']);
         Route::put('/berita-admin/update/{adminberita}', [AdminBeritaController::class, 'update']);

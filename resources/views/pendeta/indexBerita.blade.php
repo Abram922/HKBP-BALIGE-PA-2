@@ -43,7 +43,7 @@
           <td>{{$loop-> iteration}}</td>
           <td>{{$admberita->title}}</td>
           <td><img src="/image/{{ $admberita->image }}" width="100px"></td>
-          <td>{{$admberita-> body}}</td>
+          <td>{!! $admberita-> body !!}</td>
           <td>
 
 

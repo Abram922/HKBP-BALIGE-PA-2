@@ -1,6 +1,3 @@
-@extends('layout.admin')
-
-@section('content')
 <a href="{{ route('beritas.index')}}" class="badge bg-info"><i class="bi bi-arrow-left"></i></a>
 
 <div class="container">
@@ -20,11 +17,10 @@
                     <p>Author {{$berita->user->name}}</p>
                 </small>
             </p>
-            <p class="card-text">{{$berita->body}}</p>
+            <p class="card-text">{!! $berita-> body !!}</p>
 
 
         </div>
     </div>
 
 </div>
-@endsection

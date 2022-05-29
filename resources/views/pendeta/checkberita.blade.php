@@ -18,7 +18,7 @@
                         <p>Author{{$adminberita->user->name}}</p>
                     </small>
                 </p>
-                <p class="card-text">{{$adminberita->body}}</p>
+                <p class="card-text">{!! $adminberita-> body !!}</p>
 
 
             </div>

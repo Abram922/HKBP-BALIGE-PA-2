@@ -52,8 +52,7 @@ class AdminBeritaController extends Controller
 
         Berita::create($input);
 
-        return redirect()->route('adminberita.index')
-            ->with('success', 'Data berhasil ditambahkan.');
+        return redirect('/berita-admin')->with('success', 'Data berhasil diubahtambah');
     }
 
     /**

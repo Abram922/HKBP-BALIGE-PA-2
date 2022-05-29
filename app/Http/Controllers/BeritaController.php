@@ -141,7 +141,6 @@ class BeritaController extends Controller
     }
 
 
-}
 
 
 
@@ -161,7 +160,7 @@ class BeritaController extends Controller
         $berita->delete();
 
         return redirect()->route('pendeta.indexBerita')
-        ->with('success', 'Data berhasil dihapus');
+            ->with('success', 'Data berhasil dihapus');
     }
 
     public function edit_berita_admin(Berita $berita)
@@ -199,6 +198,6 @@ class BeritaController extends Controller
         $berita->update($input);
 
         return redirect()->route('beritas.index')
-        ->with('success', 'Data berhasil diubah');
+            ->with('success', 'Data berhasil diubah');
     }
 }

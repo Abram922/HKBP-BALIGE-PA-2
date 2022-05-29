@@ -126,6 +126,7 @@
 
 
     @yield('content')
+    @yield('ckeditor')
 
 
     <script type="text/javascript" src="{{ asset('js/jquery-1.12.0.min.js') }}"></script>

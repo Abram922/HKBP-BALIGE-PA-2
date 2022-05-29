@@ -8,11 +8,10 @@
     <title>Document</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
 
+
 </head>
 
 <body>
-
-
 
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -41,18 +40,8 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Body</label>
-            <input type="text" class="form-control @error('body') is-invalid @enderror" name="body" id="body" value="{{old('body', $adminberita->body)}}">
-            @error('body')
-            <div class="invalid-feedback">
-                {{$message}}
-            </div>
-            @enderror
-            <script>
-                // Replace the <textarea id="editor1"> with a CKEditor 4
-                // instance, using default configuration.
-                CKEDITOR.replace('body');
-            </script>
+            <label for="body" class="form-label">Body</label>
+            <textarea class="form-control" id="body" rows="10" name="body"></textarea>
 
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -70,5 +59,15 @@
     </form>
 
 </body>
+
+<script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create(document.querySelector('#body'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+
 
 </html>

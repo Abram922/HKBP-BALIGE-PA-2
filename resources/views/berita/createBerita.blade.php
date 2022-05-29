@@ -35,21 +35,12 @@
 
 
             <div class="mb-3">
-                <label class="form-label">Body</label>
-                <input type="text" class="form-control @error('body') is-invalid @enderror" name="body" id="body" value="{{old('body')}}">
-                @error('body')
-                <div class="invalid-feedback">
-                    {{$message}}
-                </div>
-                @enderror
-                <script>
-                    CKEDITOR.replace('body');
-                </script>
-
-            </div>
+                <label for="body" class="form-label">Body</label>
+                <textarea class="form-control" id="body" rows="10" name="body"></textarea>
 
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
         <script src="https://cdn.ckeditor.com/4.18.0/standard/ckeditor.js"></script>
@@ -58,4 +49,14 @@
 
 
 
+@endsection
+@section('ckeditor')
+<script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create(document.querySelector('#body'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>
 @endsection

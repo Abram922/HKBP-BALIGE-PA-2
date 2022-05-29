@@ -43,7 +43,7 @@
           <td>{{$loop-> iteration}}</td>
           <td>{{$beritas->title}}</td>
           <td><img src="/image/{{ $beritas->image }}" width="100px"></td>
-          <td>{{$beritas-> body}}</td>
+          <td>{!! $beritas->body !!}</td>
           <td>
             <form action="{{ route('beritas.destroy',$beritas->id) }}" method="POST">
 
