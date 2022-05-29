@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Ting;
+use App\Models\JadwalIbadah;
 class NormalController extends Controller
 {
     public function index()
