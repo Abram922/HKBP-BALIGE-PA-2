@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Guest;
 
 use App\Models\Berita;
 use App\Models\User;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class UserBeritaController extends Controller
+class GuestBeritaController extends Controller
 {
     public function index()
     {
@@ -20,7 +21,7 @@ class UserBeritaController extends Controller
 
         $user = User::all();
 
-        return view('.UserTerdaftar.berita.berita', [
+        return view('.guest.berita.berita', [
             "judul" => "berita",
             "berita" => Berita::latest()->filter(request(['search']))->paginate(8)->withQueryString(),
             compact('user')
@@ -29,7 +30,7 @@ class UserBeritaController extends Controller
 
     public function show(Berita $berita)
     {
-        return view('.UserTerdaftar.berita.beritafull', [
+        return view('.guest.berita.beritafull', [
             "title" => "beritafull",
             "berita" => $berita  // dicari berdasarkan post
         ]);
@@ -37,7 +38,7 @@ class UserBeritaController extends Controller
 
     public function authorpost(User $user)
     {
-        return view('.UserTerdaftar.berita.beritaauthor', [
+        return view('.guest.berita.beritaauthor', [
             'title' => 'post by author',
             'berita' => $user->berita->load('user')
         ]);

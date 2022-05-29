@@ -2,7 +2,7 @@
 
 <div class="container">
     <div class="row my-5">
-        <div class="col-lg-8">
+        <div class="col-lg-">
             <h5 class="my-3">{{$berita->title}}</h5>
 
             @if($berita -> image)

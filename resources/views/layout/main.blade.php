@@ -61,15 +61,15 @@
                         <a class="nav-link" href="/diakonia">Diakonia</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/berita">Berita</a>
+                        <a class="nav-link" href="{{ route('guestberita.index') }}">Berita</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Aula
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="{{ route('aula.create') }}">Booking</a></li>
-                            <li><a class="dropdown-item" href="">History Pemesanan</a></li>
+                            <li><a class="dropdown-item" href="{{ route('guestaula.index') }}">Booking</a></li>
+                            <li><a class="dropdown-item" href="/login">History Pemesanan</a></li>
                         </ul>
                     </li>
 

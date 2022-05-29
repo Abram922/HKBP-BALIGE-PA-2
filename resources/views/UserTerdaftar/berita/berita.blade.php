@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('layout.user')
 
 @section('container')
 
@@ -36,7 +36,7 @@
             </p>
             <div style="max-width: 1100px;">
                 <p class="card-text">{!!$berita[0]->excerpt!!}</p>
-                <a href="/guestshowberita/{{$berita[0]->id}}">Baca Selengkapnya</a>
+                <a href="/berita/{{$berita[0]->id}}">Baca Selengkapnya</a>
             </div>
 
 
@@ -58,9 +58,9 @@
         <div class="col-md-6">
             <div class="card-body">
                 <h4>{{$beritas -> title}}</h4>
-                <p class="card-title">Author <a href="/author/{{$beritas->user->id}}">{{$beritas->user->name}} </a>{{ $beritas->created_at->diffForHumans()}}</p>
+                <p class="card-title">Author <a href="/authors/{{$beritas->user->id}}">{{$beritas->user->name}} </a>{{ $beritas->created_at->diffForHumans()}}</p>
                 <p class="card-text">{{$beritas -> excerpt}}</p>
-                <a href="/guestshowberita/{{$beritas->id}}">Baca Selengkapnya</a>
+                <a href="/berita/{{$beritas->id}}">Baca Selengkapnya</a>
             </div>
         </div>
     </div>

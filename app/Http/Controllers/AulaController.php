@@ -34,8 +34,8 @@ class AulaController extends Controller
     public function create(Request $request)
     {
         return view('aula.booking');
-    }
 
+    }
     /**
      * Store a newly created resource in storage.
      *

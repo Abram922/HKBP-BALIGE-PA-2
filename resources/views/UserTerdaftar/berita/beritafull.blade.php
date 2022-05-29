@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('layout.user')
 
 @section('container')
 
@@ -13,7 +13,7 @@
 
     <p><a href="/berita?authors={{$berita->user->id }}">Author {{$berita->user->name}}</a></p>
     <p>{!!$berita->body!!}</p>
-    <a href="{{ route('guestberita.index') }}">kembali</a>
+    <a href="/berita">kembali</a>
 </article>
 
 @endsection

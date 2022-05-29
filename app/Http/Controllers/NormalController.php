@@ -11,8 +11,4 @@ class NormalController extends Controller
         return view('.guest\index');
     }
 
-    public function uji()
-    {
-        return view('.layout.superadmin');
-    }
 }

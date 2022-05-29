@@ -23,7 +23,8 @@ use App\Http\Controllers\AulaController;
 use App\Http\Controllers\AdminAulaController;
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\AdminBeritaController;
-
+use App\Http\Controllers\Guest\GuestBeritaController;
+use App\Http\Controllers\Guest\AulaGuestController;
 
 
 
@@ -40,9 +41,10 @@ use App\Http\Controllers\AdminBeritaController;
 
 //GUEST
 Route::get('/', [NormalController::class, 'index']);
-Route::get('/uji', [NormalController::class, 'uji']);
-
-
+Route::resource('guestberita', GuestBeritaController::class);
+Route::get('/author/{user}', [GuestBeritaController::class, 'authorpost']);
+Route::get('/guestshowberita/{berita}', [GuestBeritaController::class, 'show']);
+Route::resource('guestaula', AulaGuestController::class);
 
 
 
@@ -89,6 +91,7 @@ Route::post('/daftar', [AutentikasiController::class, 'store']);
 Route::get('/berita', [UserBeritaController::class, 'index']);
 Route::get('/berita/{berita}', [UserBeritaController::class, 'show']);
 Route::get('/authors/{user}', [UserBeritaController::class, 'authorpost']);
+
 
 
 /*
@@ -140,6 +143,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('/logout', [AutentikasiController::class, 'logout']);
         Route::resource('aula', AulaController::class);
         Route::resource('userberita', UserBeritaController::class);
+        Route::get('/authors/{user}', [UserBeritaController::class, 'authorpost']);
         Route::put('/aula/cancel/{id}', [AulaController::class, 'cancelOrder']);
         // akun
     });
