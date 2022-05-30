@@ -49,6 +49,7 @@ Route::resource('guestaula', AulaGuestController::class);
 
 
 
+
 //MARTURIA REMAJA
 Route::resource('remaja', RemajaController::class);
 

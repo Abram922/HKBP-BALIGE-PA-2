@@ -11,11 +11,11 @@ class GuestBeritaController extends Controller
 {
     public function index()
     {
-        $berita = Berita::latest();
+        $guestberita = Berita::latest();
 
 
         if (request('search')) {
-            $berita->where('title', 'like', '%' . request('search') . '%')
+            $guestberita->where('title', 'like', '%' . request('search') . '%')
                 ->orWhere('body', 'like', '%' . request('search') . '%');
         }
 
@@ -23,16 +23,16 @@ class GuestBeritaController extends Controller
 
         return view('.guest.berita.berita', [
             "judul" => "berita",
-            "berita" => Berita::latest()->filter(request(['search']))->paginate(8)->withQueryString(),
+            "guestberita" => Berita::latest()->filter(request(['search']))->paginate(8)->withQueryString(),
             compact('user')
         ]);
     }
 
-    public function show(Berita $berita)
+    public function show(Berita $guestberita)
     {
         return view('.guest.berita.beritafull', [
             "title" => "beritafull",
-            "berita" => $berita  // dicari berdasarkan post
+            "guestberita" => $guestberita  // dicari berdasarkan post
         ]);
     }
 
@@ -40,7 +40,7 @@ class GuestBeritaController extends Controller
     {
         return view('.guest.berita.beritaauthor', [
             'title' => 'post by author',
-            'berita' => $user->berita->load('user')
+            'guestberita' => $user->berita->load('user')
         ]);
     }
 }
