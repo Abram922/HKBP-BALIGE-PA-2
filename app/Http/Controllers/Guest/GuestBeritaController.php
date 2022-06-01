@@ -13,7 +13,6 @@ class GuestBeritaController extends Controller
     {
         $guestberita = Berita::latest();
 
-
         if (request('search')) {
             $guestberita->where('title', 'like', '%' . request('search') . '%')
                 ->orWhere('body', 'like', '%' . request('search') . '%');
@@ -29,10 +28,11 @@ class GuestBeritaController extends Controller
     }
 
     public function show(Berita $guestberita)
+
     {
         return view('.guest.berita.beritafull', [
             "title" => "beritafull",
-            "guestberita" => $guestberita  // dicari berdasarkan post
+            "guestberita" => $guestberita
         ]);
     }
 

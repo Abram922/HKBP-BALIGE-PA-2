@@ -43,7 +43,7 @@ use App\Http\Controllers\Guest\AulaGuestController;
 Route::get('/', [NormalController::class, 'index']);
 Route::resource('guestberita', GuestBeritaController::class);
 Route::get('/author/{user}', [GuestBeritaController::class, 'authorpost']);
-Route::get('/guestshowberita/{berita}', [GuestBeritaController::class, 'show']);
+Route::get('/guestshowberita/{guestberita}', [GuestBeritaController::class, 'show']);
 Route::resource('guestaula', AulaGuestController::class);
 
 Route::get('/', [NormalController::class, 'jadwalIbadah']);

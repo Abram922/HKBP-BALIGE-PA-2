@@ -16,4 +16,5 @@
     <a href="{{ route('guestberita.index') }}">kembali</a>
 </article>
 
+
 @endsection
