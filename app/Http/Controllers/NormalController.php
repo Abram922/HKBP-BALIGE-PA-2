@@ -9,91 +9,94 @@ class NormalController extends Controller
 {
     public function index()
     {
-        return view('.guest\index');
+        return view('.guest.index');
     }
 
     public function jadwalIbadah()
     {
         $jadwalIbadah  = JadwalIbadah::paginate(20);
         $tingg  = Ting::paginate(20);
-        return view('.guest\index', ['jadwalIbadah' => $jadwalIbadah ],['ting'=>$tingg]);
-    }
-
+        return view('.guest.index', [
+            'jadwalIbadah' => $jadwalIbadah,
+            'ting'=>$tingg
+        ]);
+        // ['ting'=>$tingg]);
+        }
     //TING TING
     public function indexting()
     {
         $ting  = Ting::paginate(20);
-        return view('.guest\tentang\tingting',['ting'=>$ting]);
+        return view('.guest.tentang.tingting',['ting'=>$ting]);
     }
 
     public function indexjadwalIbadah()
     {
         $jadwalIbadah  = JadwalIbadah::paginate(20);
-        return view('.guest\tentang\jadwalIbadah', ['jadwalIbadah' => $jadwalIbadah ]);
+        return view('.guest.tentang.jadwalIbadah', ['jadwalIbadah' => $jadwalIbadah ]);
     }
 
     //KOINONIA
     public function indexremaja()
     {
-        return view('.guest\koinonia\remaja');
+        return view('.guest.koinonia.remaja');
     }
 
     public function indexlansia()
     {
-        return view('.guest\koinonia\lansia');
+        return view('.guest.koinonia.lansia');
     }
 
     public function indexnaposo()
     {
-        return view('.guest\koinonia\naposo');
+        return view('.guest.koinonia.naposo');
     }
 
     public function indexparompuan()
     {
-        return view('.guest\koinonia\parompuan');
+        return view('.guest.koinonia.parompuan');
     }
     
     public function indexpunguanama()
     {
-        return view('.guest\koinonia\punguanama');
+        return view('.guest.koinonia.punguanama');
     }
 
     public function indexsekolahminggu()
     {
-        return view('.guest\koinonia\sekolahminggu');
+        return view('.guest.koinonia.sekolahminggu');
     }
 
 
     //MARTURIA
     public function indexsending()
     {
-        return view('.guest\marturia\sending');
+        return view('.guest.marturia.sending');
     }
 
     public function indexmusik()
     {
-        return view('.guest\marturia\musik');
+        return view('.guest.marturia.musik');
     }
 
     //DIAKONIA
     public function indexsosial()
     {
-        return view('.guest\diakonia\sosial');
+        return view('.guest.diakonia.sosial');
     }
 
     public function indexmasyarakat()
     {
-        return view('.guest\diakonia\masyarakat');
+        return view('.guest.diakonia.masyarakat');
     }
    
     public function indexkesehatan()
     {
-        return view('.guest\diakonia\kesehatan');
+        return view('.guest.diakonia.kesehatan');
     }
 
     public function indexpendidikan()
     {
-        return view('.guest\diakonia\pendidikan');
+        return view('.guest.diakonia.pendidikan');
     }
 
 }

@@ -24,7 +24,7 @@ return new class extends Migration
             $table->timestamp('tanggal_selesai')->useCurrent();
             $table->string('total');
             $table->text('alamat');
-            $table->text('pesan')->default('');
+            $table->text('pesan');
             $table->string('keperluan');
             $table->timestamps();
         });
