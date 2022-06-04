@@ -1,72 +1,139 @@
 @extends('layout.main')
+@section('container4')
 
-@section('container')
-<div class="row justify-content-center">
-    <div class="col-md-5">
-        <main class="form-signin">
-            <form action="/daftar" method="post">
-                @csrf
+<!DOCTYPE html>
+<html lang="en">
 
-                <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-                <h1 class="h3 mb-3 fw-normal">Register</h1>
+<head>
+    <title>Login V16</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--===============================================================================================-->
+</head>
 
-                <div class="form-floating">
-                    <input class="form-control @error ('name') is-invalid @enderror" type="text" class="form-control" id="name" placeholder="Nama" name="name" required value="{{old('name')}}">
-                    <label for="name">Nama</label>
-                    @error('name')
-                    <div class="invalid-feedback">
-                        {{$message}}
-                    </div>
-                    @enderror
-                    <br>
-                </div>
-                <div class="form-floating">
-                    <input type="email" class="form-control @error ('name') is-invalid @enderror" id="email" placeholder="name@example.com" name="email" required value="{{old('email')}}">
-                    <label for="email">Alamat Email</label>
-                    @error('email')
-                    <div class="invalid-feedback">
-                        {{$message}}
-                    </div>
-                    @enderror
-                </div><br>
-                <div class="form-floating">
-                    <input type="text" class="form-control @error ('username') is-invalid @enderror" id="username" name="username" placeholder="username" required value="{{old('username')}}">
-                    <label for="username">Username</label>
-                    @error('username')
-                    <div class="invalid-feedback">
-                        {{$message}}
-                    </div>
-                    @enderror
-                </div><br>
-                <div class="form-floating">
-                    <input type="text" class="form-control @error ('phoneno') is-invalid @enderror" id="phoneno" name="phoneno" placeholder="Nomor Telepon" required value="{{old('phoneno')}}">
-                    <label for="phoneno">Nomor Telepon</label>
-                </div><br>
-                @error('phoneno')
-                <div class="invalid-feedback">
-                    {{$message}}
-                </div>
-                @enderror
-                <div class="form-floating">
-                    <input type="password" class="form-control @error ('password') is-invalid @enderror" id="password" name="password" placeholder="Password" required>
-                    <label for="password">Password</label>
-                </div>
-                @error('password')
-                <div class="invalid-feedback">
-                    {{$message}}
-                </div>
-                @enderror
-                <div class="checkbox mb-3">
-                    <label>
-                        <input type="checkbox" value="remember-me"> Remember me
-                    </label>
-                </div>
-                <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
-            </form>
-            <small class="d-block text-center mt-3">Sudah Punya Akun <a href="/login">Login</a></small>
-        </main>
+<body>
+    @if(session()->has('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{session('success')}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-</div>
+    @endif
 
 
+    @if(session()->has('loginError'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{session('loginError')}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
+
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url('images/1.jpg');">
+            <div class="wrap-login100 p-t-30 p-b-50">
+                <span class="login100-form-title p-b-41">
+                    Account Login
+                </span>
+                <form class="login100-form validate-form p-b-33 p-t-5" action="/daftar" method="post">
+                    @csrf
+                    <div class="wrap-input100 validate-input" data-validate="Name">
+                        <input class="input100" type="text" name="name" id="name" placeholder="Name" autofocus required value="{{ old('name')}}">
+                        <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                        @error('name')
+                        <div class="invalid-feedback">
+                            {{$message}}
+                        </div>
+                        @enderror
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter username">
+                        <input class="input100" type="text" name="username" id="username" placeholder="User Name" autofocus required value="{{ old('username')}}">
+                        <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                        @error('username')
+                        <div class="invalid-feedback">
+                            {{$message}}
+                        </div>
+                        @enderror
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="E-mail">
+                        <input class="input100" type="text" name="email" id="email" placeholder="E-mail" autofocus required value="{{ old('email')}}">
+                        <span class="focus-input100" data-placeholder="&#xe83c;"></span>
+                        @error('email')
+                        <div class="invalid-feedback">
+                            {{$message}}
+                        </div>
+                        @enderror
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Nomor Telepon">
+                        <input class="input100" type="text" name="phoneno" id="phoneno" placeholder="Nomor Telepon" autofocus required value="{{ old('phoneno')}}">
+                        <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                        @error('phoneno')
+                        <div class="invalid-feedback">
+                            {{$message}}
+                        </div>
+                        @enderror
+                    </div>
+
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter password">
+                        <input class="input100" type="password" name="password" id="password" placeholder="Password" autofocus required>
+                        <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                    </div>
+
+                    <div class="container-login100-form-btn m-t-32">
+                        <button class="login100-form-btn" type="submit">
+                            Daftar
+                        </button>
+                    </div>
+                    <small class="d-block text-center mt-3">Sudah Punya Akun <a href="/login">Login</a></small>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="dropDownSelect1"></div>
+
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/daterangepicker/moment.min.js"></script>
+    <script src="vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
 @endsection
