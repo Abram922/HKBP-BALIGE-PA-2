@@ -40,7 +40,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="/images/logohkbp.png" width="30" height="30" alt="">
+                <img src="/images/logohkbp.png" width="160" height="100" alt="" margin-left="100px">
             </a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">

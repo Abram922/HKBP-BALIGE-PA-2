@@ -46,17 +46,41 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/">Beranda</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">Tentang</a>
+                    <li class="nav-item dropdown" id="myDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Tentang </a>
+                        <ul class="dropdown-menu">
+                            <li> <a class="dropdown-item" href="#"> Parhalado </a></li>
+                            <li><a class="dropdown-item" href="/tingting"> Tingting </a></li>
+                            <li><a class="dropdown-item" href="/jadwalIbadah"> Jadwal Ibadah </a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/koinonia">Koinonia</a>
+                    <li class="nav-item dropdown" id="myDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Koinonia </a>
+                        <ul class="dropdown-menu">
+                            <li> <a class="dropdown-item" href="/remajaa"> Remaja </a></li>
+                            <li><a class="dropdown-item" href="/sekolahminggu"> Sekolah Minggu </a></li>
+                            <li><a class="dropdown-item" href="/naposoo"> Naposo Bulung </a></li>
+                            <li><a class="dropdown-item" href="/parompuann"> Parompuan Huria </a></li>
+                            <li><a class="dropdown-item" href="/punguanama"> Punguan Ama </a></li>
+                            <li><a class="dropdown-item" href="/lansia"> Lansia </a></li>
+
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/marturia">Marturia</a>
+                    <li class="nav-item dropdown" id="myDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Marturia </a>
+                        <ul class="dropdown-menu">
+                            <li> <a class="dropdown-item" href="/musikk"> Musik </a></li>
+                            <li><a class="dropdown-item" href="/sendingg"> Zending </a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/diakonia">Diakonia</a>
+                    <li class="nav-item dropdown" id="myDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Diakonia </a>
+                        <ul class="dropdown-menu">
+                            <li> <a class="dropdown-item" href="/sosiall"> Sosial </a></li>
+                            <li><a class="dropdown-item" href="/masyarakatt"> Masyarakat </a></li>
+                            <li><a class="dropdown-item" href="/kesehatann"> Kesehatan </a></li>
+                            <li><a class="dropdown-item" href="/pendidikann"> Pendidikan </a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('guestberita.index') }}">Berita</a>

@@ -25,6 +25,8 @@ use App\Http\Controllers\AkunController;
 use App\Http\Controllers\AdminBeritaController;
 use App\Http\Controllers\Guest\GuestBeritaController;
 use App\Http\Controllers\Guest\AulaGuestController;
+use App\Http\Controllers\UserKoinoniaController;
+
 
 
 
