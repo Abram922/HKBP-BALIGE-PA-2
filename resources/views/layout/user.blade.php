@@ -47,17 +47,41 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/dash_u">Beranda</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/dash_u">Tentang</a>
+                    <li class="nav-item dropdown" id="myDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Tentang </a>
+                        <ul class="dropdown-menu">
+                            <li> <a class="dropdown-item" href="#"> Parhalado </a></li>
+                            <li><a class="dropdown-item" href="/usertingting"> Tingting </a></li>
+                            <li><a class="dropdown-item" href="/userjadwalIbadah"> Jadwal Ibadah </a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/dash_u">Koinonia</a>
+                    <li class="nav-item dropdown" id="myDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Koinonia </a>
+                        <ul class="dropdown-menu">
+                            <li> <a class="dropdown-item" href="/userremajaa"> Remaja </a></li>
+                            <li><a class="dropdown-item" href="/usersekolahminggu"> Sekolah Minggu </a></li>
+                            <li><a class="dropdown-item" href="/usernaposoo"> Naposo Bulung </a></li>
+                            <li><a class="dropdown-item" href="/userparompuann"> Parompuan Huria </a></li>
+                            <li><a class="dropdown-item" href="/userpunguanama"> Punguan Ama </a></li>
+                            <li><a class="dropdown-item" href="/userlansia"> Lansia </a></li>
+
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/dash_u">Marturia</a>
+                    <li class="nav-item dropdown" id="myDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Marturia </a>
+                        <ul class="dropdown-menu">
+                            <li> <a class="dropdown-item" href="/usermusikk"> Musik </a></li>
+                            <li><a class="dropdown-item" href="/usersendingg"> Zending </a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/dash_u">Diakonia</a>
+                    <li class="nav-item dropdown" id="myDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Diakonia </a>
+                        <ul class="dropdown-menu">
+                            <li> <a class="dropdown-item" href="/usersosiall"> Sosial </a></li>
+                            <li><a class="dropdown-item" href="/usermasyarakatt"> Masyarakat </a></li>
+                            <li><a class="dropdown-item" href="/userkesehatann"> Kesehatan </a></li>
+                            <li><a class="dropdown-item" href="/userpendidikann"> Pendidikan </a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('userberita.index') }}">Berita</a>
