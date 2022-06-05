@@ -48,7 +48,7 @@ class AutentikasiController extends Controller
             if ($user->level_user == '1') {
                 return redirect()->intended('/dash_pendeta');
             } elseif ($user->level_user == '2') {
-                
+
                 return redirect()->intended('/dash_bph');
             } elseif ($user->level_user == '3') {
                 return redirect()->intended('/dash_user');

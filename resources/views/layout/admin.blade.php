@@ -43,7 +43,7 @@
                     </a>
                     <ul class="children collapse" id="sub-item-4">
                         <li>
-                            <a class="" href="#"><span class="fa fa-arrow-right">&nbsp;</span> Parhalado</a>
+                            <a class="" href="{{ route('parhalados.index') }}"><span class="fa fa-arrow-right">&nbsp;</span> Parhalado</a>
                         </li>
                         <li>
                             <a class="" href="{{ route('ting.index')}}"><span class="fa fa-arrow-right">&nbsp;</span> Tingting</a>

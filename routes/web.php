@@ -25,6 +25,8 @@ use App\Http\Controllers\AkunController;
 use App\Http\Controllers\AdminBeritaController;
 use App\Http\Controllers\Guest\GuestBeritaController;
 use App\Http\Controllers\Guest\AulaGuestController;
+use App\Http\Controllers\ParhaladoController;
+use App\Http\Controllers\ParhaladoControllerLogin;
 use App\Http\Controllers\UserKoinoniaController;
 
 
@@ -63,6 +65,8 @@ Route::get('/lansia', [NormalController::class, 'indexlansia']);
 Route::get('/musikk', [NormalController::class, 'indexmusik']);
 Route::get('/sendingg', [NormalController::class, 'indexsending']);
 
+// PARHALADO FRONT
+Route::get('/parhalado', [NormalController::class, 'indexparhalado']);
 
 
 
@@ -96,6 +100,7 @@ Route::get('/tentang/hapus/{id}', [JadwalIbadahController::class, 'hapus']);
 
 //TENTANG TINGTING
 Route::resource('ting', TingController::class);
+
 
 
 
@@ -175,6 +180,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('/logout', [AutentikasiController::class, 'logout']);
         //BERITA
         Route::resource('beritas', BeritaController::class);
+        // admin parhalado
+        Route::resource('parhalados', ParhaladoController::class);
         //DIAKONIA SOSIAL
         Route::resource('sosial', SosialController::class);
         //DIAKONIA KESEHATAN
@@ -200,6 +207,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('userberita', UserBeritaController::class);
         Route::get('/authors/{user}', [UserBeritaController::class, 'authorpost']);
         Route::put('/aula/cancel/{id}', [AulaController::class, 'cancelOrder']);
+        Route::get('/parhaladologin', [ParhaladoControllerLogin::class, 'index']);
         // akun
     });
 });
