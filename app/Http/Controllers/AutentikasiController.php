@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Berita;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -43,14 +44,18 @@ class AutentikasiController extends Controller
             'password' => 'required|min:5|max:255'
 
         ]);
+
+
         if (Auth::attempt($credentials)) {
+            $countberita = Berita::count();
             $user = Auth::user();
             if ($user->level_user == '1') {
-                return redirect()->intended('/dash_pendeta');
+                return view('autentikasi.welcomependeta', compact('countberita'));
             } elseif ($user->level_user == '2') {
-                
+
                 return redirect()->intended('/dash_bph');
             } elseif ($user->level_user == '3') {
+
                 return redirect()->intended('/dash_user');
             }
             return redirect()->intended('/');
@@ -79,12 +84,12 @@ class AutentikasiController extends Controller
         // return view('guest.index');
 
         // new logout
-        Auth::logout(); 
- 
+        Auth::logout();
+
         $request->session()->invalidate();
         //request()->session()->invalidate();
         $request->session()->regenerateToken();
-    
+
         return redirect('/');
     }
 }
