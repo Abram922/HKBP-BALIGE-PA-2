@@ -1,4 +1,4 @@
-<div>
+<div style="">
     <a href="/berita-admin" class="badge bg-info"><i class="bi bi-arrow-left"></i></a>
 
     <div class="container">

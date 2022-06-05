@@ -38,9 +38,9 @@
         </tr>
       </thead>
       <tbody>
-        @foreach($berita as $beritas)
+        @foreach($berita as $b =>$beritas)
         <tr>
-          <td>{{$loop-> iteration}}</td>
+          <td>{{ $b + $berita->firstItem()}}</td>
           <td>{{$beritas->title}}</td>
           <td><img src="/image/{{ $beritas->image }}" width="100px"></td>
           <td>{!! $beritas->body !!}</td>

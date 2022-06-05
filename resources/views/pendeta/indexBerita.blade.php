@@ -38,9 +38,9 @@
         </tr>
       </thead>
       <tbody>
-        @foreach($adminberita as $admberita)
+        @foreach($adminberita as $adm => $admberita)
         <tr>
-          <td>{{$loop-> iteration}}</td>
+          <td>{{$adm + $adminberita->firstItem()}}</td>
           <td>{{$admberita->title}}</td>
           <td><img src="/image/{{ $admberita->image }}" width="100px"></td>
           <td>{!! $admberita-> body !!}</td>

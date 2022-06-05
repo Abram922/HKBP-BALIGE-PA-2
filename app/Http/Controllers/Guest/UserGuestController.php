@@ -23,7 +23,7 @@ class UserGuestController extends Controller
 {
     public function index()
     {
-        return view('.userguest\index');
+        return view('.UserTerdaftar.index');
     }
 
     public function userremaja()
@@ -34,7 +34,7 @@ class UserGuestController extends Controller
             $remaja->where('name', 'like', '%' . request('search') . '%');
         }
 
-        return view('.userguest.koinonia.remaja', [
+        return view('.UserTerdaftar.koinonia.remaja', [
             "name" => "remaja",
             "remaja" => Remaja::latest()->paginate(8)->withQueryString()
         ]);
@@ -42,7 +42,7 @@ class UserGuestController extends Controller
 
     public function showremaja(Remaja $remaja)
     {
-        return view('.userguest.koinonia.remajafull', [
+        return view('.UserTerdaftar.koinonia.remajafull', [
             "name" => "beritafull",
             "remaja" => $remaja  // dicari berdasarkan post
         ]);
@@ -52,20 +52,20 @@ class UserGuestController extends Controller
     {
         $jadwalIbadah  = JadwalIbadah::paginate(20);
         $tingg  = Ting::paginate(20);
-        return view('.userguest\index', ['jadwalIbadah' => $jadwalIbadah], ['ting' => $tingg]);
+        return view('.UserTerdaftar.index', ['jadwalIbadah' => $jadwalIbadah], ['ting' => $tingg]);
     }
 
     //TING TING
     public function indexting()
     {
         $ting  = Ting::paginate(20);
-        return view('.userguest\tentang\tingting', ['ting' => $ting]);
+        return view('.UserTerdaftar.tentang.tingting', ['ting' => $ting]);
     }
 
     public function indexjadwalIbadah()
     {
         $jadwalIbadah  = JadwalIbadah::paginate(20);
-        return view('.userguest\tentang\jadwalIbadah', ['jadwalIbadah' => $jadwalIbadah]);
+        return view('.UserTerdaftar.tentang.jadwalIbadah', ['jadwalIbadah' => $jadwalIbadah]);
     }
 
     //SEKOLAH MINGGU
@@ -77,7 +77,7 @@ class UserGuestController extends Controller
             $sekolah->where('name', 'like', '%' . request('search') . '%');
         }
 
-        return view('.userguest.koinonia.sekolahminggu', [
+        return view('.UserTerdaftar.koinonia.sekolahminggu', [
             "name" => "sekolah",
             "sekolah" => Sekolah::latest()->paginate(8)->withQueryString()
         ]);
@@ -85,7 +85,7 @@ class UserGuestController extends Controller
 
     public function showsekolahminggu(Sekolah $sekolah)
     {
-        return view('.userguest.koinonia.sekolahminggufull', [
+        return view('.UserTerdaftar.koinonia.sekolahminggufull', [
             "name" => "sekolahminggufull",
             "sekolah" => $sekolah  // dicari berdasarkan post
         ]);
@@ -100,7 +100,7 @@ class UserGuestController extends Controller
             $naposo->where('name', 'like', '%' . request('search') . '%');
         }
 
-        return view('.userguest.koinonia.naposo', [
+        return view('.UserTerdaftar.koinonia.naposo', [
             "name" => "naposo",
             "naposo" => Naposo::latest()->paginate(8)->withQueryString()
         ]);
@@ -108,7 +108,7 @@ class UserGuestController extends Controller
 
     public function shownaposo(Naposo $naposo)
     {
-        return view('.userguest.koinonia.naposofull', [
+        return view('.UserTerdaftar.koinonia.naposofull', [
             "name" => "naposofull",
             "naposo" => $naposo  // dicari berdasarkan post
         ]);
@@ -123,7 +123,7 @@ class UserGuestController extends Controller
             $parompuan->where('name', 'like', '%' . request('search') . '%');
         }
 
-        return view('.userguest.koinonia.parompuan', [
+        return view('.UserTerdaftar.koinonia.parompuan', [
             "name" => "parompuan",
             "parompuan" => Parompuan::latest()->paginate(8)->withQueryString()
         ]);
@@ -131,7 +131,7 @@ class UserGuestController extends Controller
 
     public function showparompuan(Parompuan $parompuan)
     {
-        return view('.userguest.koinonia.parompuanfull', [
+        return view('.UserTerdaftar.koinonia.parompuanfull', [
             "name" => "parompuanfull",
             "parompuan" => $parompuan  // dicari berdasarkan post
         ]);
@@ -146,7 +146,7 @@ class UserGuestController extends Controller
             $punguan->where('name', 'like', '%' . request('search') . '%');
         }
 
-        return view('.userguest.koinonia.punguanama', [
+        return view('.UserTerdaftar.koinonia.punguanama', [
             "name" => "punguan",
             "punguan" => Punguan::latest()->paginate(8)->withQueryString()
         ]);
@@ -154,7 +154,7 @@ class UserGuestController extends Controller
 
     public function showpunguan(Punguan $punguan)
     {
-        return view('.userguest.koinonia.punguanamafull', [
+        return view('.UserTerdaftar.koinonia.punguanamafull', [
             "name" => "punguanamafull",
             "punguan" => $punguan  // dicari berdasarkan post
         ]);
@@ -169,7 +169,7 @@ class UserGuestController extends Controller
             $lanjut->where('name', 'like', '%' . request('search') . '%');
         }
 
-        return view('.userguest.koinonia.lansia', [
+        return view('.UserTerdaftar.koinonia.lansia', [
             "name" => "lanjut",
             "lanjut" => Lanjut::latest()->paginate(8)->withQueryString()
         ]);
@@ -177,7 +177,7 @@ class UserGuestController extends Controller
 
     public function showlansia(Lanjut $lanjut)
     {
-        return view('.userguest.koinonia.lansiafull', [
+        return view('.UserTerdaftar.koinonia.lansiafull', [
             "name" => "lansiafull",
             "lanjut" => $lanjut  // dicari berdasarkan post
         ]);
@@ -193,7 +193,7 @@ class UserGuestController extends Controller
             $musik->where('name', 'like', '%' . request('search') . '%');
         }
 
-        return view('.userguest.marturia.musik', [
+        return view('.UserTerdaftar.marturia.musik', [
             "name" => "musik",
             "musik" => Musik::latest()->paginate(8)->withQueryString()
         ]);
@@ -201,7 +201,7 @@ class UserGuestController extends Controller
 
     public function showmusik(Musik $musik)
     {
-        return view('.userguest.marturia.musikfull', [
+        return view('.UserTerdaftar.marturia.musikfull', [
             "name" => "musikfull",
             "musik" => $musik  // dicari berdasarkan post
         ]);
@@ -216,7 +216,7 @@ class UserGuestController extends Controller
             $sending->where('name', 'like', '%' . request('search') . '%');
         }
 
-        return view('.userguest.marturia.sending', [
+        return view('.UserTerdaftar.marturia.sending', [
             "name" => "sending",
             "sending" => Sending::latest()->paginate(8)->withQueryString()
         ]);
@@ -224,7 +224,7 @@ class UserGuestController extends Controller
 
     public function showsending(Sending $sending)
     {
-        return view('.userguest.marturia.sendingfull', [
+        return view('.UserTerdaftar.marturia.sendingfull', [
             "name" => "sendingfull",
             "sending" => $sending  // dicari berdasarkan post
         ]);
@@ -240,7 +240,7 @@ class UserGuestController extends Controller
             $sosial->where('name', 'like', '%' . request('search') . '%');
         }
 
-        return view('.userguest.diakonia.sosial', [
+        return view('.UserTerdaftar.diakonia.sosial', [
             "name" => "sosial",
             "sosial" => Sosial::latest()->paginate(8)->withQueryString()
         ]);
@@ -248,7 +248,7 @@ class UserGuestController extends Controller
 
     public function showsosial(Sosial $sosial)
     {
-        return view('.userguest.diakonia.sosialfull', [
+        return view('.UserTerdaftar.diakonia.sosialfull', [
             "name" => "sosialfull",
             "sosial" => $sosial  // dicari berdasarkan post
         ]);
@@ -263,7 +263,7 @@ class UserGuestController extends Controller
             $masyarakat->where('name', 'like', '%' . request('search') . '%');
         }
 
-        return view('.userguest.diakonia.masyarakat', [
+        return view('.UserTerdaftar.diakonia.masyarakat', [
             "name" => "masyarakat",
             "masyarakat" => Masyarakat::latest()->paginate(8)->withQueryString()
         ]);
@@ -271,7 +271,7 @@ class UserGuestController extends Controller
 
     public function showmasyarakat(Masyarakat $masyarakat)
     {
-        return view('.userguest.diakonia.masyarakatfull', [
+        return view('.UserTerdaftar.diakonia.masyarakatfull', [
             "name" => "masyarakatfull",
             "masyarakat" => $masyarakat  // dicari berdasarkan post
         ]);
@@ -286,7 +286,7 @@ class UserGuestController extends Controller
             $kesehatan->where('name', 'like', '%' . request('search') . '%');
         }
 
-        return view('.userguest.diakonia.kesehatan', [
+        return view('.UserTerdaftar.diakonia.kesehatan', [
             "name" => "kesehatan",
             "kesehatan" => Kesehatan::latest()->paginate(8)->withQueryString()
         ]);
@@ -294,7 +294,7 @@ class UserGuestController extends Controller
 
     public function showkesehatan(Kesehatan $kesehatan)
     {
-        return view('.userguest.diakonia.kesehatanfull', [
+        return view('.UserTerdaftar.diakonia.kesehatanfull', [
             "name" => "kesehatanfull",
             "kesehatan" => $kesehatan  // dicari berdasarkan post
         ]);
@@ -309,7 +309,7 @@ class UserGuestController extends Controller
             $pendidikan->where('name', 'like', '%' . request('search') . '%');
         }
 
-        return view('.userguest.diakonia.pendidikan', [
+        return view('.UserTerdaftar.diakonia.pendidikan', [
             "name" => "pendidikan",
             "pendidikan" => Pendidikan::latest()->paginate(8)->withQueryString()
         ]);
@@ -317,7 +317,7 @@ class UserGuestController extends Controller
 
     public function showpendidikan(Pendidikan $pendidikan)
     {
-        return view('.userguest.diakonia.pendidikanfull', [
+        return view('.UserTerdaftar.diakonia.pendidikanfull', [
             "name" => "pendidikanfull",
             "pendidikan" => $pendidikan  // dicari berdasarkan post
         ]);

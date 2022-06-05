@@ -29,7 +29,7 @@
                             <tr>
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
                                 <th scope="col">Level</th>
                                 <th colspan="2" class="text-center" scope="col">Action</th>
                             </tr>
@@ -40,7 +40,7 @@
                             @foreach($user->skip(1) as $account)
                             <tr>
                                 <td>{{$account->id}}</td>
-                                <td>{{$account->name}}</td>
+                                <td>{{$account->email}}</td>
                                 <td><label class="label label-success">
                                         {{$account->level_user == 1 ? 'pendeta' : ($account->level_user == 2 ? 'bph' : 'user')}}
                                     </label></td>
