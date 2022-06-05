@@ -28,6 +28,9 @@ use App\Http\Controllers\Guest\AulaGuestController;
 use App\Http\Controllers\ParhaladoController;
 use App\Http\Controllers\ParhaladoControllerLogin;
 use App\Http\Controllers\UserKoinoniaController;
+use App\Http\Controllers\Guest\UserGuestController;
+use App\Http\Controllers\AfterLoginController;
+
 
 
 
@@ -209,5 +212,36 @@ Route::group(['middleware' => ['auth']], function () {
         Route::put('/aula/cancel/{id}', [AulaController::class, 'cancelOrder']);
         Route::get('/parhaladologin', [ParhaladoControllerLogin::class, 'index']);
         // akun
+        //GUEST TENTANG
+        Route::get('/usertingting', [UserGuestController::class, 'indexting']);
+        Route::get('/userjadwalIbadah', [UserGuestController::class, 'indexjadwalIbadah']);
+
+        //GUEST MARTURIA
+        Route::get('/usermusikk', [UserGuestController::class, 'usermusik']);
+        Route::get('/usermusikk/{musik}', [UserGuestController::class, 'showmusik']);
+
+        Route::get('/usersendingg', [UserGuestController::class, 'usersending']);
+        Route::get('/usersendingg/{sending}', [UserGuestController::class, 'showsending']);
+
+        //GUEST DIAKONIA
+        Route::get('/usersosiall', [UserGuestController::class, 'usersosial']);
+        Route::get('/usersosiall/{sosial}', [UserGuestController::class, 'showsosial']);
+
+        Route::get('/usermasyarakatt', [UserGuestController::class, 'usermasyarakat']);
+        Route::get('/usermasyarakatt/{masyarakat}', [UserGuestController::class, 'showmasyarakat']);
+
+        Route::get('/userkesehatann', [UserGuestController::class, 'userkesehatan']);
+        Route::get('/userkesehatann/{kesehatan}', [UserGuestController::class, 'showkesehatan']);
+
+        Route::get('/userpendidikann', [UserGuestController::class, 'userpendidikan']);
+        Route::get('user/pendidikann/{pendidikan}', [UserGuestController::class, 'showpendidikan']);
+
+        //GUEST LOGIN KOINONIA
+        Route::get('/userremajaa', [AfterLoginController::class, 'indexremaja']);
+        Route::get('/usersekolahminggu', [AfterLoginController::class, 'indexsekolahminggu']);
+        Route::get('/usernaposoo', [AfterLoginController::class, 'indexnaposo']);
+        Route::get('/userparompuann', [AfterLoginController::class, 'indexparompuan']);
+        Route::get('/userpunguanama', [AfterLoginControllerr::class, 'indexpunguanama']);
+        Route::get('/userlansia', [AfterLoginController::class, 'indexlansia']);
     });
 });

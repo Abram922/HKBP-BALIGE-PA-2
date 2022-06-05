@@ -10,64 +10,64 @@ class AfterLoginController extends Controller
     //KOINONIA
     public function indexremaja()
     {
-        return view('.userguest\koinonia\remaja');
+        return view('.UserTerdaftar.koinonia.remaja');
     }
 
     public function indexlansia()
     {
-        return view('.userguest\koinonia\lansia');
+        return view('.UserTerdaftar.koinonia.lansia');
     }
 
     public function indexnaposo()
     {
-        return view('.userguest\koinonia\naposo');
+        return view('.UserTerdaftar.koinonia.naposo');
     }
 
     public function indexparompuan()
     {
-        return view('.userguest\koinonia\parompuan');
+        return view('.UserTerdaftar.koinonia.parompuan');
     }
 
     public function indexpunguanama()
     {
-        return view('.userguest\koinonia\punguanama');
+        return view('.UserTerdaftar.koinonia.punguanama');
     }
 
     public function indexsekolahminggu()
     {
-        return view('.userguest\koinonia\sekolahminggu');
+        return view('.UserTerdaftar.koinonia.sekolahminggu');
     }
 
 
     //MARTURIA
     public function indexsending()
     {
-        return view('.userguest\marturia\sending');
+        return view('.UserTerdaftar.marturia.sending');
     }
 
     public function indexmusik()
     {
-        return view('.userguest\marturia\musik');
+        return view('.UserTerdaftar.marturia.musik');
     }
 
     //DIAKONIA
     public function indexsosial()
     {
-        return view('.userguest\diakonia\sosial');
+        return view('.UserTerdaftar.diakonia.sosial');
     }
 
     public function indexmasyarakat()
     {
-        return view('.userguest\diakonia\masyarakat');
+        return view('.UserTerdaftar.diakonia.masyarakat');
     }
 
     public function indexkesehatan()
     {
-        return view('.userguest\diakonia\kesehatan');
+        return view('.UserTerdaftar.diakonia.kesehatan');
     }
 
     public function indexpendidikan()
     {
-        return view('.userguest\diakonia\pendidikan');
+        return view('.UserTerdaftar.diakonia.pendidikan');
     }
 }
