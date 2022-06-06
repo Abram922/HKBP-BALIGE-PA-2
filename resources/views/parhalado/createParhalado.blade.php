@@ -25,7 +25,7 @@
             <div class="card-body">
                 <form action="{{ route('parhalados.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <div class="form-group">
+                <div class="form-group">
                         <label for="name" class="form-label">Nama</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" autofocus value="{{old('name')}}">
                 @error('name')
@@ -33,7 +33,7 @@
                     {{$message}}
                 </div>
                 @enderror
-                    </div>
+                </div>
 
                     <div class="form-group">
                         <label for="title" class="form-label">Title</label>
