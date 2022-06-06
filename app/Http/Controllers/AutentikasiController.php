@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Aula;
 use App\Models\User;
 use App\Models\Berita;
 use Illuminate\Support\Facades\Hash;
@@ -44,13 +45,10 @@ class AutentikasiController extends Controller
             'password' => 'required|min:5|max:255'
 
         ]);
-
-
         if (Auth::attempt($credentials)) {
-            $countberita = Berita::count();
             $user = Auth::user();
             if ($user->level_user == '1') {
-                return view('autentikasi.welcomependeta', compact('countberita'));
+                return redirect()->intended('/dash_pendeta');
             } elseif ($user->level_user == '2') {
 
                 return redirect()->intended('/dash_bph');
@@ -65,11 +63,17 @@ class AutentikasiController extends Controller
 
     public function dash_p()
     {
-        return view('autentikasi.welcomependeta');
+        $countaula = Aula::where('status_id', 2)->count();
+        $countberita = Berita::count();
+        $countuserterdaftar = User::where('level_user', 3)->count();
+        return view('autentikasi.welcomependeta', compact('countberita', 'countuserterdaftar', 'countaula'));
     }
     public function dash_b()
     {
-        return view('autentikasi.welcomebph');
+        $countaula = Aula::where('status_id', 2)->count();
+        $countberita = Berita::count();
+        $countuserterdaftar = User::where('level_user', 3)->count();
+        return view('autentikasi.welcomebph', compact('countberita', 'countuserterdaftar', 'countaula'));
     }
     public function dash_u()
     {
