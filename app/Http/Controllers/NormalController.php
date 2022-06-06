@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ting;
 use App\Models\JadwalIbadah;
+use App\Models\Parhalado;
+
 class NormalController extends Controller
 {
     public function index()
@@ -22,6 +24,13 @@ class NormalController extends Controller
         ]);
         // ['ting'=>$tingg]);
         }
+
+    public function indexparhalado() {
+        $parhalado = Parhalado::all();
+        return view('guest.tentang.parhalado', [
+            'parhalados' => $parhalado
+        ]);
+    }
     //TING TING
     public function indexting()
     {
@@ -99,4 +108,5 @@ class NormalController extends Controller
         return view('.guest.diakonia.pendidikan');
     }
 
+    
 }

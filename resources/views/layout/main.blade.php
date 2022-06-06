@@ -49,7 +49,7 @@
                     <li class="nav-item dropdown" id="myDropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Tentang </a>
                         <ul class="dropdown-menu">
-                            <li> <a class="dropdown-item" href="#"> Parhalado </a></li>
+                            <li> <a class="dropdown-item" href="/parhalado"> Parhalado </a></li>
                             <li><a class="dropdown-item" href="/tingting"> Tingting </a></li>
                             <li><a class="dropdown-item" href="/jadwalIbadah"> Jadwal Ibadah </a></li>
                         </ul>

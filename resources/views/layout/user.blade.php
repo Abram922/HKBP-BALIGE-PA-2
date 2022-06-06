@@ -50,7 +50,7 @@
                     <li class="nav-item dropdown" id="myDropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Tentang </a>
                         <ul class="dropdown-menu">
-                            <li> <a class="dropdown-item" href="#"> Parhalado </a></li>
+                            <li> <a class="dropdown-item" href="/parhaladologin"> Parhalado </a></li>
                             <li><a class="dropdown-item" href="/usertingting"> Tingting </a></li>
                             <li><a class="dropdown-item" href="/userjadwalIbadah"> Jadwal Ibadah </a></li>
                         </ul>
