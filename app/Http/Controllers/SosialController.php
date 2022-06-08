@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Sosial;
 use Illuminate\Http\Request;
 use DB;
@@ -15,7 +16,7 @@ class SosialController extends Controller
     public function index()
     {
         $sosial  = Sosial::paginate(20);
-        return view('.diakonia.indexSosial',['sosial'=>$sosial]);
+        return view('.diakonia.indexSosial', ['sosial' => $sosial]);
     }
 
     /**
@@ -41,20 +42,20 @@ class SosialController extends Controller
             'keterangan' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-  
+
         $input = $request->all();
-  
+
         if ($image = $request->file('image')) {
             $destinationPath = 'image/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
             $input['image'] = "$profileImage";
         }
-    
+
         Sosial::create($input);
-     
+
         return redirect()->route('sosial.index')
-                        ->with('success','Data berhasil ditambahkan');
+            ->with('success', 'Data berhasil ditambahkan');
     }
 
     /**
@@ -63,10 +64,6 @@ class SosialController extends Controller
      * @param  \App\Models\Masyarakat  $masyarakat
      * @return \Illuminate\Http\Response
      */
-    public function show(Masyarakat $masyarakat)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -76,7 +73,7 @@ class SosialController extends Controller
      */
     public function edit(Sosial $sosial)
     {
-        return view('diakonia.editSosial',compact('sosial'));
+        return view('diakonia.editSosial', compact('sosial'));
     }
 
     /**
@@ -92,22 +89,22 @@ class SosialController extends Controller
             'judul' => 'required',
             'keterangan' => 'required',
         ]);
-  
+
         $input = $request->all();
-  
+
         if ($image = $request->file('image')) {
             $destinationPath = 'image/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
             $input['image'] = "$profileImage";
-        }else{
+        } else {
             unset($input['image']);
         }
-          
+
         $sosial->update($input);
-    
+
         return redirect()->route('sosial.index')
-                        ->with('success','Data berhasil diubah');
+            ->with('success', 'Data berhasil diubah');
     }
 
     /**
@@ -119,10 +116,8 @@ class SosialController extends Controller
     public function destroy(Sosial $sosial)
     {
         $sosial->delete();
-     
-        return redirect()->route('sosial.index')
-                        ->with('success','Data berhasil dihapus');
-    }
 
-    
+        return redirect()->route('sosial.index')
+            ->with('success', 'Data berhasil dihapus');
+    }
 }

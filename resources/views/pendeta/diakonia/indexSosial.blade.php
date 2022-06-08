@@ -18,7 +18,7 @@
     <div class="panel-heading">
       <h4>Edit Seksi Sosial</h4>
     </div>
-    <a href="{{ route('sosial.create') }}" class="btn btn-sm btn-success" type="submit">Tambah</a>
+    <a href="{{ route('pendetasosial.create') }}" class="btn btn-sm btn-success" type="submit">Tambah</a>
     <hr>
     <table class="table table-striped table-bordered data">
 
@@ -33,16 +33,16 @@
         </tr>
       </thead>
       <tbody>
-        @foreach ($sosial as $product)
+        @foreach ($pendetasosial as $product)
         <tr>
           <td>{{ $loop->iteration }}</td>
           <td><img src="/image/{{ $product->image }}" width="100px"></td>
           <td>{{ $product->judul}}</td>
           <td>{!! $product->keterangan !!}</td>
           <td>
-            <form action="{{ route('sosial.destroy',$product->id) }}" method="POST">
+            <form action="{{ route('pendetasosial.destroy',$product->id) }}" method="POST">
 
-              <a class="btn btn-primary" href="{{ route('sosial.edit',$product->id) }}">Edit</a>
+              <a class="btn btn-primary" href="{{ route('pendetasosial.edit',$product->id) }}">Edit</a>
 
               @csrf
               @method('DELETE')
@@ -56,7 +56,7 @@
       </tbody>
 
     </table>
-    {!! $sosial->links() !!}
+    {!! $pendetasosial->links() !!}
 
   </div>
 

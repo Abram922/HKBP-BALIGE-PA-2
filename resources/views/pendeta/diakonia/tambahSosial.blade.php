@@ -20,7 +20,7 @@
 
             {{-- card body --}}
             <div class="card-body">
-                <form action="{{ route('sosial.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('pendetasosial.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="row">

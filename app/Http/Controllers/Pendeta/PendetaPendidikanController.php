@@ -15,8 +15,8 @@ class PendetaPendidikanController extends Controller
      */
     public function index()
     {
-        $pendidikan  = Pendidikan::paginate(20);
-        return view('.diakonia.indexPendidikan', ['pendidikan' => $pendidikan]);
+        $pendetapendidikan  = Pendidikan::paginate(20);
+        return view('.pendeta.diakonia.indexPendidikan', ['pendetapendidikan' => $pendetapendidikan]);
     }
 
     /**
@@ -26,7 +26,7 @@ class PendetaPendidikanController extends Controller
      */
     public function create()
     {
-        return view('diakonia.tambahPendidikan');
+        return view('.pendeta.diakonia.tambahPendidikan');
     }
 
     /**
@@ -54,17 +54,17 @@ class PendetaPendidikanController extends Controller
 
         Pendidikan::create($input);
 
-        return redirect()->route('pendidikan.index')
+        return redirect()->route('pendetapendidikan.index')
             ->with('success', 'Data berhasil ditambahkan.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Pendidikan  $pendidikan
+     * @param  \App\Models\Pendidikan  $pendetapendidikan
      * @return \Illuminate\Http\Response
      */
-    public function show(Pendidikan $pendidikan)
+    public function show(Pendidikan $pendetapendidikan)
     {
         //
     }
@@ -72,22 +72,22 @@ class PendetaPendidikanController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Pendidikan  $pendidikan
+     * @param  \App\Models\Pendidikan  $pendetapendidikan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pendidikan $pendidikan)
+    public function edit(Pendidikan $pendetapendidikan)
     {
-        return view('diakonia.editPendidikan', compact('pendidikan'));
+        return view('.pendeta.diakonia.editPendidikan', compact('pendetapendidikan'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Pendidikan  $pendidikan
+     * @param  \App\Models\Pendidikan  $pendetapendidikan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pendidikan $pendidikan)
+    public function update(Request $request, Pendidikan $pendetapendidikan)
     {
         $request->validate([
             'name' => 'required',
@@ -105,23 +105,23 @@ class PendetaPendidikanController extends Controller
             unset($input['image']);
         }
 
-        $pendidikan->update($input);
+        $pendetapendidikan->update($input);
 
-        return redirect()->route('pendidikan.index')
+        return redirect()->route('pendetapendidikan.index')
             ->with('success', 'Data berhasil diubah');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Pendidikan  $pendidikan
+     * @param  \App\Models\Pendidikan  $pendetapendidikan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pendidikan $pendidikan)
+    public function destroy(Pendidikan $pendetapendidikan)
     {
-        $pendidikan->delete();
+        $pendetapendidikan->delete();
 
-        return redirect()->route('pendidikan.index')
+        return redirect()->route('pendetapendidikan.index')
             ->with('success', 'Data berhasil dihapus');
     }
 }

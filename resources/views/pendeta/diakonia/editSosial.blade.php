@@ -32,7 +32,7 @@
             {{-- card body --}}
             <div class="card-body">
 
-                <form action="{{ route('sosial.update',$sosial->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('pendetasosial.update',$pendetasosial->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
@@ -40,14 +40,14 @@
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <strong>Name:</strong>
-                                <input type="text" name="judul" value="{{ $sosial->judul }}" class="form-control" placeholder="Name">
+                                <input type="text" name="judul" value="{{ $pendetasosial->judul }}" class="form-control" placeholder="Name">
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <strong>Detail:</strong>
 
-                                <textarea class="form-control" id="keterangan" rows="10" name="keterangan">{{ $sosial->keterangan }}</textarea>
+                                <textarea class="form-control" id="keterangan" rows="10" name="keterangan">{{ $pendetasosial->keterangan }}</textarea>
 
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                             <div class="form-group">
                                 <strong>Image:</strong>
                                 <input type="file" name="image" class="form-control" placeholder="image">
-                                <img src="/image/{{ $sosial->image }}" width="300px">
+                                <img src="/image/{{ $pendetasosial->image }}" width="300px">
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
