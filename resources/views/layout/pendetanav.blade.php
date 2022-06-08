@@ -99,8 +99,8 @@
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{{ route('sending.index')}}">Zending</a>
-                        <a class="collapse-item" href="{{ route('musik.index')}}">Musik</a>
+                        <a class="collapse-item" href="{{ route('pendetasending.index')}}">Zending</a>
+                        <a class="collapse-item" href="{{ route('pendetamusik.index')}}">Musik</a>
                     </div>
                 </div>
             </li>

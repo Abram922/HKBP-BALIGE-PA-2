@@ -21,7 +21,7 @@
             {{-- card body --}}
             <div class="card-body">
 
-                <form action="{{ route('musik.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('pendetamusik.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="row">

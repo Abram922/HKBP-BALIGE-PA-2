@@ -33,6 +33,8 @@ use App\Http\Controllers\AfterLoginController;
 use App\Http\Controllers\Pendeta\PendetaJadwalIbadahController;
 use App\Http\Controllers\Pendeta\PendetaParhaladoController;
 use App\Http\Controllers\Pendeta\PendetaTingTingController;
+use App\Http\Controllers\Pendeta\PendetaMusikController;
+use App\Http\Controllers\Pendeta\PendetaSendingController;
 
 
 
@@ -192,6 +194,11 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('pendetamasyarakat', PendetaMasyarakatController::class);
         //DIAKONIA PENDIDIKAN
         Route::resource('pendetapendidikan', PendetaPendidikanController::class);
+
+        //MARTURIA MUSIK
+        Route::resource('pendetamusik', PendetaMusikController::class);
+        //MARTURIA MUSIK
+        Route::resource('pendetasending', PendetaSendingController::class);
     });
     Route::group(['middleware' => ['Auth_Check:2']], function () {
         Route::get('/dash_bph', [AutentikasiController::class, 'dash_b']);

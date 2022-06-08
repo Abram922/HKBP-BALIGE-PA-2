@@ -32,7 +32,7 @@
             {{-- card body --}}
             <div class="card-body">
 
-                <form action="{{ route('musik.update',$musik->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('pendetamusik.update',$pendetamusik->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
@@ -40,14 +40,14 @@
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <strong>Judul:</strong>
-                                <input type="text" name="name" value="{{ $musik->name }}" class="form-control" placeholder="Name">
+                                <input type="text" name="name" value="{{ $pendetamusik->name }}" class="form-control" placeholder="Name">
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <strong>Keterangan:</strong>
 
-                                <textarea class="form-control" id="detail" rows="10" name="detail">{{ $musik->detail }}</textarea>
+                                <textarea class="form-control" id="detail" rows="10" name="detail">{{ $pendetamusik->detail }}</textarea>
 
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                             <div class="form-group">
                                 <strong>Image:</strong>
                                 <input type="file" name="image" class="form-control" placeholder="image">
-                                <img src="/image/{{ $musik->image }}" width="300px">
+                                <img src="/image/{{ $pendetamusik->image }}" width="300px">
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
