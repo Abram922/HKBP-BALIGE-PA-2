@@ -15,7 +15,7 @@
 
         <div class="card mt-5 d-flex justify-content-center">
             <div class="card-header text-center">
-                <strong>EDIT Naposo</strong>
+                <strong>EDIT NAPOSO BULUNG</strong>
             </div>
 
             {{-- if there is error --}}
@@ -31,7 +31,7 @@
             @endif
             {{-- card body --}}
             <div class="card-body">
-                <form action="{{ route('naposo.update',$naposo->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('pendetanaposo.update',$pendetanaposo->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
@@ -39,7 +39,7 @@
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <strong>Judul:</strong>
-                                <input type="text" name="name" value="{{ $naposo->name }}" class="form-control" placeholder="Name">
+                                <input type="text" name="name" value="{{ $pendetanaposo->name }}" class="form-control" placeholder="Name">
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -52,7 +52,7 @@
                             <div class="form-group">
                                 <strong>Image:</strong>
                                 <input type="file" name="image" class="form-control" placeholder="image">
-                                <img src="/image/{{ $naposo->image }}" width="300px">
+                                <img src="/image/{{ $pendetanaposo->image }}" width="300px">
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

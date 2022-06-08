@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Pendeta;
 
-use App\Http\Controllers\Controller;
+use App\Models\Naposo;
 use Illuminate\Http\Request;
-use App\Models\Masyarakat;
+use App\Http\Controllers\Controller;
 
-class PendetaMasyarakatController extends Controller
+class PendetaNaposoBulungController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class PendetaMasyarakatController extends Controller
      */
     public function index()
     {
-        $pendetamasyarakat  = Masyarakat::paginate(20);
-        return view('.pendeta.diakonia.indexMasyarakat', ['pendetamasyarakat' => $pendetamasyarakat]);
+        $pendetanaposo  = Naposo::paginate(20);
+        return view('..pendeta.marturia.indexNaposo', ['pendetanaposo' => $pendetanaposo]);
     }
 
     /**
@@ -26,7 +26,7 @@ class PendetaMasyarakatController extends Controller
      */
     public function create()
     {
-        return view('.pendeta.diakonia.tambahMasyarakat');
+        return view('.pendeta.marturia.tambahNaposo');
     }
 
     /**
@@ -52,19 +52,19 @@ class PendetaMasyarakatController extends Controller
             $input['image'] = "$profileImage";
         }
 
-        Masyarakat::create($input);
+        Naposo::create($input);
 
-        return redirect()->route('pendetamasyarakat.index')
-        ->with('success', 'Data berhasil ditambahkan.');
+        return redirect()->route('pendetanaposo.index')
+            ->with('success', 'Data berhasil ditambahkan.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Masyarakat  $pendetamasyarakat
+     * @param  \App\Models\Naposo  $pendetanaposo
      * @return \Illuminate\Http\Response
      */
-    public function show(Masyarakat $pendetamasyarakat)
+    public function show(Naposo $pendetanaposo)
     {
         //
     }
@@ -72,22 +72,22 @@ class PendetaMasyarakatController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Masyarakat  $pendetamasyarakat
+     * @param  \App\Models\Naposo  $pendetanaposo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Masyarakat $pendetamasyarakat)
+    public function edit(Naposo $pendetanaposo)
     {
-        return view('.pendeta.diakonia.editMasyarakat', compact('pendetamasyarakat'));
+        return view('.pendeta.marturia.editNaposo', compact('pendetanaposo'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Masyarakat  $pendetamasyarakat
+     * @param  \App\Models\Naposo  $pendetanaposo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Masyarakat $pendetamasyarakat)
+    public function update(Request $request, Naposo $pendetanaposo)
     {
         $request->validate([
             'name' => 'required',
@@ -105,23 +105,23 @@ class PendetaMasyarakatController extends Controller
             unset($input['image']);
         }
 
-        $pendetamasyarakat->update($input);
+        $pendetanaposo->update($input);
 
-        return redirect()->route('pendetamasyarakat.index')
-        ->with('success', 'Data berhasil diubah');
+        return redirect()->route('pendetanaposo.index')
+            ->with('success', 'Data berhasil diubah');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Masyarakat  $pendetamasyarakat
+     * @param  \App\Models\Naposo  $pendetanaposo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Masyarakat $pendetamasyarakat)
+    public function destroy(Naposo $pendetanaposo)
     {
-        $pendetamasyarakat->delete();
+        $pendetanaposo->delete();
 
-        return redirect()->route('pendetamasyarakat.index')
-        ->with('success', 'Data berhasil dihapus');
+        return redirect()->route('pendetanaposo.index')
+            ->with('success', 'Data berhasil dihapus');
     }
 }

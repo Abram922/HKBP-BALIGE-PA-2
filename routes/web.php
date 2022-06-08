@@ -33,6 +33,14 @@ use App\Http\Controllers\AfterLoginController;
 use App\Http\Controllers\Pendeta\PendetaJadwalIbadahController;
 use App\Http\Controllers\Pendeta\PendetaParhaladoController;
 use App\Http\Controllers\Pendeta\PendetaTingTingController;
+use App\Http\Controllers\Pendeta\PendetaKesehatanController;
+use App\Http\Controllers\Pendeta\PendetaMasyarakatController;
+use App\Http\Controllers\Pendeta\PendetaPendidikanController;
+use App\Http\Controllers\Pendeta\PendetaSosialController;
+use App\Http\Controllers\Pendeta\PendetaNaposoBulungController;
+use App\Http\Controllers\Pendeta\PendetaRemajaController;
+use App\Http\Controllers\Pendeta\PendetaSekolahMingguController;
+
 
 
 
@@ -192,6 +200,13 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('pendetamasyarakat', PendetaMasyarakatController::class);
         //DIAKONIA PENDIDIKAN
         Route::resource('pendetapendidikan', PendetaPendidikanController::class);
+        Route::resource('pendetaremaja', PendetaRemajaController::class);
+
+        //MARTURIA SEKOLAH MINGGU
+        Route::resource('pendetasekolah', PendetaSekolahMingguController::class);
+
+        //MARTURIA NAPOSO
+        Route::resource('pendetanaposo', PendetaNaposoBulungController::class);
     });
     Route::group(['middleware' => ['Auth_Check:2']], function () {
         Route::get('/dash_bph', [AutentikasiController::class, 'dash_b']);

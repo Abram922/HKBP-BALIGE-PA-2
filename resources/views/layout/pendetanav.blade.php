@@ -82,9 +82,9 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{{ route('remaja.index')}}">Remaja</a>
-                        <a class="collapse-item" href="{{ route('sekolah.index')}}">Sekolah Minggu</a>
-                        <a class="collapse-item" href="{{ route('naposo.index')}}">Naposo Bulung</a>
+                        <a class="collapse-item" href="{{ route('pendetaremaja.index')}}">Remaja</a>
+                        <a class="collapse-item" href="{{ route('pendetasekolah.index')}}">Sekolah Minggu</a>
+                        <a class="collapse-item" href="{{ route('pendetanaposo.index')}}">Naposo Bulung</a>
                         <a class="collapse-item" href="{{ route('parompuan.index')}}">Parompuan Huria</a>
                         <a class="collapse-item" href="{{ route('punguan.index')}}">Punguan Ama</a>
                         <a class="collapse-item" href="{{ route('lanjut.index')}}">Lansia</a>
@@ -112,10 +112,10 @@
                 </a>
                 <div id="collapse" class="collapse" aria-labelledby="heading" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{{ route('sosial.index')}}">Sosial</a>
-                        <a class="collapse-item" href="{{ route('masyarakat.index')}}">Masyarakat</a>
-                        <a class="collapse-item" href="{{ route('kesehatan.index')}}">Kesehatan </a>
-                        <a class="collapse-item" href="{{ route('pendidikan.index')}}">Pendidikan</a>
+                        <a class="collapse-item" href="{{ route('pendetasosial.index')}}">Sosial</a>
+                        <a class="collapse-item" href="{{ route('pendetamasyarakat.index')}}">Masyarakat</a>
+                        <a class="collapse-item" href="{{ route('pendetakesehatan.index')}}">Kesehatan </a>
+                        <a class="collapse-item" href="{{ route('pendetapendidikan.index')}}">Pendidikan</a>
                     </div>
                 </div>
             </li>

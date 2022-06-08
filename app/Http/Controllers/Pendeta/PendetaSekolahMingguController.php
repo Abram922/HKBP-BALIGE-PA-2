@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Pendeta;
 
-use App\Http\Controllers\Controller;
+use App\Models\Sekolah;
 use Illuminate\Http\Request;
-use App\Models\Masyarakat;
+use App\Http\Controllers\Controller;
 
-class PendetaMasyarakatController extends Controller
+class PendetaSekolahMingguController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class PendetaMasyarakatController extends Controller
      */
     public function index()
     {
-        $pendetamasyarakat  = Masyarakat::paginate(20);
-        return view('.pendeta.diakonia.indexMasyarakat', ['pendetamasyarakat' => $pendetamasyarakat]);
+        $pendetasekolah  = Sekolah::paginate(20);
+        return view('.pendeta.marturia.indexSekolah', ['pendetasekolah' => $pendetasekolah]);
     }
 
     /**
@@ -26,7 +26,7 @@ class PendetaMasyarakatController extends Controller
      */
     public function create()
     {
-        return view('.pendeta.diakonia.tambahMasyarakat');
+        return view('.pendeta.marturia.tambahSekolah');
     }
 
     /**
@@ -52,19 +52,19 @@ class PendetaMasyarakatController extends Controller
             $input['image'] = "$profileImage";
         }
 
-        Masyarakat::create($input);
+        Sekolah::create($input);
 
-        return redirect()->route('pendetamasyarakat.index')
-        ->with('success', 'Data berhasil ditambahkan.');
+        return redirect()->route('pendetasekolah.index')
+            ->with('success', 'Data berhasil ditambahkan.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Masyarakat  $pendetamasyarakat
+     * @param  \App\Models\Sekolah  $pendetasekolah
      * @return \Illuminate\Http\Response
      */
-    public function show(Masyarakat $pendetamasyarakat)
+    public function show(Sekolah $pendetasekolah)
     {
         //
     }
@@ -72,22 +72,22 @@ class PendetaMasyarakatController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Masyarakat  $pendetamasyarakat
+     * @param  \App\Models\Sekolah  $pendetasekolah
      * @return \Illuminate\Http\Response
      */
-    public function edit(Masyarakat $pendetamasyarakat)
+    public function edit(Sekolah $pendetasekolah)
     {
-        return view('.pendeta.diakonia.editMasyarakat', compact('pendetamasyarakat'));
+        return view('.pendeta.marturia.editSekolah', compact('pendetasekolah'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Masyarakat  $pendetamasyarakat
+     * @param  \App\Models\Sekolah  $pendetasekolah
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Masyarakat $pendetamasyarakat)
+    public function update(Request $request, Sekolah $pendetasekolah)
     {
         $request->validate([
             'name' => 'required',
@@ -105,23 +105,23 @@ class PendetaMasyarakatController extends Controller
             unset($input['image']);
         }
 
-        $pendetamasyarakat->update($input);
+        $pendetasekolah->update($input);
 
-        return redirect()->route('pendetamasyarakat.index')
-        ->with('success', 'Data berhasil diubah');
+        return redirect()->route('pendetasekolah.index')
+            ->with('success', 'Data berhasil diubah');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Masyarakat  $pendetamasyarakat
+     * @param  \App\Models\Sekolah  $pendetasekolah
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Masyarakat $pendetamasyarakat)
+    public function destroy(Sekolah $pendetasekolah)
     {
-        $pendetamasyarakat->delete();
+        $pendetasekolah->delete();
 
-        return redirect()->route('pendetamasyarakat.index')
-        ->with('success', 'Data berhasil dihapus');
+        return redirect()->route('pendetasekolah.index')
+            ->with('success', 'Data berhasil dihapus');
     }
 }

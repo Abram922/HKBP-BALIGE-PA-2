@@ -15,13 +15,13 @@
 
         <div class="card mt-5 d-flex justify-content-center">
             <div class="card-header text-center">
-                <strong>Tambah NAPOSO</strong>
+                <strong>TAMBAH NAPOSO</strong>
             </div>
 
             {{-- card body --}}
             <div class="card-body">
 
-                <form action="{{ route('naposo.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('pendetanaposo.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="row">

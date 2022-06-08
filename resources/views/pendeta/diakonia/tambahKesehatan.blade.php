@@ -21,7 +21,7 @@
             {{-- card body --}}
             <div class="card-body">
 
-                <form action="{{ route('kesehatan.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('pendetakesehatan.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="row">
