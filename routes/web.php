@@ -30,6 +30,9 @@ use App\Http\Controllers\ParhaladoControllerLogin;
 use App\Http\Controllers\UserKoinoniaController;
 use App\Http\Controllers\Guest\UserGuestController;
 use App\Http\Controllers\AfterLoginController;
+use App\Http\Controllers\Pendeta\PendetaJadwalIbadahController;
+use App\Http\Controllers\Pendeta\PendetaParhaladoController;
+use App\Http\Controllers\Pendeta\PendetaTingTingController;
 
 
 
@@ -102,7 +105,7 @@ Route::post('/tentang/editJadwal', [JadwalIbadahController::class, 'ubah']);
 Route::get('/tentang/hapus/{id}', [JadwalIbadahController::class, 'hapus']);
 
 //TENTANG TINGTING
-Route::resource('ting', TingController::class);
+
 
 
 
@@ -177,6 +180,18 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/berita-admin/show/{adminberita}', [AdminBeritaController::class, 'show']);
         Route::put('/berita-admin/update/{adminberita}', [AdminBeritaController::class, 'update']);
         Route::delete('/berita-admin/delete/{adminberita}', [AdminBeritaController::class, 'destroy']);
+
+        Route::resource('PendetaTingting', PendetaTingTingController::class);
+        Route::resource('PendetaJadwal', PendetaJadwalIbadahController::class);
+        Route::resource('PendetaParhalado', PendetaParhaladoController::class);
+        //DIAKONIA SOSIAL
+        Route::resource('pendetasosial', PendetaSosialController::class);
+        //DIAKONIA KESEHATAN
+        Route::resource('pendetakesehatan', PendetaKesehatanController::class);
+        //DIAKONIA MASYARAKAT
+        Route::resource('pendetamasyarakat', PendetaMasyarakatController::class);
+        //DIAKONIA PENDIDIKAN
+        Route::resource('pendetapendidikan', PendetaPendidikanController::class);
     });
     Route::group(['middleware' => ['Auth_Check:2']], function () {
         Route::get('/dash_bph', [AutentikasiController::class, 'dash_b']);
@@ -197,6 +212,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('sending', SendingController::class);
         //KOINONIA MUSIK
         Route::resource('musik', MusikController::class);
+
+        Route::resource('ting', TingController::class);
         //Aula
         Route::resource('adminaula', AdminAulaController::class);
         Route::put('/aula/cancel-admin/{id}', [AdminAulaController::class, 'cancelOrderAdmin']);
@@ -211,6 +228,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/authors/{user}', [UserBeritaController::class, 'authorpost']);
         Route::put('/aula/cancel/{id}', [AulaController::class, 'cancelOrder']);
         Route::get('/parhaladologin', [ParhaladoControllerLogin::class, 'index']);
+
+
         // akun
         //GUEST TENTANG
         Route::get('/usertingting', [UserGuestController::class, 'indexting']);

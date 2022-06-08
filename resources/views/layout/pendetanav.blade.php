@@ -67,9 +67,9 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{{ route('parhalados.index') }}">Parhalado</a>
-                        <a class="collapse-item" href="{{ route('ting.index')}}">Tingting</a>
-                        <a class="collapse-item" href="{{ url('/jadwalibadah')}}">jadwal Ibadah</a>
+                        <a class="collapse-item" href="{{ route('PendetaParhalado.index') }}">Parhalado</a>
+                        <a class="collapse-item" href="{{ route('PendetaTingting.index')}}">Tingting</a>
+                        <a class="collapse-item" href="{{ route('PendetaJadwal.index')}}">jadwal Ibadah</a>
 
                     </div>
                 </div>
