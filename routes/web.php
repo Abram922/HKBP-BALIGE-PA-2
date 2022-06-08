@@ -35,7 +35,16 @@ use App\Http\Controllers\Pendeta\PendetaParhaladoController;
 use App\Http\Controllers\Pendeta\PendetaTingTingController;
 use App\Http\Controllers\Pendeta\PendetaMusikController;
 use App\Http\Controllers\Pendeta\PendetaSendingController;
-
+use App\Http\Controllers\Pendeta\PendetaParompuanController;
+use App\Http\Controllers\Pendeta\PendetaLansiaController;
+use App\Http\Controllers\Pendeta\PendetaPunguanController;
+use App\Http\Controllers\Pendeta\PendetaPendidikanController;
+use App\Http\Controllers\Pendeta\PendetaKesehatanController;
+use App\Http\Controllers\Pendeta\PendetaMasyarakatController;
+use App\Http\Controllers\Pendeta\PendetaNaposoBulungController;
+use App\Http\Controllers\Pendeta\PendetaRemajaController;
+use App\Http\Controllers\Pendeta\PendetaSekolahMingguController;
+use App\Http\Controllers\Pendeta\PendetaSosialController;
 
 
 
@@ -182,6 +191,15 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/berita-admin/show/{adminberita}', [AdminBeritaController::class, 'show']);
         Route::put('/berita-admin/update/{adminberita}', [AdminBeritaController::class, 'update']);
         Route::delete('/berita-admin/delete/{adminberita}', [AdminBeritaController::class, 'destroy']);
+        
+        Route::resource('pendetaremaja', PendetaRemajaController::class);
+
+        //MARTURIA SEKOLAH MINGGU
+        Route::resource('pendetasekolah', PendetaSekolahMingguController::class);
+
+        //MARTURIA NAPOSO
+        Route::resource('pendetanaposo', PendetaNaposoBulungController::class);
+
 
         Route::resource('PendetaTingting', PendetaTingTingController::class);
         Route::resource('PendetaJadwal', PendetaJadwalIbadahController::class);
@@ -199,6 +217,13 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('pendetamusik', PendetaMusikController::class);
         //MARTURIA MUSIK
         Route::resource('pendetasending', PendetaSendingController::class);
+
+        //KOINONIA LANJUT
+        Route::resource('pendetalanjut', PendetaLansiaController::class);
+        //KOINONIA PUNGUAN
+        Route::resource('pendetapunguan', PendetaPunguanController::class);
+        //KOINONIA PAROMPUAN
+        Route::resource('pendetaparompuan', PendetaParompuanController::class);
     });
     Route::group(['middleware' => ['Auth_Check:2']], function () {
         Route::get('/dash_bph', [AutentikasiController::class, 'dash_b']);

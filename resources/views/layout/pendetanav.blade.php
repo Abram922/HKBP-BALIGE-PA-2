@@ -85,9 +85,9 @@
                         <a class="collapse-item" href="{{ route('pendetaremaja.index')}}">Remaja</a>
                         <a class="collapse-item" href="{{ route('pendetasekolah.index')}}">Sekolah Minggu</a>
                         <a class="collapse-item" href="{{ route('pendetanaposo.index')}}">Naposo Bulung</a>
-                        <a class="collapse-item" href="{{ route('parompuan.index')}}">Parompuan Huria</a>
-                        <a class="collapse-item" href="{{ route('punguan.index')}}">Punguan Ama</a>
-                        <a class="collapse-item" href="{{ route('lanjut.index')}}">Lansia</a>
+                        <a class="collapse-item" href="{{ route('pendetaparompuan.index')}}">Parompuan Huria</a>
+                        <a class="collapse-item" href="{{ route('pendetapunguan.index')}}">Punguan Ama</a>
+                        <a class="collapse-item" href="{{ route('pendetalanjut.index')}}">Lansia</a>
                     </div>
                 </div>
             </li>
