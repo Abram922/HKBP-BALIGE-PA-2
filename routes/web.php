@@ -288,11 +288,11 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('user/pendidikann/{pendidikan}', [UserGuestController::class, 'showpendidikan']);
 
         //GUEST LOGIN KOINONIA
-        Route::get('/userremajaa', [AfterLoginController::class, 'indexremaja']);
-        Route::get('/usersekolahminggu', [AfterLoginController::class, 'indexsekolahminggu']);
-        Route::get('/usernaposoo', [AfterLoginController::class, 'indexnaposo']);
-        Route::get('/userparompuann', [AfterLoginController::class, 'indexparompuan']);
-        Route::get('/userpunguanama', [AfterLoginControllerr::class, 'indexpunguanama']);
-        Route::get('/userlansia', [AfterLoginController::class, 'indexlansia']);
+        Route::get('/userremajaa', [UserGuestController::class, 'userremaja']);
+        Route::get('/usersekolahminggu', [UserGuestController::class, 'usersekolahminggu']);
+        Route::get('/usernaposoo', [UserGuestController::class, 'usernaposo']);
+        Route::get('/userparompuann', [UserGuestController::class, 'userparompuan']);
+        Route::get('/userpunguanama', [UserGuestController::class, 'userpunguan']);
+        Route::get('/userlansia', [UserGuestController::class, 'userlansia']);
     });
 });
