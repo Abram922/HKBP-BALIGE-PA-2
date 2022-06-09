@@ -12,55 +12,29 @@
         <hr>
 </div>
 @if($naposo->count())
+
+@foreach($naposo as $naposos)
 <div class="container">
-    <div class="row my-5">
-        <div class="col-lg-12">
-            <h5 class="my-3">{{$naposo[0]->name}}</h5>
-            @if($naposo[0] -> image)
-            <div style="max-height: 550px; overflow:hidden">
-                <img src="/image/{{$naposo[0]->image}}" class="img-fluid mt-3" alt="...">
-            </div>
-            @endif
-            <small>
-                <span><i>{{$naposo[0]->created_at}}</i></span>
-            </small>
-          <br><br>
-            <div style="max-width: 1100px;">
-                <p class="card-text">{{$naposo[0]->detail}}</p>
-                <a href="/naposoo/{{$naposo[0]->id}}">Baca Selengkapnya</a>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
-
-<div class="container">
-    <div class="zoom">
-@foreach($naposo->skip(1) as $naposos)
-<div class="card" style="max-width: 1100px;">
-    <div class="row no-gutters">
+<div class="article" >
+    <div class="no-gutters">
+    <h4 style="color:#711A75;"><b>{{$naposos -> name}}</b></h4>
+    <small>
+        <span><i>{{$naposos->created_at}}</i></span>
+    </small><br>
         <div class="col-md-4">
-            <img src="/image/{{ $naposos->image }}" class="card-img" alt="..." width="350">
+            <img src="/image/{{ $naposos->image }}" class="card-img" alt="..." width="500" >
         </div>
         <div class="col-md-6">
-            <div class="card-body">
-                <h4>{{$naposos -> name}}</h4>
-                <small>
-                <span><i>{{$naposos->created_at}}</i></span>
-            </small>
-            <br><br>
-                <p class="card-text">{{$naposos -> detail}}</p>
-                <a href="/naposoo/{{$naposos->id}}">Baca Selengkapnya</a>
-            </div>
+          <br>
+                <h6 class="text" style="font-style=poppins;">{!! $naposos -> detail !!}</h6>
+            
         </div>
     </div>
 </div>
 </div>
 </div>
 <br><br>
-
+<hr>
 @endforeach
 @else
 <p>No Post found</p>

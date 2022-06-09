@@ -12,54 +12,34 @@
         <hr>
 </div>
 @if($musik->count())
+
+
+
+
+ 
+@foreach($musik as $musiks)
 <div class="container">
-    <div class="row my-5">
-        <div class="col-lg-12">
-            <h5 class="my-3">{{$musik[0]->name}}</h5>
-            @if($musik[0] -> image)
-            <div style="max-height: 550px; overflow:hidden">
-                <img src="/image/{{$musik[0]->image}}" class="img-fluid mt-3" alt="...">
-            </div>
-            @endif
-            <small>
-                <span><i>{{$musik[0]->created_at}}</i></span>
-            </small>
-          <br><br>
-            <div style="max-width: 1100px;">
-                <p class="card-text">{{$musik[0]->detail}}</p>
-                <a href="/musikk/{{$musik[0]->id}}">Baca Selengkapnya</a>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
-
-<div class="container">
-    <div class="zoom">
-@foreach($musik->skip(1) as $musiks)
-<div class="card" style="max-width: 1100px;">
-    <div class="row no-gutters">
+<div class="article" >
+    <div class="no-gutters">
+    <h4 style="color:#711A75;"><b>{{$musiks -> name}}</b></h4>
+    <small>
+        <span><i>{{$musiks->created_at}}</i></span>
+    </small><br>
         <div class="col-md-4">
-            <img src="/image/{{ $musiks->image }}" class="card-img" alt="..." width="350">
+            <img src="/image/{{ $musiks->image }}" class="card-img" alt="..." width="500" >
         </div>
         <div class="col-md-6">
-            <div class="card-body">
-                <h4>{{$musiks -> name}}</h4>
-                <small>
-                <span><i>{{$musiks->created_at}}</i></span>
-                </small>
-                 <br><br>
-                <p class="card-text">{{$musiks -> detail}}</p>
-                <a href="/musikk/{{$musiks->id}}">Baca Selengkapnya</a>
-            </div>
+          <br>
+                <h6 class="text" style="font-style=poppins;">{!! $musiks -> detail !!}</h6>
+            
         </div>
     </div>
 </div>
 </div>
 </div>
 <br><br>
+<hr>
+
 
 @endforeach
 @else

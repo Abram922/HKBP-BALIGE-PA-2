@@ -12,54 +12,29 @@
         <hr>
 </div>
 @if($masyarakat->count())
+
+@foreach($masyarakat as $masyarakats)
 <div class="container">
-    <div class="row my-5">
-        <div class="col-lg-12">
-            <h5 class="my-3">{{$masyarakat[0]->name}}</h5>
-            @if($masyarakat[0] -> image)
-            <div style="max-height: 550px; overflow:hidden">
-                <img src="/image/{{$masyarakat[0]->image}}" class="img-fluid mt-3" alt="...">
-            </div>
-            @endif
-            <small>
-                <span><i>{{$masyarakat[0]->created_at}}</i></span>
-            </small>
-          <br><br>
-            <div style="max-width: 1100px;">
-                <p class="card-text">{{$masyarakat[0]->detail}}</p>
-                <a href="/usermasyarakatt/{{$masyarakat[0]->id}}">Baca Selengkapnya</a>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
-
-<div class="container">
-    <div class="zoom">
-@foreach($masyarakat->skip(1) as $masyarakats)
-<div class="card" style="max-width: 1100px;">
-    <div class="row no-gutters">
+<div class="article" >
+    <div class="no-gutters">
+    <h4 style="color:#711A75;"><b>{{$masyarakats -> name}}</b></h4>
+    <small>
+        <span><i>{{$masyarakats->created_at}}</i></span>
+    </small><br>
         <div class="col-md-4">
-            <img src="/image/{{ $masyarakats->image }}" class="card-img" alt="..." width="350">
+            <img src="/image/{{ $masyarakats->image }}" class="card-img" alt="..." width="500" >
         </div>
         <div class="col-md-6">
-            <div class="card-body">
-                <h4>{{$masyarakats -> name}}</h4>
-                <small>
-                <span><i>{{$masyarakats->created_at}}</i></span>
-            </small>
-          <br><br>
-                <p class="card-text">{{$masyarakats -> detail}}</p>
-                <a href="/usermasyarakatt/{{$masyarakats->id}}">Baca Selengkapnya</a>
-            </div>
+          <br>
+                <h6 class="text" style="font-style=poppins;">{!! $masyarakats -> detail !!}</h6>
+            
         </div>
     </div>
 </div>
 </div>
 </div>
 <br><br>
+<hr>
 
 @endforeach
 @else

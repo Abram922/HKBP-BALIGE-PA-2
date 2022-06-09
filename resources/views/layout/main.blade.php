@@ -104,8 +104,9 @@
             </div>
         </div>
     </nav>
-    <div class="container">
+    
         @yield('container')
+        <div class="container">
         @yield('container2')
         @yield('container3')
     </div>

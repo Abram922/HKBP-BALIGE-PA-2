@@ -12,55 +12,30 @@
         <hr>
 </div>
 @if($punguan->count())
+
+@foreach($punguan as $punguans)
 <div class="container">
-    <div class="row my-5">
-        <div class="col-lg-12">
-            <h5 class="my-3">{{$punguan[0]->name}}</h5>
-            @if($punguan[0] -> image)
-            <div style="max-height: 550px; overflow:hidden">
-                <img src="/image/{{$punguan[0]->image}}" class="img-fluid mt-3" alt="...">
-            </div>
-            @endif
-            <small>
-                <span><i>{{$punguan[0]->created_at}}</i></span>
-            </small>
-          <br><br>
-          
-            <div style="max-width: 1100px;">
-                <p class="card-text">{{$punguan[0]->detail}}</p>
-                <a href="/userpunguanama/{{$punguan[0]->id}}">Baca Selengkapnya</a>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
-
-<div class="container">
-    <div class="zoom">
-@foreach($punguan->skip(1) as $punguans)
-<div class="card" style="max-width: 1100px;">
-    <div class="row no-gutters">
+<div class="article" >
+    <div class="no-gutters">
+    <h4 style="color:#711A75;"><b>{{ $punguans-> name}}</b></h4>
+    <small>
+        <span><i>{{ $punguans->created_at}}</i></span>
+    </small><br>
         <div class="col-md-4">
-            <img src="/image/{{ $punguans->image }}" class="card-img" alt="..." width="350">
+            <img src="/image/{{  $punguans->image }}" class="card-img" alt="..." width="500" >
         </div>
         <div class="col-md-6">
-            <div class="card-body">
-                <h4>{{$punguans -> name}}</h4>
-                <small>
-                <span><i>{{$punguans->created_at}}</i></span>
-            </small>
-          <br><br>
-                <p class="card-text">{{$punguans -> detail}}</p>
-                <a href="/userpunguanama/{{$punguans->id}}">Baca Selengkapnya</a>
-            </div>
+          <br>
+                <h6 class="text" style="font-style=poppins;">{!!  $punguans -> detail !!}</h6>
+            
         </div>
     </div>
 </div>
 </div>
 </div>
 <br><br>
+<hr>
+
 
 @endforeach
 @else
