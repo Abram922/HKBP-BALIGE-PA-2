@@ -241,7 +241,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/usersekolahminggu', [AfterLoginController::class, 'indexsekolahminggu']);
         Route::get('/usernaposoo', [AfterLoginController::class, 'indexnaposo']);
         Route::get('/userparompuann', [AfterLoginController::class, 'indexparompuan']);
-        Route::get('/userpunguanama', [AfterLoginControllerr::class, 'indexpunguanama']);
+        Route::get('/userpunguanama', [AfterLoginController::class, 'indexpunguanama']);
         Route::get('/userlansia', [AfterLoginController::class, 'indexlansia']);
     });
 });

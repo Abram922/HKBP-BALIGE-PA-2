@@ -8,7 +8,7 @@
 @section('container')
 <br>
 <div class="container">
-<h2 style="color:#711A75;"><b>Remaja</b></h2>
+<h2 style="color:#711A75;"><b>Sekolah Minggu</b></h2>
         <hr>
 </div>
 @if($sekolah->count())

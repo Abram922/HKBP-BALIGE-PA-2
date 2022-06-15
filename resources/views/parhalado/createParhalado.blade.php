@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,22 +25,24 @@
                     @csrf
                     <div class="form-group">
                         <label for="name" class="form-label">Nama</label>
-                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" autofocus value="{{old('name')}}">
-                @error('name')
-                <div class="invalid-feedback">
-                    {{$message}}
-                </div>
-                @enderror
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name"
+                            autofocus value="{{ old('name') }}">
+                        @error('name')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="title" class="form-label">Title</label>
-                <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="title" autofocus value="{{old('title')}}">
-                @error('title')
-                <div class="invalid-feedback">
-                    {{$message}}
-                </div>
-                @enderror
+                        <input type="text" class="form-control @error('title') is-invalid @enderror" name="title"
+                            id="title" autofocus value="{{ old('title') }}">
+                        @error('title')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
@@ -53,19 +53,20 @@
 
                     <div class="form-group mb-2">
                         <label for="image" class="form-label">Image</label>
-                <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image">
-                @error('image')
-                <div class="invalid-feedback">
-                    {{$message}}
-                </div>
-                @enderror
+                        <input class="form-control @error('image') is-invalid @enderror" type="file" id="image"
+                            name="image">
+                        @error('image')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <div class="form-group mt-2 ">
                         <button type="submit" class="btn btn-success">Create</button>
                         <button class="btn btn-primary " href="{{ route('parhalados.index') }}">Back</button>
                     </div>
-                    
+
                 </form>
             </div>
         </div>
