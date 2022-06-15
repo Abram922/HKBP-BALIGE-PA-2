@@ -15,7 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- Bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
@@ -29,6 +30,15 @@
     <!-- style login -->
     <link rel="stylesheet" href="/css/login.css">
 
+    {{-- update --}}
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+        <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}"> 
+  
+        <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}"> 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}"> 
+    {{-- end-update --}}
 
 </head>
 
@@ -38,11 +48,12 @@
             <a class="navbar-brand">
                 <img src="/images/logohkbp.png" width="160" height="100" alt="" margin-left="100px">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav  ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="/">Beranda</a>
                     </li>
@@ -86,7 +97,8 @@
                         <a class="nav-link" href="{{ route('guestberita.index') }}">Berita</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Aula
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -96,9 +108,9 @@
                     </li>
 
                 </ul>
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a class="nav-item" href="\login"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                        <a class="nav-item margin-left" href="\login"><i class="bi bi-box-arrow-in-right"></i> Login</a>
                     </li>
                 </ul>
             </div>
@@ -113,7 +125,117 @@
 
     @yield('container4')
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    {{-- footer --}}
+    <footer class="text-center text-lg-start text-white" style="background-color: #929fba; margin-top: 50px;">
+        <!-- Grid container -->
+        <div class="container p-0 pb-0 mb-0">
+            <!-- Section: Links -->
+            <section class="">
+                <!--Grid row-->
+                <div class="row ">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+
+                        <!-- Facebook -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" href="#!"
+                            role="button"><i class="bi bi-instagram"></i></a>
+
+                        <!-- Twitter -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="#!"
+                            role="button"><i class="bi bi-facebook"></i></i></a>
+
+                        <!-- Google -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39" href="#!"
+                            role="button"><i class="bi bi-twitter"></i></a>
+
+                        <!-- Instagram -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" href="#!"
+                            role="button"><i class="bi bi-youtube"></i></a>
+
+
+                    </div>
+
+
+                    <!-- Grid column -->
+
+                    <hr class="w-100 clearfix d-md-none" />
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">information link</h6>
+                        <p>
+                            <a class="text-white" href="/">Beranda</a>
+                        </p>
+                        <p>
+                            <a class="text-white" href="/parhalado">Tentang</a>
+                        </p>
+                        <p>
+                            <a class="text-white" href="/remajaa">Koinonia</a>
+                        </p>
+                        <p>
+                            <a class="text-white" href="/musikk">Marturia</a>
+                        </p>
+                        <p>
+                            <a class="text-white" href="/sosiall">Diakonia</a>
+                        </p>
+                        <p>
+                            <a class="text-white" href="/guestberita">Berita</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="w-100 clearfix d-md-none" />
+
+                    <!-- Grid column -->
+                    <hr class="w-100 clearfix d-md-none" />
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                        <p><i class="fas fa-home mr-3"></i> Jl.HKBP Balige</p>
+                        <p><i class="fas fa-envelope mr-3"></i> hkbpbalige@gmail.com</p>
+                        <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                        <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                    </div>
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">
+                            Develop by
+                        </h6>
+                        <p>
+                            PA-2 KELOMPOK 12
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!--Grid row-->
+            </section>
+            <!-- Section: Links -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        {{-- <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2020 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div> --}}
+        <!-- Copyright -->
+    </footer>
+    {{-- end-footer --}}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+
+    {{-- script update --}}
+    <script src="{{ asset('js/jquery.min.js') }}"></script> 
+    <script src="{{ asset('js/popper.js') }}"></script> 
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script> 
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script> 
+    <script src="{{ asset('js/main.js') }}"></script> 
+    {{-- end-script-update --}}
 </body>
 
 </html>

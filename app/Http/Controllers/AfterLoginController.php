@@ -2,6 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Lan;
+use App\Models\Naposo;
+use App\Models\Parompuan;
+use App\Models\Punguan;
+use App\Models\Remaja;
+use App\Models\Sekolah;
 use Illuminate\Http\Request;
 
 class AfterLoginController extends Controller
@@ -10,32 +16,50 @@ class AfterLoginController extends Controller
     //KOINONIA
     public function indexremaja()
     {
-        return view('.UserTerdaftar.koinonia.remaja');
+        $remaja = Remaja::paginate(20);
+        return view('.UserTerdaftar.koinonia.remaja', [
+            'remaja' => $remaja
+        ]);
     }
 
     public function indexlansia()
     {
-        return view('.UserTerdaftar.koinonia.lansia');
+        $lanjut = Lan::paginate(20);
+        return view('.UserTerdaftar.koinonia.lansia', [
+            'lanjut' => $lanjut
+        ]);
     }
 
     public function indexnaposo()
     {
-        return view('.UserTerdaftar.koinonia.naposo');
+        $naposo = Naposo::paginate(20);
+        return view('.UserTerdaftar.koinonia.naposo', [
+            'naposo' => $naposo
+        ]);
     }
 
     public function indexparompuan()
     {
-        return view('.UserTerdaftar.koinonia.parompuan');
+        $parompuan = Parompuan::paginate(20);
+        return view('.UserTerdaftar.koinonia.parompuan', [
+            'parompuan' => $parompuan
+        ]);
     }
 
     public function indexpunguanama()
     {
-        return view('.UserTerdaftar.koinonia.punguanama');
+        $punguan = Punguan::paginate(20);
+        return view('.UserTerdaftar.koinonia.punguanama', [
+            'punguan' => $punguan
+        ]);
     }
 
     public function indexsekolahminggu()
     {
-        return view('.UserTerdaftar.koinonia.sekolahminggu');
+        $sekolah = Sekolah::paginate(20);
+        return view('.UserTerdaftar.koinonia.sekolahminggu', [
+            'sekolah' => $sekolah
+        ]);
     }
 
 

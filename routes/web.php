@@ -27,6 +27,7 @@ use App\Http\Controllers\Guest\GuestBeritaController;
 use App\Http\Controllers\Guest\AulaGuestController;
 use App\Http\Controllers\ParhaladoController;
 use App\Http\Controllers\ParhaladoControllerLogin;
+use App\Http\Controllers\TingtingControllerLogin;
 use App\Http\Controllers\UserKoinoniaController;
 use App\Http\Controllers\Guest\UserGuestController;
 use App\Http\Controllers\AfterLoginController;
@@ -191,7 +192,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/berita-admin/show/{adminberita}', [AdminBeritaController::class, 'show']);
         Route::put('/berita-admin/update/{adminberita}', [AdminBeritaController::class, 'update']);
         Route::delete('/berita-admin/delete/{adminberita}', [AdminBeritaController::class, 'destroy']);
-        
+
         Route::resource('pendetaremaja', PendetaRemajaController::class);
 
         //MARTURIA SEKOLAH MINGGU
@@ -261,7 +262,6 @@ Route::group(['middleware' => ['auth']], function () {
         Route::put('/aula/cancel/{id}', [AulaController::class, 'cancelOrder']);
         Route::get('/parhaladologin', [ParhaladoControllerLogin::class, 'index']);
 
-
         // akun
         //GUEST TENTANG
         Route::get('/usertingting', [UserGuestController::class, 'indexting']);
@@ -288,11 +288,19 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('user/pendidikann/{pendidikan}', [UserGuestController::class, 'showpendidikan']);
 
         //GUEST LOGIN KOINONIA
-        Route::get('/userremajaa', [UserGuestController::class, 'userremaja']);
-        Route::get('/usersekolahminggu', [UserGuestController::class, 'usersekolahminggu']);
-        Route::get('/usernaposoo', [UserGuestController::class, 'usernaposo']);
-        Route::get('/userparompuann', [UserGuestController::class, 'userparompuan']);
-        Route::get('/userpunguanama', [UserGuestController::class, 'userpunguan']);
-        Route::get('/userlansia', [UserGuestController::class, 'userlansia']);
+        Route::get('/userremajaa', [AfterLoginController::class, 'indexremaja']);
+        Route::get('/usersekolahminggu', [AfterLoginController::class, 'indexsekolahminggu']);
+        Route::get('/usernaposoo', [AfterLoginController::class, 'indexnaposo']);
+        Route::get('/userparompuann', [AfterLoginController::class, 'indexparompuan']);
+        Route::get('/userpunguanama', [AfterLoginController::class, 'indexpunguanama']);
+        Route::get('/userlansia', [AfterLoginController::class, 'indexlansia']);
+
+        // Route::get('/userremajaa', [UserGuestController::class, 'userremaja']);
+        // Route::get('/usersekolahminggu', [UserGuestController::class, 'usersekolahminggu']);
+        // Route::get('/usernaposoo', [UserGuestController::class, 'usernaposo']);
+        // Route::get('/userparompuann', [UserGuestController::class, 'userparompuan']);
+        // Route::get('/userpunguanama', [UserGuestController::class, 'userpunguan']);
+        // Route::get('/userlansia', [UserGuestController::class, 'userlansia']);
+
     });
 });

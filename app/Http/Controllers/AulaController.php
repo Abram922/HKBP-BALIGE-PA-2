@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use App\Models\Aula;
+use App\Models\BuktiPembayaran;
 use App\Models\StatusPemesanan;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
@@ -34,7 +35,6 @@ class AulaController extends Controller
     public function create(Request $request)
     {
         return view('aula.booking');
-
     }
     /**
      * Store a newly created resource in storage.
@@ -44,6 +44,8 @@ class AulaController extends Controller
      */
     public function store(Request $request)
     {
+
+        $kode_pemesanan = "INV/AULA/HKBP" . now()->format('Y-m-d') . "/" . rand(100, 999);
         $validateData = $request->validate(([
             'name' => 'required',
             'email' => 'max:255|email',
@@ -57,6 +59,8 @@ class AulaController extends Controller
         ]));
 
         $validateData['user_id'] = auth()->user()->id;
+        $validateData['kode_pemesanan'] = $kode_pemesanan;
+
 
         Aula::create($validateData);
         return redirect()->route('aula.index')->with('success', 'Pemesanan Berhasil');
@@ -150,12 +154,26 @@ class AulaController extends Controller
         return redirect()->back()->with(['success' => 'Pesanan Dikonfirmasi']);
     }
 
-    /*
-    public function cancelOrder(Request $request, Aula $aula)
+    public function buktipembayaran()
     {
-        $aula->update(['status_id' => 3]);
-        //REDIRECT KEMBALI DENGAN MENAMPILKAN ALERT SUCCESS
-        return redirect()->back()->with(['success' => 'Pesanan Dikonfirmasi']);
+        return view('aula.buktipembayaran');
     }
-    */
+
+    public function storebukti(Request $request)
+    {
+        $input_bukti = $request->validate([
+            'bukti_pemesanan' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        if ($bukti_pembayaran = $request->file('bukti_pemesanan')) {
+            $destinationPath = 'bukti_pembayaran/';
+            $profileImage = date('YmdHis') . "." . $bukti_pembayaran->getClientOriginalExtension();
+            $bukti_pembayaran->move($destinationPath, $profileImage);
+            $input_bukti['bukti_pemesanan'] = "$profileImage";
+        }
+
+        BuktiPembayaran::create($input_bukti);
+
+        return redirect()->route('aula.index')->with('success', 'Bukti Pembayaran Berhasil di Tambah');
+    }
 }

@@ -9,11 +9,6 @@ use Illuminate\Http\Request;
 
 class AdminAulaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         return view('.aula.index', [
@@ -42,28 +37,11 @@ class AdminAulaController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    // public function edit(Aula $adminaula)
-    // {
-    //     $status = DB::table('status_pemesanans')->get();
-    //     return view('aula.editstatus_pemesanan', compact('adminaula', 'status'));
-    // }
 
     public function edit(Aula $adminaula)
     {
@@ -73,33 +51,6 @@ class AdminAulaController extends Controller
 
 
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    // public function update(Request $request, Aula $adminaula)
-    // {
-
-    //     $validateData = $request->validate(([
-    //         'name' => 'required',
-    //         'email' => 'max:255|email',
-    //         'nomor_telepon' => 'integer',
-    //         'keperluan' => 'max:255',
-    //         'tanggal_mulai',
-    //         'tanggal_selesai',
-    //         'total' => 'integer',
-    //         'pesan' => 'max:255',
-    //         'alamat' => 'max:255',
-    //         'status_pemesanan',
-    //     ]));
-    //     $validateData['user_id'] = auth()->user()->id;
-    //     $adminaula->update($validateData);
-    //     return redirect()->route('adminaula.index')
-    //         ->with('success', 'Data berhasil diubah');
-    // }
 
     public function update(Request $request, Aula $adminaula)
     {
