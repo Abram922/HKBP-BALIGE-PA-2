@@ -27,6 +27,7 @@ use App\Http\Controllers\Guest\GuestBeritaController;
 use App\Http\Controllers\Guest\AulaGuestController;
 use App\Http\Controllers\ParhaladoController;
 use App\Http\Controllers\ParhaladoControllerLogin;
+use App\Http\Controllers\TingtingControllerLogin;
 use App\Http\Controllers\UserKoinoniaController;
 use App\Http\Controllers\Guest\UserGuestController;
 use App\Http\Controllers\AfterLoginController;
@@ -211,6 +212,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/authors/{user}', [UserBeritaController::class, 'authorpost']);
         Route::put('/aula/cancel/{id}', [AulaController::class, 'cancelOrder']);
         Route::get('/parhaladologin', [ParhaladoControllerLogin::class, 'index']);
+<<<<<<< Updated upstream
         // akun
         //GUEST TENTANG
         Route::get('/usertingting', [UserGuestController::class, 'indexting']);
@@ -243,5 +245,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/userparompuann', [AfterLoginController::class, 'indexparompuan']);
         Route::get('/userpunguanama', [AfterLoginController::class, 'indexpunguanama']);
         Route::get('/userlansia', [AfterLoginController::class, 'indexlansia']);
+=======
+        Route::get('/tingtinglogin', [TingtingControllerLogin::class, 'index']);
+>>>>>>> Stashed changes
     });
 });

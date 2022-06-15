@@ -38,7 +38,8 @@
     <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
         <div class="divider">
             <ul class="nav menu ">
-                <li><a href="{{ url('/')}}"> Dashboard</a></li>
+                {{-- <li><a href="{{ url('/')}}"> Dashboard</a></li> --}}
+                <li><a href="#"> Dashboard</a></li>
                 <li><a href="{{ route('beritas.index')}}"> Berita</a></li>
                 <li><a href="{{ route('adminaula.index')}}"> Aula </a></li>
                 <li class="parent "><a data-toggle="collapse" href="#sub-item-4">

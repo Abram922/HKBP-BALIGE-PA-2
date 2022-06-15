@@ -43,7 +43,7 @@
                 <img src="/images/logohkbp.png" width="160" height="100" alt="" margin-left="100px">
             </a>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="/dash_u">Beranda</a>
                     </li>
@@ -51,14 +51,14 @@
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Tentang </a>
                         <ul class="dropdown-menu">
                             <li> <a class="dropdown-item" href="/parhaladologin"> Parhalado </a></li>
-                            <li><a class="dropdown-item" href="/usertingting"> Tingting </a></li>
+                            <li><a class="dropdown-item" href="/tingtinglogin"> Tingting </a></li>
                             <li><a class="dropdown-item" href="/userjadwalIbadah"> Jadwal Ibadah </a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown" id="myDropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Koinonia </a>
                         <ul class="dropdown-menu">
-                            <li> <a class="dropdown-item" href="/userremajaa"> Remaja </a></li>
+                            <li><a class="dropdown-item" href="/userremajaa"> Remaja </a></li>
                             <li><a class="dropdown-item" href="/usersekolahminggu"> Sekolah Minggu </a></li>
                             <li><a class="dropdown-item" href="/usernaposoo"> Naposo Bulung </a></li>
                             <li><a class="dropdown-item" href="/userparompuann"> Parompuan Huria </a></li>
@@ -96,10 +96,10 @@
                         </ul>
                     </li>
                 </ul>
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ">
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            Welcome {{ Auth::user()->name }}
+                            <strong>Welcome {{ Auth::user()->name }}</strong>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#"><i class="bi bi-layout-text-sidebar-reverse"></i>Profile</a></li>
