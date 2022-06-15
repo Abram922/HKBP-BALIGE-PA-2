@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('aulas', function (Blueprint $table) {
             $table->id();
+            $table->string('kode_pemesanan')->unique();
             $table->foreignId('user_id');
             $table->foreignId('status_id')->default(1);
             $table->string('name');

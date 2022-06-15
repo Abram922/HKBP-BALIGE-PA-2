@@ -21,7 +21,8 @@ class Aula extends Model
         'user_id',
         'keperluan',
         'kode_status',
-        'status_id'
+        'status_id',
+        'kode_pemesanan'
     ];
 
     protected $with = ['user'];
@@ -35,5 +36,10 @@ class Aula extends Model
     public function booking_status()
     {
         return $this->belongsTo(status_pemesanan::class, 'status_id');
+    }
+
+    public function bayar()
+    {
+        return $this->belongsTo(BuktiPembayaran::class);
     }
 }

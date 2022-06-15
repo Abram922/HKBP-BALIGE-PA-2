@@ -192,7 +192,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/berita-admin/show/{adminberita}', [AdminBeritaController::class, 'show']);
         Route::put('/berita-admin/update/{adminberita}', [AdminBeritaController::class, 'update']);
         Route::delete('/berita-admin/delete/{adminberita}', [AdminBeritaController::class, 'destroy']);
-        
+
         Route::resource('pendetaremaja', PendetaRemajaController::class);
 
         //MARTURIA SEKOLAH MINGGU
