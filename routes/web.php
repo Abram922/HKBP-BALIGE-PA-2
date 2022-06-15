@@ -31,7 +31,21 @@ use App\Http\Controllers\TingtingControllerLogin;
 use App\Http\Controllers\UserKoinoniaController;
 use App\Http\Controllers\Guest\UserGuestController;
 use App\Http\Controllers\AfterLoginController;
-
+use App\Http\Controllers\Pendeta\PendetaJadwalIbadahController;
+use App\Http\Controllers\Pendeta\PendetaParhaladoController;
+use App\Http\Controllers\Pendeta\PendetaTingTingController;
+use App\Http\Controllers\Pendeta\PendetaMusikController;
+use App\Http\Controllers\Pendeta\PendetaSendingController;
+use App\Http\Controllers\Pendeta\PendetaParompuanController;
+use App\Http\Controllers\Pendeta\PendetaLansiaController;
+use App\Http\Controllers\Pendeta\PendetaPunguanController;
+use App\Http\Controllers\Pendeta\PendetaPendidikanController;
+use App\Http\Controllers\Pendeta\PendetaKesehatanController;
+use App\Http\Controllers\Pendeta\PendetaMasyarakatController;
+use App\Http\Controllers\Pendeta\PendetaNaposoBulungController;
+use App\Http\Controllers\Pendeta\PendetaRemajaController;
+use App\Http\Controllers\Pendeta\PendetaSekolahMingguController;
+use App\Http\Controllers\Pendeta\PendetaSosialController;
 
 
 
@@ -103,7 +117,7 @@ Route::post('/tentang/editJadwal', [JadwalIbadahController::class, 'ubah']);
 Route::get('/tentang/hapus/{id}', [JadwalIbadahController::class, 'hapus']);
 
 //TENTANG TINGTING
-Route::resource('ting', TingController::class);
+
 
 
 
@@ -178,6 +192,39 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/berita-admin/show/{adminberita}', [AdminBeritaController::class, 'show']);
         Route::put('/berita-admin/update/{adminberita}', [AdminBeritaController::class, 'update']);
         Route::delete('/berita-admin/delete/{adminberita}', [AdminBeritaController::class, 'destroy']);
+        
+        Route::resource('pendetaremaja', PendetaRemajaController::class);
+
+        //MARTURIA SEKOLAH MINGGU
+        Route::resource('pendetasekolah', PendetaSekolahMingguController::class);
+
+        //MARTURIA NAPOSO
+        Route::resource('pendetanaposo', PendetaNaposoBulungController::class);
+
+
+        Route::resource('PendetaTingting', PendetaTingTingController::class);
+        Route::resource('PendetaJadwal', PendetaJadwalIbadahController::class);
+        Route::resource('PendetaParhalado', PendetaParhaladoController::class);
+        //DIAKONIA SOSIAL
+        Route::resource('pendetasosial', PendetaSosialController::class);
+        //DIAKONIA KESEHATAN
+        Route::resource('pendetakesehatan', PendetaKesehatanController::class);
+        //DIAKONIA MASYARAKAT
+        Route::resource('pendetamasyarakat', PendetaMasyarakatController::class);
+        //DIAKONIA PENDIDIKAN
+        Route::resource('pendetapendidikan', PendetaPendidikanController::class);
+
+        //MARTURIA MUSIK
+        Route::resource('pendetamusik', PendetaMusikController::class);
+        //MARTURIA MUSIK
+        Route::resource('pendetasending', PendetaSendingController::class);
+
+        //KOINONIA LANJUT
+        Route::resource('pendetalanjut', PendetaLansiaController::class);
+        //KOINONIA PUNGUAN
+        Route::resource('pendetapunguan', PendetaPunguanController::class);
+        //KOINONIA PAROMPUAN
+        Route::resource('pendetaparompuan', PendetaParompuanController::class);
     });
     Route::group(['middleware' => ['Auth_Check:2']], function () {
         Route::get('/dash_bph', [AutentikasiController::class, 'dash_b']);
@@ -198,6 +245,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('sending', SendingController::class);
         //KOINONIA MUSIK
         Route::resource('musik', MusikController::class);
+
+        Route::resource('ting', TingController::class);
         //Aula
         Route::resource('adminaula', AdminAulaController::class);
         Route::put('/aula/cancel-admin/{id}', [AdminAulaController::class, 'cancelOrderAdmin']);
@@ -212,7 +261,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/authors/{user}', [UserBeritaController::class, 'authorpost']);
         Route::put('/aula/cancel/{id}', [AulaController::class, 'cancelOrder']);
         Route::get('/parhaladologin', [ParhaladoControllerLogin::class, 'index']);
-<<<<<<< Updated upstream
+
         // akun
         //GUEST TENTANG
         Route::get('/usertingting', [UserGuestController::class, 'indexting']);
@@ -245,8 +294,13 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/userparompuann', [AfterLoginController::class, 'indexparompuan']);
         Route::get('/userpunguanama', [AfterLoginController::class, 'indexpunguanama']);
         Route::get('/userlansia', [AfterLoginController::class, 'indexlansia']);
-=======
-        Route::get('/tingtinglogin', [TingtingControllerLogin::class, 'index']);
->>>>>>> Stashed changes
+
+        // Route::get('/userremajaa', [UserGuestController::class, 'userremaja']);
+        // Route::get('/usersekolahminggu', [UserGuestController::class, 'usersekolahminggu']);
+        // Route::get('/usernaposoo', [UserGuestController::class, 'usernaposo']);
+        // Route::get('/userparompuann', [UserGuestController::class, 'userparompuan']);
+        // Route::get('/userpunguanama', [UserGuestController::class, 'userpunguan']);
+        // Route::get('/userlansia', [UserGuestController::class, 'userlansia']);
+
     });
 });

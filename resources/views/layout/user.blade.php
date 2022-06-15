@@ -45,7 +45,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/dash_u">Beranda</a>
+                        <a class="nav-link" href="/dash_user">Beranda</a>
                     </li>
                     <li class="nav-item dropdown" id="myDropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Tentang </a>
@@ -102,14 +102,12 @@
                             <strong>Welcome {{ Auth::user()->name }}</strong>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-layout-text-sidebar-reverse"></i>Profile</a></li>
-                            <!-- <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i>Logout</a></li> -->
-                            <li>
-                                <form action="/logout" method="post">
-                                    @csrf
-                                    <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right"></i> Logout</button>
-                                </form>
-                            </li>
+
+                            <form action="/logout" method="post">
+                                @csrf
+                                <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right"></i> Logout</button>
+                            </form>
+                    </li>
                     </li>
                 </ul>
             </div>

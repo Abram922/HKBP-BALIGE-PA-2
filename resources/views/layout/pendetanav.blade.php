@@ -59,8 +59,67 @@
                     <span>Dashboard</span></a>
             </li>
 
-            <!-- Divider -->
-            <!-- <hr class="sidebar-divider"> -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="bi bi-pin"></i>
+                    <span>Tentang</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('PendetaParhalado.index') }}">Parhalado</a>
+                        <a class="collapse-item" href="{{ route('PendetaTingting.index')}}">Tingting</a>
+                        <a class="collapse-item" href="{{ route('PendetaJadwal.index')}}">jadwal Ibadah</a>
+
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="bi bi-union"></i>
+                    <span>Koinonia</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('pendetaremaja.index')}}">Remaja</a>
+                        <a class="collapse-item" href="{{ route('pendetasekolah.index')}}">Sekolah Minggu</a>
+                        <a class="collapse-item" href="{{ route('pendetanaposo.index')}}">Naposo Bulung</a>
+                        <a class="collapse-item" href="{{ route('pendetaparompuan.index')}}">Parompuan Huria</a>
+                        <a class="collapse-item" href="{{ route('pendetapunguan.index')}}">Punguan Ama</a>
+                        <a class="collapse-item" href="{{ route('pendetalanjut.index')}}">Lansia</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="bi bi-file-earmark-music-fill"></i>
+                    <span>Marturia</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('pendetasending.index')}}">Zending</a>
+                        <a class="collapse-item" href="{{ route('pendetamusik.index')}}">Musik</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse" aria-expanded="true" aria-controls="collapse">
+                    <i class="bi bi-people"></i>
+                    <span>Diakonia</span>
+                </a>
+                <div id="collapse" class="collapse" aria-labelledby="heading" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('pendetasosial.index')}}">Sosial</a>
+                        <a class="collapse-item" href="{{ route('pendetamasyarakat.index')}}">Masyarakat</a>
+                        <a class="collapse-item" href="{{ route('pendetakesehatan.index')}}">Kesehatan </a>
+                        <a class="collapse-item" href="{{ route('pendetapendidikan.index')}}">Pendidikan</a>
+                    </div>
+                </div>
+            </li>
+
 
             <li class="nav-item">
                 <a class="nav-link" href="/berita-admin">

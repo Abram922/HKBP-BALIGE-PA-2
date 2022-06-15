@@ -117,11 +117,11 @@
         </div>
     </nav>
     <div class="container">
-
+        @yield('container')
         @yield('container2')
         @yield('container3')
     </div>
-    @yield('container')
+
     @yield('container4')
 
     {{-- footer --}}
