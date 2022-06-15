@@ -191,7 +191,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/berita-admin/show/{adminberita}', [AdminBeritaController::class, 'show']);
         Route::put('/berita-admin/update/{adminberita}', [AdminBeritaController::class, 'update']);
         Route::delete('/berita-admin/delete/{adminberita}', [AdminBeritaController::class, 'destroy']);
-        
+
         Route::resource('pendetaremaja', PendetaRemajaController::class);
 
         //MARTURIA SEKOLAH MINGGU
@@ -294,5 +294,10 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/userparompuann', [UserGuestController::class, 'userparompuan']);
         Route::get('/userpunguanama', [UserGuestController::class, 'userpunguan']);
         Route::get('/userlansia', [UserGuestController::class, 'userlansia']);
+
+        //Bukti Pembayaran
+
+        Route::get('/invoice', [AulaController::class, 'buktipembayaran']);
+        Route::post('/kirimbuktipembayaran',  [AulaController::class, 'storebukti']);
     });
 });

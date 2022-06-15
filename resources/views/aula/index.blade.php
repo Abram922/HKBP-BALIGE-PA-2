@@ -26,21 +26,23 @@
 
                 <thead>
                     <tr>
-                        <th scope="col">OrderId</th>
+                        <th scope="col">Kode Pemesanan</th>
                         <th scope="col">Total</th>
                         <th scope="col">Name</th>
                         <th scope="col">Keperluan</th>
                         <th scope="col">Status</th>
+                        <th scope="col">Bukti Pembayaran</th>
                         <th colspan="2" class="text-center" scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($adminaula as $bookings)
                     <tr>
-                        <td>{{$bookings->id}}</td>
+                        <td>{{$bookings -> kode_pemesanan}}</td>
                         <td>{{$bookings->total}}</td>
                         <td>{{$bookings->name}}</td>
                         <td>{{$bookings->keperluan}}</td>
+                        <td>{{$bookings->bayar->bukti_pemesanan}}</td>
                         <td><label class="label label-success">
                                 {{$bookings->status_id == 1 ? 'new' : ($bookings->status_id == 2 ? 'Approve' : 'Cancel')}}
                             </label>
