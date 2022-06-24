@@ -56,13 +56,23 @@
 
                     <div class="form-group">
                         <label for="lunggu" class="form-label">Lunggu</label>
-                        <input class="form-control" id="lunggu" rows="10" name="lunggu" value="{{ old('lunggu', $parhalado->lunggu) }}">
+                        <input type="text" class="form-control @error('lunggu') is-invalid @enderror" name="lunggu" id="lunggu" autofocus value="{{ old('lunggu', $parhalado->lunggu) }}">
                         @error('lunggu')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>
                         @enderror
                     </div>
+
+                    {{-- <div class="form-group">
+                        <label for="lunggu" class="form-label">Lunggu</label>
+                        <input class="form-control" id="lunggu" rows="10" name="lunggu" value="{{ old('lunggu', $parhalado->lunggu) }}">
+                        @error('lunggu')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div> --}}
 
                     <div class="form-group mb-2">
                         <div class="form-group">
@@ -87,13 +97,13 @@
 
 </body>
 
-<script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+{{-- <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
 <script>
     ClassicEditor
         .create(document.querySelector('#lunggu'))
         .catch(error => {
             console.error(error);
         });
-</script> 
+</script>  --}}
 
 </html>

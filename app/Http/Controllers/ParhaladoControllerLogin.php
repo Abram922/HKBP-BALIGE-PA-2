@@ -9,7 +9,7 @@ class ParhaladoControllerLogin extends Controller
 {
     public function index() {
         // mengembalikan view parhalado
-        $parhalado = Parhalado::all();
+        $parhalado = Parhalado::paginate(12);
 
         return view('UserTerdaftar.parhalado.index', [
             'parhalados' => $parhalado

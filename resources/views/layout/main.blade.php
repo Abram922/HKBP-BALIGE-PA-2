@@ -8,7 +8,7 @@
     <title>Laravel</title>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    {{-- <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"> --}}
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -37,9 +37,10 @@
   
         <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}"> 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}"> 
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {{-- end-update --}}
 
+ 
 </head>
 
 <body>
@@ -97,8 +98,8 @@
                         <a class="nav-link" href="{{ route('guestberita.index') }}">Berita</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Aula
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -110,7 +111,8 @@
                 </ul>
                 <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a class="nav-item margin-left" href="\login"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                        <a class="nav-item margin-left" href="\login"><i class="bi bi-box-arrow-in-right"></i>
+                            Login</a>
                     </li>
                 </ul>
             </div>
@@ -125,8 +127,14 @@
 
     @yield('container4')
 
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4127.100027086587!2d99.06506558946438!3d2.3313199338620683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x302e045d386d733f%3A0xf231bb4016871485!2sHKBP%20Balige!5e0!3m2!1sid!2sid!4v1655562911163!5m2!1sid!2sid"
+        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
     {{-- footer --}}
-    <footer class="text-center text-lg-start text-white" style="background-color: #929fba; margin-top: 50px;">
+    <footer class="text-center text-lg-start text-white"
+        style="background-color: #5D1A77;   position:relative; width:100%; bottom:0; ">
+
         <!-- Grid container -->
         <div class="container p-0 pb-0 mb-0">
             <!-- Section: Links -->
@@ -137,20 +145,20 @@
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
                         <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
 
-                        <!-- Facebook -->
-                        <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" href="#!"
+                        <!-- instagram -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #5D1A77" href="#!"
                             role="button"><i class="bi bi-instagram"></i></a>
 
-                        <!-- Twitter -->
-                        <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="#!"
+                        <!-- facebook -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #5D1A77" href="#!"
                             role="button"><i class="bi bi-facebook"></i></i></a>
 
-                        <!-- Google -->
-                        <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39" href="#!"
-                            role="button"><i class="bi bi-twitter"></i></a>
+                        <!-- twitter -->
+                        {{-- <a class="btn btn-primary btn-floating m-1" style="background-color: #5D1A77" href="#!"
+                            role="button"><i class="bi bi-twitter"></i></a> --}}
 
-                        <!-- Instagram -->
-                        <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" href="#!"
+                        <!-- Youtube -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #5D1A77" href="#!"
                             role="button"><i class="bi bi-youtube"></i></a>
 
 
@@ -229,12 +237,15 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
 
+    {{-- font-awesome --}}
+    <script src="https://kit.fontawesome.com/eed5181037.js" crossorigin="anonymous"></script>
+
     {{-- script update --}}
-    <script src="{{ asset('js/jquery.min.js') }}"></script> 
-    <script src="{{ asset('js/popper.js') }}"></script> 
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script> 
-    <script src="{{ asset('js/owl.carousel.min.js') }}"></script> 
-    <script src="{{ asset('js/main.js') }}"></script> 
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/popper.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
     {{-- end-script-update --}}
 </body>
 

@@ -14,7 +14,7 @@ class ParhaladoController extends Controller
      */
     public function index()
     {
-        $parhalado = Parhalado::paginate(20);
+        $parhalado = Parhalado::paginate(4);
         return view('parhalado.indexparhalado', [
             'parhalados' => $parhalado
         ]);
@@ -99,7 +99,8 @@ class ParhaladoController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'title' => 'required'
+            'title' => 'required',
+            'lunggu' => 'required'
         ]);
   
         $input = $request->all();

@@ -5,7 +5,49 @@
 <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}"> 
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('css/zoomgambar.css') }}">
+
+
+{{-- newest --}}
 @section('container')
+    <br>
+    <div class="container">
+        <h2 style="color:#711A75;"><b>Sosial</b></h2>
+        <hr>
+
+
+        <div class="container">
+            <div class="row mb-5">
+                @foreach ($sosial as $sosials)
+                    <div class="article">
+                        <div class="no-gutters">
+                            {{-- <h4 style="color:#711A75;"><b>{{ $sosials->judul }}</b></h4> --}}
+                            <h4>{{$sosials->judul}}</h4>
+                            <div class="col-md-4">
+                                <img src="/image/{{ $sosials->image }}" class="card-img" alt="..." style="height:367px; width:550px">
+                            </div>
+                            <div class="col-md-6">
+                                <br>
+                                
+                                <h6 class="text" style="font-style=poppins;">{!! $sosials->keterangan !!}</h6>
+
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                    <hr>
+                @endforeach
+                {!! $sosial->links() !!}
+            </div>
+        </div>
+    </div>
+    </div>
+@endsection
+
+{{-- end newest --}}
+
+
+
+{{-- @section('container')
 <br>
 <div class="container">
 <h2 style="color:#711A75;"><b>Sosial</b></h2>
@@ -43,4 +85,4 @@
 
 {{$sosial->links() }}
 
-@endsection
+@endsection --}}

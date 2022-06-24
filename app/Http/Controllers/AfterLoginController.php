@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lan;
+use App\Models\Lanjut;
 use App\Models\Naposo;
 use App\Models\Parompuan;
 use App\Models\Punguan;
@@ -24,7 +25,7 @@ class AfterLoginController extends Controller
 
     public function indexlansia()
     {
-        $lanjut = Lan::paginate(20);
+        $lanjut = Lanjut::paginate(20);
         return view('.UserTerdaftar.koinonia.lansia', [
             'lanjut' => $lanjut
         ]);

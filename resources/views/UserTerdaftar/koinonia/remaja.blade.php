@@ -1,4 +1,4 @@
-@extends('layout.user')
+{{-- @extends('layout.user')
 <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}"> 
 <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
@@ -13,16 +13,51 @@
 <h2 style="color:#711A75;"><b>Remaja</b></h2>
         <hr>
 </div>
+<<<<<<< Updated upstream
 @if($remaja->count())
+=======
+@if ($remaja->count())
+<div class="container">
+    <div class="row my-5">
+        <div class="col-lg-12">
+            <h3 class="my-3"><b>{{$remaja[0]->name}}</b></h3>
+            @if ($remaja[0]->image)
+            <div style="max-height: 550px; overflow:hidden" >
+                <img src="/image/{{$remaja[0]->image}}" class="img-fluid mt-3" alt="...">
+            </div>
+            @endif
+            <small>
+                <span><i>{{$remaja[0]->created_at}}</i></span>
+            </small>
+          <br><br>
+          
+            <div style="max-width: 1100px;">
+                <p class="card-text">{{$remaja[0]->detail}}</p>
+                <a href="/userremaja/{{$remaja[0]->id}}">Baca Selengkapnya</a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+>>>>>>> Stashed changes
 
 @foreach($remaja as $remajas)
 <div class="container">
+<<<<<<< Updated upstream
 <div class="article" >
     <div class="no-gutters">
     <h4 style="color:#711A75;"><b>{{ $remajas-> name}}</b></h4>
     <small>
         <span><i>{{ $remajas->created_at}}</i></span>
     </small><br>
+=======
+@foreach ($remaja->skip(1) as $remajas)
+<div class="zoom">
+<div class="card" style="max-width: 1100px;">
+    <div class="row no-gutters">
+>>>>>>> Stashed changes
         <div class="col-md-4">
             <img src="/image/{{  $remajas->image }}" class="card-img" alt="..." width="500" >
         </div>
@@ -45,4 +80,45 @@
 
 {{$remaja->links() }}
 
+@endsection --}}
+
+{{-- new remaja --}}
+
+@extends('layout.user')
+
+@section('container')
+    <br>
+    <div class="container">
+        <h2 style="color:#711A75;"><b>Remaja</b></h2>
+        <hr>
+
+        <div class="container">
+            <div class="row mb-5">
+                @foreach ($remaja as $remajas)
+                    <div class="article">
+                        <div class="no-gutters">
+                            {{-- <h4 style="color:#711A75;"><b>{{ $remajas->judul }}</b></h4> --}}
+                            <h4>{{$remajas->name}}</h4>
+                            <div class="col-md-4">
+                                <img src="/image/{{ $remajas->image }}" class="card-img" alt="..." style="height:367px; width:550px">
+                            </div>
+                            <div class="col-md-6">
+                                <br>
+                                
+                                <h6 class="text" style="font-style=poppins;">{!! $remajas->detail !!}</h6>
+
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                    <hr>
+                @endforeach
+                {!! $remaja->links() !!}
+            </div>
+        </div>
+
+
+
+    </div>
+    </div>
 @endsection

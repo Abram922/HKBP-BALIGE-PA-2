@@ -19,8 +19,11 @@
             {{-- TAMBAH PARHALADO --}}
             {{-- <a href="{{ route('parhalados.create') }}" class="btn btn-sm btn-success" type="submit">Tambah</a> --}}
             {{-- <button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i>Tambah</button> --}}
-            <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#createModal"><i
+            <a href="{{ route('parhalados.create') }}">
+                <button type="button" class="btn btn-sm btn-success" ><i
                     class="fas fa-plus"></i>Tambah</button>
+            </a>
+            
             <hr>
             <table class="table table-striped table-bordered data">
 
@@ -55,8 +58,8 @@
                                 <a class="btn btn-primary" href="{{ route('parhalados.edit', $parhalado->id) }}"><i
                                         class="bi bi-pencil-square"></i></a>
                                 {{-- button show --}}
-                                <button class="btn btn-info" data-toggle="modal"
-                                    data-target="#showModal{{ $parhalado->id }}"><i class="bi bi-eye"></i></button>
+                                {{-- <button type="button" class="btn btn-info" data-toggle="modal"
+                                    data-target="#showModal{{ $parhalado->id }}"><i class="bi bi-eye"></i></button> --}}
 
                                 {{-- <a class="btn btn-info" href="{{ route('parhalados.show', $parhalado->id) }}"
                                     class="badge bg-info"><i class="bi bi-eye"></i></a> --}}
@@ -65,20 +68,20 @@
                                     </button>
                                 </a> --}}
 
-                                {{-- <form action="{{ route('parhalados.destroy', $parhalado->id) }}" method="POST">
+                                <form action="{{ route('parhalados.destroy', $parhalado->id) }}" method="POST">
                                     @method('delete')
                                     @csrf
                                     <button type="submit" class="btn btn-danger"
                                         onclick="return confirm('Yakin ingin menghapus data?')"><i
                                             class="bi bi-trash3-fill"></i></button>
-                                </form> --}}
+                                </form>
 
                                 {{-- button delete --}}
-                                <button class="btn btn-danger" data-toggle="modal"
+                                {{-- <button class="btn btn-danger" data-toggle="modal"
                                     data-target="#exampleModal{{ $parhalado->id }}"><i
-                                        class="bi bi-trash3-fill"></i></button>
+                                        class="bi bi-trash3-fill"></i></button> --}}
                                 <!-- Modal delete-->
-                                <div class="modal fade" id="exampleModal{{ $parhalado->id }}" tabindex="-1"
+                                {{-- <div class="modal fade" id="exampleModal{{ $parhalado->id }}" tabindex="-1"
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <form action="{{ route('parhalados.destroy', $parhalado->id) }}" method="post">
                                         @csrf
@@ -105,10 +108,10 @@
                                             </div>
                                         </div>
                                     </form>
-                                </div>
+                                </div> --}}
 
                                 {{-- modal show --}}
-                                <div class="modal fade" id="showModal{{ $parhalado->id }}" tabindex="-1"
+                                {{-- <div class="modal fade" id="showModal{{ $parhalado->id }}" tabindex="-1"
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
@@ -144,10 +147,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
 
                                 {{-- CREATE PARHALADO --}}
-                                <div class="modal fade" id="createModal" tabindex="-1" role="dialog"
+                                {{-- <div class="modal fade" id="createModal" tabindex="-1" role="dialog"
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
@@ -215,7 +218,7 @@
                                             </form>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </td>
                         </tr>
                     @endforeach

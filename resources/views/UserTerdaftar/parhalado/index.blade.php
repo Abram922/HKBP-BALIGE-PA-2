@@ -15,7 +15,7 @@
                             <h4 class="text-white text-decoration-none">{{ $parhalado->title }}</h4>
                         </div>
                         @if ($parhalado->image)
-                            <img src="image/{{ $parhalado->image }}" class="card-img-top" alt="" height="300" >
+                            <img src="image/{{ $parhalado->image }}" class="card-img-top" height="400" alt="">
                         @endif
                         <div class="card-body">
                             <h5 class="card-title text-center">{{ $parhalado->name }}</h5>
@@ -24,7 +24,9 @@
                     </div>
                 </div>
             @endforeach
+            {!! $parhalados->links() !!}
         </div>
+
     </div>
 </div>
 @endsection

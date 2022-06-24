@@ -26,7 +26,7 @@ class NormalController extends Controller
         }
 
     public function indexparhalado() {
-        $parhalado = Parhalado::all();
+        $parhalado = Parhalado::paginate(12);
         return view('guest.tentang.parhalado', [
             'parhalados' => $parhalado
         ]);

@@ -17,6 +17,7 @@
         <div class="card mt-5 d-flex justify-content-center">
             <div class="card-header text-center">
                 <strong>CREATE PARHALADO</strong>
+                {{-- <button class="btn btn-primary " href="{{ route('parhalados.index') }}">Back</button> --}}
             </div>
 
             {{-- card body --}}
@@ -64,10 +65,11 @@
 
                     <div class="form-group mt-2 ">
                         <button type="submit" class="btn btn-success">Create</button>
-                        <button class="btn btn-primary " href="{{ route('parhalados.index') }}">Back</button>
+                        {{-- <button class="btn btn-primary " href="{{ route('parhalados.index') }}">Back</button> --}}
                     </div>
 
                 </form>
+                <button class="btn btn-primary " href="{{ route('parhalados.index') }}">Back</button>
             </div>
         </div>
     </div>

@@ -5,6 +5,47 @@
 <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}"> 
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('css/zoomgambar.css') }}">
+
+
+{{-- newest --}}
+@section('container')
+    <br>
+    <div class="container">
+        <h2 style="color:#711A75;"><b>Masyarakat</b></h2>
+        <hr>
+
+
+        <div class="container">
+            <div class="row mb-5">
+                @foreach ($masyarakat as $masyarakats)
+                    <div class="article">
+                        <div class="no-gutters">
+                            <h4>{{$masyarakats->name}}</h4>
+                            <div class="col-md-4">
+                                <img src="/image/{{ $masyarakats->image }}" class="card-img" alt="..." style="height:367px; width:550px">
+                            </div>
+                            <div class="col-md-6">
+                                <br>
+                                
+                                <h6 class="text" style="font-style=poppins;">{!! $masyarakats->detail !!}</h6>
+
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                    <hr>
+                @endforeach
+                {!! $masyarakat->links() !!}
+            </div>
+        </div>
+    </div>
+    </div>
+@endsection
+
+{{-- end newest --}}
+
+
+{{-- 
 @section('container')
 <br>
 <div class="container">
@@ -43,4 +84,4 @@
 
 {{$masyarakat->links() }}
 
-@endsection
+@endsection --}}
