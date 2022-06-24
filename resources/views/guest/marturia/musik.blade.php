@@ -13,12 +13,7 @@
     <div class="container">
         <h2 style="color:#711A75;  "><b>Musik</b></h2>
         <hr>
-<<<<<<< Updated upstream
-</div>
-@if($musik->count())
 
-=======
->>>>>>> Stashed changes
 
 
         {{-- newest --}}
@@ -37,24 +32,6 @@
                                 
                                 <h6 class="text" style="font-style=poppins;">{!! $musiks->detail !!}</h6>
 
-<<<<<<< Updated upstream
- 
-@foreach($musik as $musiks)
-<div class="container">
-<div class="article" >
-    <div class="no-gutters">
-    <h4 style="color:#711A75;"><b>{{$musiks -> name}}</b></h4>
-    <small>
-        <span><i>{{$musiks->created_at}}</i></span>
-    </small><br>
-        <div class="col-md-4">
-            <img src="/image/{{ $musiks->image }}" class="card-img" alt="..." width="500" >
-        </div>
-        <div class="col-md-6">
-          <br>
-                <h6 class="text" style="font-style=poppins;">{!! $musiks -> detail !!}</h6>
-            
-=======
                             </div>
                         </div>
                     </div>
@@ -63,26 +40,9 @@
                 @endforeach
                 {!! $musik->links() !!}
             </div>
->>>>>>> Stashed changes
+
         </div>
         {{-- end newest --}}
     </div>
     </div>
-<<<<<<< Updated upstream
-</div>
-</div>
-</div>
-<br><br>
-<hr>
-
-
-@endforeach
-@else
-<p>No Post found</p>
-@endif
-
-{{$musik->links() }}
-
-=======
->>>>>>> Stashed changes
 @endsection

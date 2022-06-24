@@ -5,41 +5,6 @@
 <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('css/zoomgambar.css') }}">
-<<<<<<< Updated upstream
-@section('container')
-<br>
-<div class="container">
-<h2 style="color:#711A75;"><b>Sekolah Minggu</b></h2>
-        <hr>
-</div>
-@if($sekolah->count())
-
-@foreach($sekolah as $sekolahs)
-<div class="container">
-<div class="article" >
-    <div class="no-gutters">
-    <h4 style="color:#711A75;"><b>{{ $sekolahs-> name}}</b></h4>
-    <small>
-        <span><i>{{ $sekolahs->created_at}}</i></span>
-    </small><br>
-        <div class="col-md-4">
-            <img src="/image/{{  $sekolahs->image }}" class="card-img" alt="..." width="500" >
-        </div>
-        <div class="col-md-6">
-          <br>
-                <h6 class="text" style="font-style=poppins;">{!!  $sekolahs -> detail !!}</h6>
-            
-        </div>
-    </div>
-</div>
-</div>
-</div>
-<br><br>
-<hr>
-@endforeach
-</div>
-
-=======
 
 
 {{-- newest --}}
@@ -75,7 +40,7 @@
                 {!! $sekolah->links() !!}
             </div>
         </div>
->>>>>>> Stashed changes
+
 
 
 

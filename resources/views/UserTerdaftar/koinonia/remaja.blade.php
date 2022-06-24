@@ -13,9 +13,6 @@
 <h2 style="color:#711A75;"><b>Remaja</b></h2>
         <hr>
 </div>
-<<<<<<< Updated upstream
-@if($remaja->count())
-=======
 @if ($remaja->count())
 <div class="container">
     <div class="row my-5">
@@ -41,23 +38,16 @@
 
 </div>
 
->>>>>>> Stashed changes
+
 
 @foreach($remaja as $remajas)
 <div class="container">
-<<<<<<< Updated upstream
-<div class="article" >
-    <div class="no-gutters">
-    <h4 style="color:#711A75;"><b>{{ $remajas-> name}}</b></h4>
-    <small>
-        <span><i>{{ $remajas->created_at}}</i></span>
-    </small><br>
-=======
+
 @foreach ($remaja->skip(1) as $remajas)
 <div class="zoom">
 <div class="card" style="max-width: 1100px;">
     <div class="row no-gutters">
->>>>>>> Stashed changes
+
         <div class="col-md-4">
             <img src="/image/{{  $remajas->image }}" class="card-img" alt="..." width="500" >
         </div>

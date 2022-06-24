@@ -204,7 +204,6 @@
                         <p><i class="fas fa-home mr-3"></i> Jl.HKBP Balige</p>
                         <p><i class="fas fa-envelope mr-3"></i> hkbpbalige@gmail.com</p>
                         <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                        <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
                     </div>
                     <!-- Grid column -->
                     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
