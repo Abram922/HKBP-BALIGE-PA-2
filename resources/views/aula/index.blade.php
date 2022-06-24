@@ -30,8 +30,8 @@
                         <th scope="col">Total</th>
                         <th scope="col">Name</th>
                         <th scope="col">Keperluan</th>
-                        <th scope="col">Status</th>
                         <th scope="col">Bukti Pembayaran</th>
+                        <th scope="col">Status</th>
                         <th colspan="2" class="text-center" scope="col">Action</th>
                     </tr>
                 </thead>
@@ -42,7 +42,9 @@
                         <td>{{$bookings->total}}</td>
                         <td>{{$bookings->name}}</td>
                         <td>{{$bookings->keperluan}}</td>
-                        <td>{{$bookings->bayar->bukti_pemesanan}}</td>
+                        <td>
+                            <img height="200" src=" /bukti_pembayaran/{{$bookings->bukti_pembayaran}}">
+                        </td>
                         <td><label class="label label-success">
                                 {{$bookings->status_id == 1 ? 'new' : ($bookings->status_id == 2 ? 'Approve' : 'Cancel')}}
                             </label>

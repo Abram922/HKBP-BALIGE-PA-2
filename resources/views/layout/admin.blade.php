@@ -20,11 +20,7 @@
     <link href="{{asset('css')}}/sb-admin-2.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
 
-
-    <!-- Fonts -->
-
     <!-- Custom fonts for this template-->
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -51,28 +47,6 @@
                 </a>
             </li>
 
-    <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-        <div class="divider">
-            <ul class="nav menu ">
-                {{-- <li><a href="{{ url('/')}}"> Dashboard</a></li> --}}
-                <li><a href="#"> Dashboard</a></li>
-                <li><a href="{{ route('beritas.index')}}"> Berita</a></li>
-                <li><a href="{{ route('adminaula.index')}}"> Aula </a></li>
-                <li class="parent "><a data-toggle="collapse" href="#sub-item-4">
-                        Tentang <span data-toggle="collapse" href="#sub-item-4" class="icon pull-right"><em class="fa fa-plus"></em></span>
-                    </a>
-                    <ul class="children collapse" id="sub-item-4">
-                        <li>
-                            <a class="" href="{{ route('parhalados.index') }}"><span class="fa fa-arrow-right">&nbsp;</span> Parhalado</a>
-                        </li>
-                        <li>
-                            <a class="" href="{{ route('ting.index')}}"><span class="fa fa-arrow-right">&nbsp;</span> Tingting</a>
-                        </li>
-                        <li>
-                            <a class="" href="{{ url('/jadwalibadah')}}"><span class="fa fa-arrow-right">&nbsp;</span> Jadwal Ibadah</a>
-                        </li>
-                    </ul>
-                </li>
 
 
             <!-- Divider -->
@@ -312,44 +286,4 @@
 
 </body>
 
-
-    <script type="text/javascript" src="{{ asset('js/jquery-1.12.0.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('vendor/datepicker/moment.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('vendor/datepicker/bootstrap-datetimepicker.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('vendor/datatables/jquery.dataTables.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('vendor/select2/js/select2.min.js') }}"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('.data').DataTable();
-            $('.datetimepicker').datetimepicker({
-                format: 'YYYY-MM-DD HH:mm:ss',
-            });
-            $('.timepicker').datetimepicker({
-                format: 'HH:mm',
-            });
-            $.fn.select2.defaults.set("theme", "bootstrap");
-            $.fn.select2.defaults.set("width", null);
-            $('.select2').select2();
-            $('.select2').change(function() {
-                $('.select2').find('option').prop('disabled', false);
-                $('.select2').each(function() {
-                    var current = $(this);
-                    // console.log(current);
-                    $('.select2').not(current).find('option').each(function() {
-                        if ($(this).val() == current.val()) {
-                            $(this).prop('disabled', true);
-                        }
-                    });
-                });
-                $('.select2').select2();
-            });
-        });
-    </script>
-    @stack('scripts')
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-
-    {{-- js 5.02 --}}
-    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> --}}
-</body>
+</html>
