@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('nomor_telepon');
+            $table->string('bukti_pembayaran')->default('Belum Dikirim');
             $table->timestamp('tanggal_mulai')->useCurrent();
             $table->timestamp('tanggal_selesai')->useCurrent();
             $table->string('total');

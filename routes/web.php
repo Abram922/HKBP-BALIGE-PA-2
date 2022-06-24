@@ -302,5 +302,11 @@ Route::group(['middleware' => ['auth']], function () {
         // Route::get('/userpunguanama', [UserGuestController::class, 'userpunguan']);
         // Route::get('/userlansia', [UserGuestController::class, 'userlansia']);
 
+
+        Route::get('/invoice/{aula}', [AulaController::class, 'buktipembayaran']);
+        Route::resource('storebukti', BuktiPembayaranAula::class);
+
+        //Route::put('/berita-admin/update/{adminberita}', [AdminBeritaController::class, 'update']);
+        Route::put('/buktipembayaran/{aula}', [AulaController::class, 'storebukti']);
     });
 });

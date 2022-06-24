@@ -22,7 +22,8 @@ class Aula extends Model
         'keperluan',
         'kode_status',
         'status_id',
-        'kode_pemesanan'
+        'kode_pemesanan',
+        'bukti_pembayaran',
     ];
 
     protected $with = ['user'];

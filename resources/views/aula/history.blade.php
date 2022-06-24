@@ -34,7 +34,7 @@
                     <a href="{{ route('aula.edit',$booking->id) }}" class=" btn btn-warning"><i class="bi bi-pencil-square"></i></a>
                     @elseif ($booking->status_id == 1)
                     <a href="{{ route('aula.edit',$booking->id) }}" class=" btn btn-warning"><i class="bi bi-pencil-square"></i></a>
-                    <a href="/invoice" class=" btn btn-info"><i class="bi bi-credit-card-2-front"></i></a>
+                    <a href="/invoice/{{$booking->id}}" class=" btn btn-info"><i class="bi bi-credit-card-2-front"></i></a>
                     @endif
 
 
