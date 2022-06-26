@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Aula;
 use App\Models\User;
 use App\Models\Berita;
+use App\Models\JadwalIbadah;
+use App\Models\Ting;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -77,7 +79,12 @@ class AutentikasiController extends Controller
     }
     public function dash_u()
     {
-        return view('autentikasi.welcomeuser');
+        $jadwalIbadah  = JadwalIbadah::paginate(20);
+        $tingg  = Ting::paginate(20);
+        return view('autentikasi.welcomeuser', [
+            'jadwalIbadah' => $jadwalIbadah,
+            'ting'=>$tingg
+        ]);
     }
 
 

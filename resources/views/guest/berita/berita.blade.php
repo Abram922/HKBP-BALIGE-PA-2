@@ -2,23 +2,13 @@
 
 @section('container')
 
-<div class="row justify-content-center mb-3 ">
-    <div class="col-md-6">
-        <form action="/gberita">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" name="search" id="name">
-                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Cari</button>
-            </div>
-        </form>
-
-
-    </div>
-    <br><br>
-
+<div class="container">
+    <h2 style="color:#711A75;"><b>Berita</b></h2>
+    <hr>
 </div>
-
 @if($guestberita->count())
 <div class="container">
+
     <div class="row my-5">
         <div class="col-lg-12">
             <h5 class="my-3">{{$guestberita[0]->title}}</h5>

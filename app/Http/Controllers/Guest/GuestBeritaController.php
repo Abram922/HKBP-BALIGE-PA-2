@@ -21,10 +21,12 @@ class GuestBeritaController extends Controller
         $user = User::all();
 
         return view('.guest.berita.berita', [
-            "judul" => "berita",
+            "judul" => "guestberita",
             "guestberita" => Berita::latest()->filter(request(['search']))->paginate(8)->withQueryString(),
             compact('user')
         ]);
+
+    
     }
 
     public function show(Berita $guestberita)

@@ -2,6 +2,11 @@
 
 @section('container')
 
+<div class="container">
+    <h2 style="color:#711A75;"><b>Berita</b></h2>
+    
+</div>
+
 <div class="row justify-content-center mb-3 ">
     <div class="col-md-6">
         <form action="/berita">

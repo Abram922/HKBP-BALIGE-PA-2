@@ -69,7 +69,7 @@ Route::get('/author/{user}', [GuestBeritaController::class, 'authorpost']);
 Route::get('/guestshowberita/{guestberita}', [GuestBeritaController::class, 'show']);
 Route::resource('guestaula', AulaGuestController::class);
 
-Route::get('/', [NormalController::class, 'jadwalIbadah']);
+// Route::get('/', [NormalController::class, 'jadwalIbadah']);
 //GUEST TENTANG
 Route::get('/tingting', [NormalController::class, 'indexting']);
 Route::get('/jadwalIbadah', [NormalController::class, 'indexjadwalIbadah']);

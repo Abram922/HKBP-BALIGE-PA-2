@@ -98,16 +98,16 @@
         </tr>
       </thead>
       <tbody>
-        {{-- @foreach($jadwalIbadah as $data) --}}
-        {{-- <tr>
+        @foreach($jadwalIbadah as $data)
+        <tr>
                 <td>{{ $loop->iteration }}</td>
         <td>{{ $data->judul }}</td>
         <td>{{ $data->date }}</td>
         <td>{{ $data->keterangan }}</td>
 
         </tr>
-      </tbody> --}}
-      {{-- @endforeach --}}
+      </tbody>
+      @endforeach
     </table>
   </div>
 
@@ -126,7 +126,7 @@
         </tr>
       </thead>
       <tbody>
-        {{-- @foreach($ting as $product)
+        @foreach($ting as $product)
                 <tr>
                 <td>{{ $loop->iteration }}</td>
         <td>{{ $product->name }}</td>
@@ -137,7 +137,7 @@
 
         </tr>
       </tbody>
-      @endforeach --}}
+      @endforeach
     </table>
   </div>
 
