@@ -15,16 +15,16 @@
 
 		<div class="card mt-5 d-flex justify-content-center">
 			<div class="card-header text-center">
-				<strong>EDIT PARHALADO</strong>
+				<strong>EDIT JADWAL IBADAH</strong>
 			</div>
 
 			{{-- card body --}}
 			<div class="card-body">
+				@foreach($jadwalibadah as $data)
 				<form action="/tentang/editJadwal" method="POST">
 					{{ csrf_field() }}
 
-
-
+					<input type="hidden" name="id" value="{{ $data->id }}"> <br/>
 
 					<div class="form-group">
 						<label for="judul" class="form-label">Judul</label>
@@ -57,14 +57,17 @@
 					</div>
 
 					<div class="form-group mt-2 ">
-						<button type="submit" class="btn btn-success">Create</button>
-						<button class="btn btn-primary " href="/indexJadwal">Back</button>
+						<button type="submit" class="btn btn-success">Ubah</button>
+						
 					</div>
 				</form>
-
+				@endforeach
+				<a href="/jadwalibadah">
+					<button class="btn btn-primary" style="float: right" >Kembali</button>
+				</a>
 			</div>
 		</div>
 	</div>
 </body>
 
-</html>
+</html>  

@@ -202,9 +202,18 @@ Route::group(['middleware' => ['auth']], function () {
         //MARTURIA NAPOSO
         Route::resource('pendetanaposo', PendetaNaposoBulungController::class);
 
+        // Pendeta jadwal ibadah
+
+        Route::get('/pendetajadwalibadah', [PendetaJadwalIbadahController::class, 'index']);
+        Route::post('/pendeta/tambahJadwal', [PendetaJadwalIbadahController::class, 'tambah']);
+        Route::get('/pendeta/tambahJadwal', [PendetaJadwalIbadahController::class, 'create']);
+        Route::get('/pendeta/editJadwal/{id}', [PendetaJadwalIbadahController::class, 'edit']);
+        Route::get('/pendeta/editJadwal', [PendetaJadwalIbadahController::class, 'update']);
+        Route::post('/pendeta/editJadwal', [PendetaJadwalIbadahController::class, 'ubah']);
+        Route::get('/pendeta/hapus/{id}', [PendetaJadwalIbadahController::class, 'hapus']);
 
         Route::resource('PendetaTingting', PendetaTingTingController::class);
-        Route::resource('PendetaJadwal', PendetaJadwalIbadahController::class);
+        // Route::resource('PendetaJadwal', PendetaJadwalIbadahController::class);
         Route::resource('PendetaParhalado', PendetaParhaladoController::class);
         //DIAKONIA SOSIAL
         Route::resource('pendetasosial', PendetaSosialController::class);

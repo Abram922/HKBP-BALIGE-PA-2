@@ -67,7 +67,7 @@
 
 		<div class="card mt-5 d-flex justify-content-center">
 			<div class="card-header text-center">
-				<strong>CREATE PARHALADO</strong>
+				<strong>TAMBAH JADWAL IBADAH</strong>
 			</div>
 
 			{{-- card body --}}
@@ -109,10 +109,15 @@
 					</div>
 
 					<div class="form-group mt-2 ">
-						<button type="submit" class="btn btn-success">Create</button>
-						<button class="btn btn-primary " href="/indexJadwal">Back</button>
+						<button type="submit" class="btn btn-success">Simpan</button>
+						{{-- <button class="btn btn-primary " href="/indexJadwal">Back</button> --}}
 					</div>
 				</form>
+
+				
+				<a href="/jadwalibadah">
+                    <button class="btn btn-primary" style="float: right">Kembali</button>
+                </a>
 
 			</div>
 		</div>

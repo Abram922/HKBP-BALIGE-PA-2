@@ -69,7 +69,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{ route('PendetaParhalado.index') }}">Parhalado</a>
                         <a class="collapse-item" href="{{ route('PendetaTingting.index')}}">Tingting</a>
-                        <a class="collapse-item" href="{{ route('PendetaJadwal.index')}}">jadwal Ibadah</a>
+                        <a class="collapse-item" href="/pendetajadwalibadah">Jadwal Ibadah</a>
 
                     </div>
                 </div>
@@ -261,14 +261,14 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    {{-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
             <a class="btn btn-primary" href="login.html">Logout</a>
         </div>
 
 
-    </div>
+    </div> --}}
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>

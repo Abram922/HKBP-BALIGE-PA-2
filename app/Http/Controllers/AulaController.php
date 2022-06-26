@@ -57,7 +57,7 @@ class AulaController extends Controller
             'pesan' => 'max:255',
             'alamat' => 'max:255'
         ]));
-
+        
         $validateData['user_id'] = auth()->user()->id;
         $validateData['kode_pemesanan'] = $kode_pemesanan;
 

@@ -73,12 +73,15 @@
                     </div>
 
                     <div class="form-group mt-2 ">
-                        <button type="submit" class="btn btn-success">Submit</button>
-                        <button class="btn btn-primary " href="{{ route('PendetaParhalado.index') }}">Back</button>
+                        <button type="submit" class="btn btn-success">Ubah</button>
                     </div>
             </div>
 
             </form>
+            
+            <a href="{{ route('PendetaParhalado.index') }}">
+                <button class="btn btn-primary" style="float: right">Kembali</button>
+            </a>
         </div>
     </div>
 
@@ -87,13 +90,13 @@
 
 </body>
 
-<script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+{{-- <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
 <script>
     ClassicEditor
         .create(document.querySelector('#lunggu'))
         .catch(error => {
             console.error(error);
         });
-</script>
+</script> --}}
 
 </html>

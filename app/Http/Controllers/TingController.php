@@ -54,7 +54,7 @@ class TingController extends Controller
         Ting::create($input);
      
         return redirect()->route('ting.index')
-                        ->with('success','Product created successfully.');
+                        ->with('success','Data berhasil ditambahkan.');
     }
 
     /**

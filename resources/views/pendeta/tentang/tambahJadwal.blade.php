@@ -67,12 +67,12 @@
 
 		<div class="card mt-5 d-flex justify-content-center">
 			<div class="card-header text-center">
-				<strong>CREATE PARHALADO</strong>
+				<strong> TAMBAH JADWAL IBADAH</strong>
 			</div>
 
 			{{-- card body --}}
 			<div class="card-body">
-				<form action="/tentang/tambahJadwal" method="POST">
+				<form action="/pendeta/tambahJadwal" method="POST">
 					{{ csrf_field() }}
 
 
@@ -109,11 +109,12 @@
 					</div>
 
 					<div class="form-group mt-2 ">
-						<button type="submit" class="btn btn-success">Create</button>
-						<button class="btn btn-primary " href="/indexJadwal">Back</button>
+						<button type="submit" class="btn btn-success">Simpan</button>
 					</div>
 				</form>
-
+                <a href="/pendetajadwalibadah">
+                    <button class="btn btn-primary" style="float: right">Kembali</button>
+                </a>
 			</div>
 		</div>
 	</div>

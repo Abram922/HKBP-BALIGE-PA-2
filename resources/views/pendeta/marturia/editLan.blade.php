@@ -15,7 +15,7 @@
 
         <div class="card mt-5 d-flex justify-content-center">
             <div class="card-header text-center">
-                <strong>EDIT PARHALADO</strong>
+                <strong>EDIT LANSIA</strong>
             </div>
 
             {{-- if there is error --}}
@@ -56,13 +56,15 @@
                                 <img src="/image/{{ $pendetalanjut->image }}" width="300px">
                             </div>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                            <a class="btn btn-warning" href="{{ route('lanjut.index') }}"> Back</a>
+                        <div class="form-group mt-2 ">
+                            <button type="submit" class="btn btn-success">Ubah</button>
                         </div>
                     </div>
 
                 </form>
+                <a href="/pendetalanjut">
+                    <button class="btn btn-primary" style="float: right">Kembali</button>
+                </a>
                 <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
                 <script>
                     ClassicEditor

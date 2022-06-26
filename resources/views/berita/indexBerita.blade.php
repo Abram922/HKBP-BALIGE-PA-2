@@ -47,13 +47,13 @@
           <td>
             <form action="{{ route('beritas.destroy',$beritas->id) }}" method="POST">
 
-              <a class="btn btn-primary" href="{{ route('beritas.edit',$beritas->id) }}"><i class="bi bi-pencil-square"></i></a>
-              <a class="btn btn-info" href="{{ route('beritas.show',$beritas->id) }}" class="badge bg-info"><i class="bi bi-eye"></i></a>
+              <a class="btn btn-primary" href="{{ route('beritas.edit',$beritas->id) }}">Edit</a>
+              <a class="btn btn-info" href="{{ route('beritas.show',$beritas->id) }}" class="badge bg-info">Lihat</a>
 
               @csrf
               @method('DELETE')
 
-              <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data?')"><i class="bi bi-trash3-fill"></i></button>
+              <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data?')">Hapus</button>
             </form>
           </td>
         </tr>

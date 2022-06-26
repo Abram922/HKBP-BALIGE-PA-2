@@ -50,13 +50,13 @@
           <td>
             <form action="{{ route('PendetaParhalado.destroy',$parhalado->id) }}" method="POST">
 
-              <a class="btn btn-primary" href="{{ route('PendetaParhalado.edit',$parhalado->id) }}"><i class="bi bi-pencil-square"></i></a>
-              <a class="btn btn-info" href="{{ route('PendetaParhalado.show',$parhalado->id) }}" class="badge bg-info"><i class="bi bi-eye"></i></a>
+              <a class="btn btn-primary" href="{{ route('PendetaParhalado.edit',$parhalado->id) }}">Edit</a>
+              {{-- <a class="btn btn-info" href="{{ route('PendetaParhalado.show',$parhalado->id) }}" class="badge bg-info"><i class="bi bi-eye"></i></a> --}}
 
               @csrf
               @method('DELETE')
 
-              <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data?')"><i class="bi bi-trash3-fill"></i></button>
+              <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data?')">Hapus</button>
             </form>
           </td>
         </tr>

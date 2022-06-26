@@ -44,12 +44,17 @@
                                         {{$account->level_user == 1 ? 'pendeta' : ($account->level_user == 2 ? 'bph' : 'user')}}
                                     </label></td>
                                 <td>
-                                    <a class="btn btn-primary" href="{{ route('user.edit',$account->id) }}"><i class="bi bi-pencil-square"></i></a>
+                                    <a class="btn btn-primary" href="{{ route('user.edit',$account->id) }}">Edit</a>
                                     <form action="{{ route('user.destroy',$account->id) }}" method="POST">
 
                                         @csrf
                                         @method('DELETE')
+<<<<<<< Updated upstream
                                         <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data?')"><i class="bi bi-trash3-fill"></i></button>
+=======
+
+                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data?')">Hapus</button>
+>>>>>>> Stashed changes
                                     </form>
                                 </td>
                             </tr>

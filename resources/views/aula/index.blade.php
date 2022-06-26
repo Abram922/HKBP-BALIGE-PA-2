@@ -59,9 +59,9 @@
                                 <input type="hidden" name="status_id" value="{{ $bookings->status_id }}">
 
                                 @if ($bookings->status_id == 2)
-                                <button class=" btn btn-success">CANCEL</i></button>
+                                <button class=" btn btn-danger">Tolak</i></button>
                                 @elseif ($bookings->status_id == 1)
-                                <button class=" btn btn-success">CANCEL</i></button>
+                                <button class=" btn btn-danger">Tolak</i></button>
                                 @endif
 
                             </form>
@@ -73,9 +73,9 @@
                                 <input type="hidden" name="status_id" value="{{ $bookings->status_id }}">
 
                                 @if ($bookings->status_id == 3)
-                                <button class=" btn btn-danger">APPROVE</button>
+                                <button class=" btn btn-success">Terima</button>
                                 @elseif ($bookings->status_id == 1)
-                                <button class=" btn btn-danger">APPROVE</button>
+                                <button class=" btn btn-success">Terima</button>
                                 @endif
 
                             </form>

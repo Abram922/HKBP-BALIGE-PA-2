@@ -16,7 +16,7 @@
   </div><br>
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4>Edit Seksi Sending</h4>
+      <h4>  Zending</h4>
     </div>
     <a href="{{ route('pendetasending.create') }}" class="btn btn-sm btn-success" type="submit">Tambah</a>
     <hr>

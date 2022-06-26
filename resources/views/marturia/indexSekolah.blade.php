@@ -16,7 +16,7 @@
   </div><br>
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4>Edit Seksi Sekolah Minggu</h4>
+      <h4>Seksi Sekolah Minggu</h4>
     </div>
     <a href="{{ route('sekolah.create') }}" class="btn btn-sm btn-success" type="submit">Tambah</a>
     <hr>

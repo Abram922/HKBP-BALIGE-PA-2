@@ -32,12 +32,12 @@
             {{-- card body --}}
             <div class="card-body">
                 <form action="{{ route('parhalados.update', $parhalado->id) }}" method="POST" enctype="multipart/form-data">
-                    {{ csrf_field() }}
-                    {{ method_field('PATCH') }}
+                    @csrf
+                    @method('PUT')
                     <div class="form-group">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" autofocus value="{{ old('name', $parhalado->name) }}">
-                        @error('title')
+                        @error('name')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>
@@ -83,8 +83,8 @@
                     </div>
 
                     <div class="form-group mt-2 ">
-                        <button type="submit" class="btn btn-success">Submit</button>
-                        <button class="btn btn-primary " href="{{ route('parhalados.index') }}">Back</button>
+                        <button type="submit" class="btn btn-success">Kirim</button>
+                        <button class="btn btn-primary " href="{{ route('parhalados.index') }}" style="float: right">Kembali</button>
                     </div>
             </div>
 

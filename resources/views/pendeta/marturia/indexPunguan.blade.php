@@ -16,7 +16,7 @@
   </div><br>
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4>Edit Punguan Ama</h4>
+      <h4> Punguan Ama</h4>
     </div>
     <a href="{{ route('pendetapunguan.create') }}" class="btn btn-sm btn-success" type="submit">Tambah</a>
     <hr>

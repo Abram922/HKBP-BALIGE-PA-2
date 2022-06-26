@@ -16,7 +16,7 @@
   </div><br>
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4>Edit Seksi Kesehatan</h4>
+      <h4> Kesehatan</h4>
     </div>
     <a href="{{ route('pendetakesehatan.create') }}" class="btn btn-sm btn-success" type="submit">Tambah</a>
     <hr>

@@ -14,7 +14,7 @@
       </div><br>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4>Edit Jadwal Ibadah</h4>
+            <h4>Jadwal Ibadah</h4>
           </div>
           <a href="{{ url('/tentang/tambahJadwal')}}" class="btn btn-sm btn-success" type="submit">Tambah</a>
             <hr>
@@ -42,8 +42,8 @@
                             <form action="#" method="post">
                                 {{ csrf_field() }}
                                 {{ method_field('delete') }}
-                                <a href="/tentang/editJadwal/{{ $data->id }}" class=" btn btn-sm btn-warning">Edit</a>
-                                <a href="/tentang/hapus/{{ $data->id }}" class="btn btn-sm btn-danger"  type="submit" onclick="return confirm('Yakin ingin menghapus data?')">Hapus</a>
+                                <a href="/tentang/editJadwal/{{ $data->id }}" class="btn btn-primary">Edit</a>
+                                <a href="/tentang/hapus/{{ $data->id }}" class="btn btn-danger"  type="submit" onclick="return confirm('Yakin ingin menghapus data?')">Hapus</a>
                             </form>
                         </td>
                     </tr>

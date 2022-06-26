@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
-                    <h2>EDIT BERTIA</h2>
+                    <h2>EDIT BERITA</h2>
                 </div>
                 <div class="pull-right">
                     <a class="btn btn-warning" href="{{ route('beritas.index') }}"> Back</a>

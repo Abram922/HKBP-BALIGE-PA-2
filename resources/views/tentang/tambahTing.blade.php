@@ -15,7 +15,7 @@
 
         <div class="card mt-5 d-flex justify-content-center">
             <div class="card-header text-center">
-                <strong>CREATE TINGTING</strong>
+                <strong>TAMBAH TINGTING</strong>
             </div>
 
             {{-- card body --}}
@@ -42,12 +42,17 @@
                                 <input type="file" name="image" class="form-control" placeholder="image">
                             </div>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="form-group mt-2 ">
+                            <button type="submit" class="btn btn-success">Simpan</button>
+                            {{-- <button class="btn btn-primary " href="/indexJadwal">Back</button> --}}
                         </div>
                     </div>
 
                 </form>
+
+				<a href="/ting">
+                    <button class="btn btn-primary" style="float: right">Kembali</button>
+                </a>
             </div>
         </div>
     </div>

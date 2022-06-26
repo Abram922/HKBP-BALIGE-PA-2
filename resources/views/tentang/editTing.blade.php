@@ -49,19 +49,24 @@
                                 <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail">{{ $ting->detail }}</textarea>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="col-xs-12 col-sm-12 col-md-12 mb-1">
                             <div class="form-group">
                                 <strong>Image:</strong>
-                                <input type="file" name="image" class="form-control" placeholder="image">
+                                <input type="file" name="image" class="form-control mb-1" placeholder="image">
                                 <a href="/file/{{ $ting->image }}" target="_blank" class="btn btn-warning">Lihat File</a>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="form-group mt-2 ">
+                            <button type="submit" class="btn btn-success">Ubah</button>
                         </div>
                     </div>
 
                 </form>
+
+
+                <a href="/ting">
+                    <button class="btn btn-primary" style="float: right">Kembali</button>
+                </a>
 
             </div>
         </div>

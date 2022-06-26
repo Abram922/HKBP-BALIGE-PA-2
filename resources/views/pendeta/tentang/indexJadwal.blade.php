@@ -14,9 +14,9 @@
   </div><br>
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4>Edit Jadwal Ibadah</h4>
+      <h4> Jadwal Ibadah</h4>
     </div>
-    <a href="{{ url('PendetaJadwal.index')}}" class="btn btn-sm btn-success" type="submit">Tambah</a>
+    <a href="/pendeta/tambahJadwal" class="btn btn-sm btn-success" type="submit">Tambah</a>
     <hr>
     <table class="table table-striped table-bordered data">
 
@@ -39,12 +39,21 @@
           <td>{{ $data->date }}</td>
 
           <td>
+            {{-- <form action="/pendeta/hapus/{{ $data->id }}" method="POST">
+
+              <a class="btn btn-primary" href="/pendeta/editJadwal/{{ $data->id }}">Edit</a>
+
+              @csrf
+              @method('DELETE')
+
+              <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data?')">Hapus</button>
+            </form> --}}
             <form action="#" method="post">
               {{ csrf_field() }}
               {{ method_field('delete') }}
-              <a href="" class=" btn btn-sm btn-warning">Edit</a>
-              <a href="" class="btn btn-sm btn-danger" type="submit" onclick="return confirm('Yakin ingin menghapus data?')">Hapus</a>
-            </form>
+              <a href="/pendeta/editJadwal/{{ $data->id }}" class=" btn btn-primary">Edit</a>
+              <a href="/pendeta/hapus/{{ $data->id }}" class="btn btn-danger"  type="submit" onclick="return confirm('Yakin ingin menghapus data?')">Hapus</a>
+          </form>
           </td>
         </tr>
         @endforeach

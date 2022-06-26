@@ -55,8 +55,7 @@
                             {{-- <td>{!! $parhalado->body !!}</td> --}}
                             <td>
 
-                                <a class="btn btn-primary" href="{{ route('parhalados.edit', $parhalado->id) }}"><i
-                                        class="bi bi-pencil-square"></i></a>
+                                <a class="btn btn-primary" href="{{ route('parhalados.edit', $parhalado->id) }}">Edit</a>
                                 {{-- button show --}}
                                 {{-- <button type="button" class="btn btn-info" data-toggle="modal"
                                     data-target="#showModal{{ $parhalado->id }}"><i class="bi bi-eye"></i></button> --}}
@@ -72,8 +71,7 @@
                                     @method('delete')
                                     @csrf
                                     <button type="submit" class="btn btn-danger"
-                                        onclick="return confirm('Yakin ingin menghapus data?')"><i
-                                            class="bi bi-trash3-fill"></i></button>
+                                        onclick="return confirm('Yakin ingin menghapus data?')">Hapus</i></button>
                                 </form>
 
                                 {{-- button delete --}}

@@ -15,7 +15,7 @@
 
         <div class="card mt-5 d-flex justify-content-center">
             <div class="card-header text-center">
-                <strong>CREATE TINGTING</strong>
+                <strong>TAMBAH TINGTING</strong>
             </div>
 
             {{-- card body --}}
@@ -44,10 +44,14 @@
                         </div>
                         
                     </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="form-group mt-2 ">
+                            <button type="submit" class="btn btn-success">Simpan</button>
                         </div>
                 </form>
+
+                <a href="/PendetaTingting">
+                    <button class="btn btn-primary" style="float: right">Kembali</button>
+                </a>
             </div>
         </div>
     </div>

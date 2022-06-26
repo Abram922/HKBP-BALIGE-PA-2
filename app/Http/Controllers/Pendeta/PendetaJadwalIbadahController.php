@@ -11,7 +11,10 @@ class PendetaJadwalIbadahController extends Controller
 {
     public function index()
     {
-        return view('pendeta/tentang/indexJadwal');
+        $jadwalIbadah  = JadwalIbadah::paginate(20);
+        return view('pendeta.tentang.indexJadwal', [
+            'jadwalIbadah' => $jadwalIbadah
+        ]);
     }
 
     public function lihatData()
@@ -37,14 +40,14 @@ class PendetaJadwalIbadahController extends Controller
             'keterangan' => $request->keterangan
         ]);
         // alihkan halaman ke halaman pegawai
-        return redirect('/jadwalibadah');
+        return redirect('/pendetajadwalibadah');
     }
 
 
     //UPDATE DATA
     public function update()
     {
-        return view('pendeta/tentang/editJadwal');
+        return view('pendeta.tentang.editJadwal');
     }
 
     public function edit($id)
@@ -64,7 +67,7 @@ class PendetaJadwalIbadahController extends Controller
             'keterangan' => $request->keterangan
         ]);
         // alihkan halaman ke halaman pegawai
-        return redirect('/jadwalibadah');
+        return redirect('/pendetajadwalibadah');
     }
 
     //HAPUS DATA
@@ -74,6 +77,6 @@ class PendetaJadwalIbadahController extends Controller
         DB::table('jadwal_ibadahs')->where('id', $id)->delete();
 
         // alihkan halaman ke halaman pegawai
-        return redirect('/jadwalibadah');
+        return redirect('/pendetajadwalibadah');
     }
 }
