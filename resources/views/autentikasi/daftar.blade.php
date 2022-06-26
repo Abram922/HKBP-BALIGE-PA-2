@@ -87,6 +87,7 @@
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Nomor Telepon">
+
                         <input class="input100" type="text" name="phoneno" id="phoneno" placeholder="Nomor Telepon" autofocus required value="{{ old('phoneno')}}">
                         <span class="focus-input100"></span>
                         @error('phoneno')

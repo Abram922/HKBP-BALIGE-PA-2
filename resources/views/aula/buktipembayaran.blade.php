@@ -10,19 +10,19 @@
             <li class="list-group-item d-flex justify-content-between lh-sm">
                 <div>
                     <h6 class="my-0">BANK BRI</h6>
-                    <small class="text-muted">0987654323456789098765</small>
+                    <small class="text-muted">353901007660502</small>
                 </div>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-sm">
                 <div>
                     <h6 class="my-0">BANK MANDIRI</h6>
-                    <small class="text-muted">Brief description</small>
+                    <small class="text-muted">-</small>
                 </div>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-sm">
                 <div>
                     <h6 class="my-0">BANK SUMUT</h6>
-                    <small class="text-muted">Brief description</small>
+                    <small class="text-muted">-</small>
                 </div>
             </li>
         </ul>

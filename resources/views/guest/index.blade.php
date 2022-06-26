@@ -37,7 +37,7 @@
                 </div>
             </div>
 
-            <div class="slider-item js-fullheight" style="background-image:url(images/gereja_2.jpg);">
+            <div class="slider-item js-fullheight" style="background-image:url(images/gereja_2.jpeg);">
                 <div class="overlay"></div>
                 <div class="container">
                     <div class="row no-gutters slider-text js-fullheight align-items-center ">
@@ -102,10 +102,10 @@
             <tbody>
                 @foreach ($jadwalIbadah as $data)
                 <tr>
-                <td>{{ $loop->iteration }}</td>
-                <td>{{ $data->judul }}</td>
-                <td>{{ $data->date }}</td>
-                <td>{{ $data->keterangan }}</td>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $data->judul }}</td>
+                    <td>{{ $data->date }}</td>
+                    <td>{{ $data->keterangan }}</td>
 
                 </tr>
             </tbody>
@@ -130,11 +130,11 @@
             <tbody>
                 @foreach ($ting as $product)
                 <tr>
-                <td>{{ $loop->iteration }}</td>
-                <td>{{ $product->name }}</td>
-                <td>{{ $product->detail }}</td>
-                <td><a href="/file/{{ $product->image }}" target="_blank" class="btn btn-warning" download>Lihat File</a></td>
-                <!--tambahh download untuk mengunduh file -->
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $product->name }}</td>
+                    <td>{{ $product->detail }}</td>
+                    <td><a href="/file/{{ $product->image }}" target="_blank" class="btn btn-warning" download>Lihat File</a></td>
+                    <!--tambahh download untuk mengunduh file -->
 
 
                 </tr>

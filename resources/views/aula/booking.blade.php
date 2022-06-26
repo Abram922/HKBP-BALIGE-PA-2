@@ -40,92 +40,98 @@
                             @enderror
                         </div>
 
-                        <div class="col-12">
-                            <label for="nomor_telepon" class="form-label">Nomor Telepon</label>
-                            <input type="text" class="form-control @error('nomor_telepon') is-invalid @enderror" name="nomor_telepon" id="nomor_telepon" autofocus value="{{old('nomor_telepon')}}">
-                            @error('nomor_telepon')
-                            <div class="invalid-feedback">
-                                {{$message}}
+                        <div class="input-group col-12">
+
+                           
+                            <label for=" nomor_telepon" class="form-label">Nomor Telepon</label>
+                            <div class="input-group">
+                                 <span class="input-group-text" id="basic-addon1">+62</span>
+                                <input type="text" class="form-control @error('nomor_telepon') is-invalid @enderror" placeholder="" name="nomor_telepon" id="nomor_telepon" autofocus value="{{old('nomor_telepon')}}">
                             </div>
-                            @enderror
-                        </div>
-
-                        <div class="col-12">
-                            <label for="keperluan" class="form-label">Keperluan</label>
-                            <input type="text" class="form-control @error('keperluan') is-invalid @enderror" name="keperluan" id="keperluan" autofocus value="{{old('keperluan')}}">
-                            @error('keperluan')
-                            <div class="invalid-feedback">
-                                {{$message}}
+                               
+                                @error('nomor_telepon')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                                @enderror
                             </div>
-                            @enderror
-                        </div>
 
-                        <div class="col-12">
-                            <label for="alamat" class="form-label">Alamat</label>
-                            <input type="text" class="form-control @error('alamat') is-invalid @enderror" name="alamat" id="alamat" autofocus value="{{old('alamat')}}">
-                            @error('alamat')
-                            <div class="invalid-feedback">
-                                {{$message}}
+                            <div class="col-12">
+                                <label for="keperluan" class="form-label">Keperluan</label>
+                                <input type="text" class="form-control @error('keperluan') is-invalid @enderror" name="keperluan" id="keperluan" autofocus value="{{old('keperluan')}}">
+                                @error('keperluan')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                                @enderror
                             </div>
-                            @enderror
-                        </div>
+
+                            <div class="col-12">
+                                <label for="alamat" class="form-label">Alamat</label>
+                                <input type="text" class="form-control @error('alamat') is-invalid @enderror" name="alamat" id="alamat" autofocus value="{{old('alamat')}}">
+                                @error('alamat')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                                @enderror
+                            </div>
 
 
-                        <script>
-                            $(function() {
-                                $("#tanggal_mulai, #tanggal_selesai").datepicker({
-                                    dateFormat: 'dd/mm/yy',
-                                    onSelect: function() {
-                                        var datestart = new Date($("#tanggal_mulai").val().split("/").reverse().join(","));
-                                        var dateend = new Date($("#tanggal_selesai").val().split("/").reverse().join(","));
-                                        $("#total").val((dateend - datestart) / 86400000 * 1000000);
+                            <script>
+                                $(function() {
+                                    $("#tanggal_mulai, #tanggal_selesai").datepicker({
+                                        dateFormat: 'dd/mm/yy',
+                                        onSelect: function() {
+                                            var datestart = new Date($("#tanggal_mulai").val().split("/").reverse().join(","));
+                                            var dateend = new Date($("#tanggal_selesai").val().split("/").reverse().join(","));
+                                            $("#total").val((dateend - datestart) / 86400000 * 1000000);
 
-                                    }
+                                        }
+                                    });
+
                                 });
+                            </script>
 
-                            });
-                        </script>
-
-                        <div class="col-sm-6">
-                            <label for="tanggal_mulai" class="form-label">Tanggal Awal</label>
-                            <input type="text" class="form-control @error('tanggal_mulai') is-invalid @enderror" name="tanggal_mulai" id="tanggal_mulai" autofocus value="{{old('tanggal_mulai')}}">
-                            @error('tanggal_mulai')
-                            <div class="invalid-feedback">
-                                {{$message}}
+                            <div class="col-sm-6">
+                                <label for="tanggal_mulai" class="form-label">Tanggal Awal</label>
+                                <input type="text" class="form-control @error('tanggal_mulai') is-invalid @enderror" name="tanggal_mulai" id="tanggal_mulai" autofocus value="{{old('tanggal_mulai')}}">
+                                @error('tanggal_mulai')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                                @enderror
                             </div>
-                            @enderror
-                        </div>
 
-                        <div class="col-sm-6">
-                            <label for="tanggal_selesai" class="form-label">Tanggal Selesai</label>
-                            <input type="text" class="form-control @error('tanggal_selesai') is-invalid @enderror" name="tanggal_selesai" id="tanggal_selesai" autofocus value="{{old('tanggal_selesai')}}">
-                            @error('tanggal_selesai')
-                            <div class="invalid-feedback">
-                                {{$message}}
+                            <div class="col-sm-6">
+                                <label for="tanggal_selesai" class="form-label">Tanggal Selesai</label>
+                                <input type="text" class="form-control @error('tanggal_selesai') is-invalid @enderror" name="tanggal_selesai" id="tanggal_selesai" autofocus value="{{old('tanggal_selesai')}}">
+                                @error('tanggal_selesai')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                                @enderror
+
+
                             </div>
-                            @enderror
 
-
-                        </div>
-
-                        <div class="col-12">
-                            <label for="total" class="form-label">Total</label>
-                            <input type="text" class="form-control" name="total" id="total" readonly="true">
-                        </div>
-
-                        <div class="col-12">
-                            <label for="pesan" class="form-label">Pesan</label><br>
-                            <textarea id="pesan" name="pesan" class="form-control  @error('pesan') is-invalid @enderror" cols="50" rows="5"></textarea>
-                            @error('pesan')
-                            <div class="invalid-feedback">
-                                {{$message}}
+                            <div class="col-12">
+                                <label for="total" class="form-label">Total</label>
+                                <input type="text" class="form-control" name="total" id="total" readonly="true">
                             </div>
-                            @enderror
+
+                            <div class="col-12">
+                                <label for="pesan" class="form-label">Pesan</label><br>
+                                <textarea id="pesan" name="pesan" class="form-control  @error('pesan') is-invalid @enderror" cols="50" rows="5"></textarea>
+                                @error('pesan')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                                @enderror
+                            </div>
+
+
                         </div>
-
-
-                    </div>
-                    <button class="w-100 btn btn-primary btn-lg" type="submit">Pesan</button>
+                        <button class="w-100 btn btn-primary btn-lg" type="submit">Pesan</button>
 
                 </form>
             </div>

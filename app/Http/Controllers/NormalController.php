@@ -11,7 +11,13 @@ class NormalController extends Controller
 {
     public function index()
     {
-        return view('.guest.index');
+
+        $jadwalIbadah  = JadwalIbadah::paginate(20);
+        $tingg  = Ting::paginate(20);
+        return view('.guest.index', [
+            'jadwalIbadah' => $jadwalIbadah,
+            'ting' => $tingg
+        ]);
     }
 
     public function jadwalIbadah()
@@ -20,12 +26,12 @@ class NormalController extends Controller
         $tingg  = Ting::paginate(20);
         return view('.guest.index', [
             'jadwalIbadah' => $jadwalIbadah,
-            'ting'=>$tingg
+            'ting' => $tingg
         ]);
-        // ['ting'=>$tingg]);
-        }
+    }
 
-    public function indexparhalado() {
+    public function indexparhalado()
+    {
         $parhalado = Parhalado::paginate(12);
         return view('guest.tentang.parhalado', [
             'parhalados' => $parhalado
@@ -35,13 +41,13 @@ class NormalController extends Controller
     public function indexting()
     {
         $ting  = Ting::paginate(20);
-        return view('.guest.tentang.tingting',['ting'=>$ting]);
+        return view('.guest.tentang.tingting', ['ting' => $ting]);
     }
 
     public function indexjadwalIbadah()
     {
         $jadwalIbadah  = JadwalIbadah::paginate(20);
-        return view('.guest.tentang.jadwalIbadah', ['jadwalIbadah' => $jadwalIbadah ]);
+        return view('.guest.tentang.jadwalIbadah', ['jadwalIbadah' => $jadwalIbadah]);
     }
 
     //KOINONIA
@@ -64,7 +70,7 @@ class NormalController extends Controller
     {
         return view('.guest.koinonia.parompuan');
     }
-    
+
     public function indexpunguanama()
     {
         return view('.guest.koinonia.punguanama');
@@ -97,7 +103,7 @@ class NormalController extends Controller
     {
         return view('.guest.diakonia.masyarakat');
     }
-   
+
     public function indexkesehatan()
     {
         return view('.guest.diakonia.kesehatan');
@@ -107,6 +113,4 @@ class NormalController extends Controller
     {
         return view('.guest.diakonia.pendidikan');
     }
-
-    
 }
