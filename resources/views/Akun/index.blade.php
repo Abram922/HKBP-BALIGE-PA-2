@@ -35,9 +35,8 @@
                             </tr>
                             </tr>
                         </thead>
-
                         <tbody>
-                            @foreach($user->skip(1) as $account)
+                            @foreach($user as $account)
                             <tr>
                                 <td>{{$account->id}}</td>
                                 <td>{{$account->email}}</td>
@@ -50,10 +49,8 @@
 
                                         @csrf
                                         @method('DELETE')
-
                                         <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data?')"><i class="bi bi-trash3-fill"></i></button>
                                     </form>
-
                                 </td>
                             </tr>
                             @endforeach
@@ -66,7 +63,5 @@
         </div>
 
     </div>
-    <!-- /.container-fluid -->
-
 </div>
 @endsection

@@ -27,7 +27,11 @@
             </li>
         </ul>
 
+        <br>
+
+
     </div>
+
     <div class="col-md-7 col-lg-8">
 
         <form action="/buktipembayaran/{{$aula->id}}" method="POST" enctype="multipart/form-data">
@@ -81,10 +85,14 @@
         </div>
         @enderror
         <br>
-
-        <div class="col-mb-3 mr-auto" style="margin-right : 20px; float:right">
+        <div class="col-mb-3 mr-auto" style="margin-right : 20px; float:center">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
+        <br>
+        <img height="200" src=" /bukti_pembayaran/{{$aula->bukti_pembayaran}}">
+
+        <br>
+
 
         </form>
     </span>
@@ -93,5 +101,6 @@
 
     </ul>
 </div>
+<br>
 
 @endsection

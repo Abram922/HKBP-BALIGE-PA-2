@@ -64,6 +64,7 @@ use App\Http\Controllers\Pendeta\PendetaSosialController;
 //GUEST
 Route::get('/', [NormalController::class, 'index']);
 Route::resource('guestberita', GuestBeritaController::class);
+Route::get('/gberita', [GuestBeritaController::class, 'index']);
 Route::get('/author/{user}', [GuestBeritaController::class, 'authorpost']);
 Route::get('/guestshowberita/{guestberita}', [GuestBeritaController::class, 'show']);
 Route::resource('guestaula', AulaGuestController::class);

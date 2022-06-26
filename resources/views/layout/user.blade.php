@@ -15,8 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- Bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
@@ -32,19 +31,19 @@
 
     {{-- update --}}
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-		
-        <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}"> 
-  
-        <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}"> 
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {{-- end-update --}}
 
 </head>
 
 <body>
     {{-- main.blade --}}
-    {{-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    {{-- <nav class="navbar navbar-expand-lg " style="background-color: #e3f2fd;">
         <div class=" container">
             <a class="navbar-brand">
                 <img src="/images/logohkbp.png" width="160" height="100" alt="" margin-left="100px">
@@ -96,34 +95,33 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('guestberita.index') }}">Berita</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Aula
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="{{ route('guestaula.index') }}">Booking</a></li>
-                            <li><a class="dropdown-item" href="/login">History Pemesanan</a></li>
-                        </ul>
-                    </li>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Aula
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="{{ route('guestaula.index') }}">Booking</a></li>
+            <li><a class="dropdown-item" href="/login">History Pemesanan</a></li>
+        </ul>
+    </li>
 
-                </ul>
-                <ul class="navbar-nav ">
-                    <li class="nav-item">
-                        <a class="nav-item margin-left" href="\login"><i class="bi bi-box-arrow-in-right"></i> Login</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+    </ul>
+    <ul class="navbar-nav ">
+        <li class="nav-item">
+            <a class="nav-item margin-left" href="\login"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+        </li>
+    </ul>
+    </div>
+    </div>
     </nav> --}}
     {{-- end nav --}}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
+        <div class=" container">
             <a class="navbar-brand" href="#">
                 <img src="/images/logohkbp.png" width="160" height="100" alt="" margin-left="100px">
             </a>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbarNav" style="font-weight:bold; color:black; ">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="/dash_user">Beranda</a>
@@ -168,8 +166,7 @@
                         <a class="nav-link" href="{{ route('userberita.index') }}">Berita</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Aula
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -180,8 +177,7 @@
                 </ul>
                 <ul class="navbar-nav ">
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             <strong>Welcome {{ Auth::user()->name }}</strong>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -197,18 +193,15 @@
             </div>
         </div>
     </nav>
-    
-        @yield('container')
+
+    @yield('container')
     <div class="container">
         @yield('container2')
         @yield('container3')
     </div>
 
     {{-- map --}}
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4127.100027086587!2d99.06506558946438!3d2.3313199338620683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x302e045d386d733f%3A0xf231bb4016871485!2sHKBP%20Balige!5e0!3m2!1sid!2sid!4v1655562911163!5m2!1sid!2sid"
-        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4127.100027086587!2d99.06506558946438!3d2.3313199338620683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x302e045d386d733f%3A0xf231bb4016871485!2sHKBP%20Balige!5e0!3m2!1sid!2sid!4v1655562911163!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     {{-- end-map --}}
 
     <!-- Remove the container if you want to extend the Footer to full width. -->
@@ -226,21 +219,13 @@
                         <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
 
                         <!-- instagram -->
-                        <a class="btn btn-primary btn-floating m-1" style="background-color: #5D1A77" href="#!"
-                            role="button"><i class="bi bi-instagram"></i></a>
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #5D1A77" href="https://www.instagram.com/naposo_balige/" role="button"><i class="bi bi-instagram"></i></a>
 
                         <!-- facebook -->
-                        <a class="btn btn-primary btn-floating m-1" style="background-color: #5D1A77" href="#!"
-                            role="button"><i class="bi bi-facebook"></i></i></a>
-
-                        <!-- twitter -->
-                        {{-- <a class="btn btn-primary btn-floating m-1" style="background-color: #5D1A77" href="#!"
-                            role="button"><i class="bi bi-twitter"></i></a> --}}
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #5D1A77" href="https://web.facebook.com/groups/742906379696112" role="button"><i class="bi bi-facebook"></i></i></a>
 
                         <!-- Youtube -->
-                        <a class="btn btn-primary btn-floating m-1" style="background-color: #5D1A77" href="#!"
-                            role="button"><i class="bi bi-youtube"></i></a>
-
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #5D1A77" href="https://www.youtube.com/channel/UCbe4oAgQ3l2z1xvbb4ifUWQ" role="button"><i class="bi bi-youtube"></i></a>
 
                     </div>
 
@@ -279,11 +264,10 @@
 
                     <!-- Grid column -->
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                        <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Kontak</h6>
                         <p><i class="fas fa-home mr-3"></i> Jl.HKBP Balige</p>
-                        <p><i class="fas fa-envelope mr-3"></i> hkbpbalige@gmail.com</p>
-                        <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                        {{-- <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p> --}}
+                        <p><i class="fas fa-envelope mr-3"></i> hkbpbalige85@gmail.com</p>
+                        <p><i class="fas fa-phone mr-3"></i>087896721783</p>
                     </div>
                     <!-- Grid column -->
                     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
@@ -313,8 +297,7 @@
     {{-- </div> --}}
     <!-- End of .container -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
 
     {{-- font-awesome --}}

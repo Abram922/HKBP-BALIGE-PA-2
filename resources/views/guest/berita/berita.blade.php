@@ -4,10 +4,10 @@
 
 <div class="row justify-content-center mb-3 ">
     <div class="col-md-6">
-        <form action="/berita">
+        <form action="/gberita">
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2" name="search" id="name">
-                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+                <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" name="search" id="name">
+                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Cari</button>
             </div>
         </form>
 
@@ -50,21 +50,25 @@
 
 
 @foreach($guestberita->skip(1) as $guestberitas)
-<div class="card" style="max-width: 1100px;">
-    <div class="row no-gutters">
-        <div class="col-md-4">
-            <img src="/image/{{ $guestberitas->image }}" class="card-img" alt="..." width="350">
-        </div>
-        <div class="col-md-6">
-            <div class="card-body">
-                <h4>{{$guestberitas -> title}}</h4>
-                <p class="card-title">Author <a href="/author/{{$guestberitas->user->id}}">{{$guestberitas->user->name}} </a>{{ $guestberitas->created_at->diffForHumans()}}</p>
-                <p class="card-text">{{$guestberitas -> excerpt}}</p>
-                <a href="/guestshowberita/{{$guestberitas->id}}">Baca Selengkapnya</a>
+<div class="container">
+    <div class="card" style="max-width: 1100px;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="/image/{{ $guestberitas->image }}" class="card-img" alt="..." width="350">
+            </div>
+            <div class="col-md-6">
+                <div class="card-body">
+                    <h4>{{$guestberitas -> title}}</h4>
+                    <p class="card-title">Author <a href="/author/{{$guestberitas->user->id}}">{{$guestberitas->user->name}} </a>{{ $guestberitas->created_at->diffForHumans()}}</p>
+                    <p class="card-text">{{$guestberitas -> excerpt}}</p>
+                    <a href="/guestshowberita/{{$guestberitas->id}}">Baca Selengkapnya</a>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+
 <br><br>
 
 @endforeach

@@ -57,8 +57,8 @@
                 <form class="login100-form validate-form p-b-33 p-t-5" action="/daftar" method="post">
                     @csrf
                     <div class="wrap-input100 validate-input" data-validate="Name">
-                        <input class="input100" type="text" name="name" id="name" placeholder="Name" autofocus required value="{{ old('name')}}">
-                        <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                        <input class="input100" type="text" name="name" id="name" placeholder="Nama Lengkap" autofocus required value="{{ old('name')}}">
+                        <span class="focus-input100"></span>
                         @error('name')
                         <div class="invalid-feedback">
                             {{$message}}
@@ -67,8 +67,8 @@
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Enter username">
-                        <input class="input100" type="text" name="username" id="username" placeholder="User Name" autofocus required value="{{ old('username')}}">
-                        <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                        <input class="input100" type="text" name="username" id="username" placeholder="Username" autofocus required value="{{ old('username')}}">
+                        <span class="focus-input100"></span>
                         @error('username')
                         <div class="invalid-feedback">
                             {{$message}}
@@ -78,7 +78,7 @@
 
                     <div class="wrap-input100 validate-input" data-validate="E-mail">
                         <input class="input100" type="text" name="email" id="email" placeholder="E-mail" autofocus required value="{{ old('email')}}">
-                        <span class="focus-input100" data-placeholder="&#xe83c;"></span>
+                        <span class="focus-input100"></span>
                         @error('email')
                         <div class="invalid-feedback">
                             {{$message}}
@@ -88,7 +88,7 @@
 
                     <div class="wrap-input100 validate-input" data-validate="Nomor Telepon">
                         <input class="input100" type="text" name="phoneno" id="phoneno" placeholder="Nomor Telepon" autofocus required value="{{ old('phoneno')}}">
-                        <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                        <span class="focus-input100"></span>
                         @error('phoneno')
                         <div class="invalid-feedback">
                             {{$message}}
@@ -99,7 +99,7 @@
 
                     <div class="wrap-input100 validate-input" data-validate="Enter password">
                         <input class="input100" type="password" name="password" id="password" placeholder="Password" autofocus required>
-                        <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                        <span class="focus-input100"></span>
                     </div>
 
                     <div class="container-login100-form-btn m-t-32">
