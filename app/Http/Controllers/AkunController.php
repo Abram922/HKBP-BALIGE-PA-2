@@ -17,7 +17,7 @@ class AkunController extends Controller
     public function index()
     {
         $role = Role::all();
-        return view('.akun.index', [
+        return view('.Akun.index', [
             'user' => User::where('id', '>', 1)->latest()->paginate(8)->withQueryString(),
             compact('role')
         ]);

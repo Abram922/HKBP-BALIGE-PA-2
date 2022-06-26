@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Laravel</title>
@@ -48,6 +49,9 @@
             <a class="navbar-brand" href="#">
                 <img src="/images/logohkbp.png" width="160" height="100" alt="" margin-left="100px">
             </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav" style="font-weight:bold; color:black; ">
                 <ul class="navbar-nav  ms-auto">
                     <li class="nav-item">
@@ -121,7 +125,7 @@
 
     @yield('container4')
 
-    
+
     {{-- footer --}}
     <footer class="text-center text-lg-start text-white mt-5" style="background-color: #5D1A77;   position:relative; width:100%; bottom:0; ">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4127.100027086587!2d99.06506558946438!3d2.3313199338620683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x302e045d386d733f%3A0xf231bb4016871485!2sHKBP%20Balige!5e0!3m2!1sid!2sid!4v1655562911163!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -154,7 +158,7 @@
 
                     <!-- Grid column -->
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                        <h6 class="text-uppercase mb-4 font-weight-bold">information link</h6>
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Information Link</h6>
                         <p>
                             <a class="text-white" href="/">Beranda</a>
                         </p>
@@ -191,7 +195,7 @@
                     <!-- Grid column -->
                     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                         <h6 class="text-uppercase mb-4 font-weight-bold">
-                            Develop by
+                            Tim Pengembang
                         </h6>
                         <p>
                             PA-2 KELOMPOK 12

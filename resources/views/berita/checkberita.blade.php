@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -33,11 +32,13 @@
 </head>
 
 <body>
-    <a href="{{ route('beritas.index')}}" class="badge bg-info"><i class="bi bi-arrow-left"></i></a>
+
 
     <div class="container">
+
         <div class="row my-5">
             <div class="col-lg-">
+                <a href="{{ route('beritas.index')}}" class="btn btn-primary" style="float: right;">Kembali</a>
                 <h5 class="my-3">{{$berita->title}}</h5>
 
                 @if($berita -> image)

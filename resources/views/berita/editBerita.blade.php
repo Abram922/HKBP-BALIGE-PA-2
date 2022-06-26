@@ -19,7 +19,7 @@
                     <h2>EDIT BERITA</h2>
                 </div>
                 <div class="pull-right">
-                    <a class="btn btn-warning" href="{{ route('beritas.index') }}"> Back</a>
+                    <a class="btn btn-primary" href="{{ route('beritas.index') }}">Kembali</a>
                 </div>
             </div>
         </div>

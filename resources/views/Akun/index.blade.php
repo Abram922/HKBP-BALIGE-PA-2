@@ -49,12 +49,9 @@
 
                                         @csrf
                                         @method('DELETE')
-<<<<<<< Updated upstream
-                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data?')"><i class="bi bi-trash3-fill"></i></button>
-=======
 
                                         <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data?')">Hapus</button>
->>>>>>> Stashed changes
+
                                     </form>
                                 </td>
                             </tr>

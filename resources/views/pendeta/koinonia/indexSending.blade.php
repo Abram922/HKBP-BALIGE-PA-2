@@ -11,7 +11,7 @@
       </li>
       <li class="active">Marturia</li>
 
-      <li class="active">Sending</li>
+      <li class="active">Zending</li>
     </ol>
   </div><br>
   <div class="panel panel-default">
