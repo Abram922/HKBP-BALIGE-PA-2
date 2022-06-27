@@ -13,7 +13,7 @@ class PendetaParompuanController extends Controller
      */
     public function index()
     {
-        $pendetaparompuan  = Parompuan::paginate(20);
+        $pendetaparompuan  = Parompuan::paginate(5);
         return view('pendeta.marturia.indexParompuan',['pendetaparompuan'=>$pendetaparompuan]);
     }
 

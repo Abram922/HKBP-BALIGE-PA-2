@@ -14,7 +14,7 @@ class PendetaSendingController extends Controller
      */
     public function index()
     {
-        $pendetasending  = Sending::paginate(20);
+        $pendetasending  = Sending::paginate(5);
         return view('pendeta.koinonia.indexSending',['pendetasending'=>$pendetasending]);
     }
 

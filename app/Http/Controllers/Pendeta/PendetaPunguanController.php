@@ -14,7 +14,7 @@ class PendetaPunguanController extends Controller
      */
     public function index()
     {
-        $pendetapunguan  = Punguan::paginate(20);
+        $pendetapunguan  = Punguan::paginate(5);
         return view('pendeta.marturia.indexPunguan',['pendetapunguan'=>$pendetapunguan]);
     }
 

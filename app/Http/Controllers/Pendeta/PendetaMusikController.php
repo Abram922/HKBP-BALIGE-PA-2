@@ -10,7 +10,7 @@ class PendetaMusikController extends Controller
 {
     public function index()
     {
-        $pendetamusik  = Musik::paginate(20);
+        $pendetamusik  = Musik::paginate(5);
         return view('.pendeta.koinonia.indexMusik',['pendetamusik'=>$pendetamusik]);
     }
 

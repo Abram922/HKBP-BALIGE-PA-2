@@ -15,7 +15,7 @@ class PendetaSekolahMingguController extends Controller
      */
     public function index()
     {
-        $pendetasekolah  = Sekolah::paginate(20);
+        $pendetasekolah  = Sekolah::paginate(5);
         return view('.pendeta.marturia.indexSekolah', ['pendetasekolah' => $pendetasekolah]);
     }
 

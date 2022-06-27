@@ -15,7 +15,7 @@ class PendetaSosialController extends Controller
      */
     public function index()
     {
-        $pendetasosial  = Sosial::paginate(20);
+        $pendetasosial  = Sosial::paginate(5);
         return view('..pendeta.diakonia.indexSosial', ['pendetasosial' => $pendetasosial]);
     }
 

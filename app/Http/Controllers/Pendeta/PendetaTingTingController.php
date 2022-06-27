@@ -15,7 +15,7 @@ class PendetaTingTingController extends Controller
      */
     public function index()
     {
-        $PendetaTingting  = Ting::paginate(20);
+        $PendetaTingting  = Ting::paginate(5);
         return view('.pendeta.tentang.indexTing', ['PendetaTingting' => $PendetaTingting]);
     }
 

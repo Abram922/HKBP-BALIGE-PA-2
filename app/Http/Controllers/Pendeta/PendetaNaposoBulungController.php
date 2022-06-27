@@ -15,7 +15,7 @@ class PendetaNaposoBulungController extends Controller
      */
     public function index()
     {
-        $pendetanaposo  = Naposo::paginate(20);
+        $pendetanaposo  = Naposo::paginate(5);
         return view('..pendeta.marturia.indexNaposo', ['pendetanaposo' => $pendetanaposo]);
     }
 

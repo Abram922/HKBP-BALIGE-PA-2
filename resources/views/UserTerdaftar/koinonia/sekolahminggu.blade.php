@@ -26,12 +26,10 @@
                             <div class="col-md-4">
                                 <img src="/image/{{ $sekolahs->image }}" class="card-img" alt="..." style="height:367px; width:550px">
                             </div>
-                            <div class="col-md-6">
                                 <br>
                                 
-                                <h6 class="text" style="font-style=poppins;">{!! $sekolahs->detail !!}</h6>
+                                <p class="text">{!! $sekolahs->detail !!}</p>
 
-                            </div>
                         </div>
                     </div>
                     <br><br>

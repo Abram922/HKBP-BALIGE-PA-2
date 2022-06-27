@@ -15,7 +15,7 @@ class PendetaKesehatanController extends Controller
      */
     public function index()
     {   
-        $pendetakesehatan  = Kesehatan::paginate(20);
+        $pendetakesehatan  = Kesehatan::paginate(5);
         return view('.pendeta.diakonia.indexKesehatan',['pendetakesehatan'=>$pendetakesehatan]);
     }
 

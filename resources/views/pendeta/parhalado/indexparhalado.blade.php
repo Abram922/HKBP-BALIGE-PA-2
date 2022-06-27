@@ -62,6 +62,9 @@
         </tr>
         @endforeach
     </table>
+
+    {!! $PendetaParhalado->links() !!}
+
   </div>
 
 </div>

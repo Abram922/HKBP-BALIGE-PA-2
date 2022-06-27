@@ -9,38 +9,36 @@
 
 {{-- newest --}}
 @section('container')
-    <br>
+<br>
+<div class="container">
+    <h2 style="color:#711A75;"><b>Musik</b></h2>
+    <hr>
+
+
+    {{-- newest --}}
     <div class="container">
-        <h2 style="color:#711A75;"><b>Musik</b></h2>
-        <hr>
-
-
-       {{-- newest --}}
-       <div class="container">
         <div class="row mb-5">
             @foreach ($musik as $musiks)
-                <div class="article">
-                    <div class="no-gutters">
-                        {{-- <h4 style="color:#711A75;"><b>{{ $musiks->judul }}</b></h4> --}}
-                        <h4>{{$musiks->name}}</h4>
-                        <div class="col-md-4">
-                            <img src="/image/{{ $musiks->image }}" class="card-img" alt="..." style="height:367px; width:550px">
-                        </div>
-                        <div class="col-md-6">
-                            <br>
-                            
-                            <h6 class="text" style="font-style=poppins;">{!! $musiks->detail !!}</h6>
-
-                        </div>
+            <div class="article">
+                <div class="no-gutters">
+                    {{-- <h4 style="color:#711A75;"><b>{{ $musiks->judul }}</b></h4> --}}
+                    <h4>{{$musiks->name}}</h4>
+                    <div class="col-md-4">
+                        <img src="/image/{{ $musiks->image }}" class="card-img" alt="..." style="height:367px; width:550px">
                     </div>
+                    <br>
+
+                    <p class="text">{!! $musiks->detail !!}</p>
+
                 </div>
-                <br><br>
-                <hr>
+            </div>
+            <br><br>
+            <hr>
             @endforeach
             {!! $musik->links() !!}
         </div>
     </div>
     {{-- end newest --}}
-    </div>
-    </div>
+</div>
+</div>
 @endsection

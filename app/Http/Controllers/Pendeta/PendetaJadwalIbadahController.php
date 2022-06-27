@@ -11,7 +11,7 @@ class PendetaJadwalIbadahController extends Controller
 {
     public function index()
     {
-        $jadwalIbadah  = JadwalIbadah::paginate(20);
+        $jadwalIbadah  = JadwalIbadah::paginate(5);
         return view('pendeta.tentang.indexJadwal', [
             'jadwalIbadah' => $jadwalIbadah
         ]);

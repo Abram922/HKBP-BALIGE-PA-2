@@ -15,7 +15,7 @@ class PendetaPendidikanController extends Controller
      */
     public function index()
     {
-        $pendetapendidikan  = Pendidikan::paginate(20);
+        $pendetapendidikan  = Pendidikan::paginate(5);
         return view('.pendeta.diakonia.indexPendidikan', ['pendetapendidikan' => $pendetapendidikan]);
     }
 

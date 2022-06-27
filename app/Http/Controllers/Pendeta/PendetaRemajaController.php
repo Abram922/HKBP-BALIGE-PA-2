@@ -15,7 +15,7 @@ class PendetaRemajaController extends Controller
      */
     public function index()
     {
-        $pendetaremaja  = Remaja::paginate(20);
+        $pendetaremaja  = Remaja::paginate(5);
         return view('pendeta.marturia.indexRemaja', ['pendetaremaja' => $pendetaremaja]);
     }
 

@@ -20,15 +20,15 @@
                 <div class="no-gutters">
                     {{-- <h4 style="color:#711A75;"><b>{{ $remajas->judul }}</b></h4> --}}
                     <h4>{{$remajas->name}}</h4>
-                    <div class="col-md-4">
-                        <img src="/image/{{ $remajas->image }}" class="card-img" alt="..." style="height:367px; width:550px">
+                    <div class="mb-5">
+                        <img src="/image/{{ $remajas->image }}" class="card-img" alt="..." style="height:467px; width:700px">
                     </div>
-                    <div class="col-md-6">
-                        <br>
+                    <!-- <div class="col-md-6"> -->
+                    <br>
 
-                        <h6 class="text" style="font-style=poppins;">{!! $remajas->detail !!}</h6>
+                    <p class="text ">{!! $remajas->detail !!}</p>
 
-                    </div>
+                    <!-- </div> -->
                 </div>
             </div>
             <br><br>

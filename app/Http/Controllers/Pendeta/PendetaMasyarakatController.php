@@ -15,7 +15,7 @@ class PendetaMasyarakatController extends Controller
      */
     public function index()
     {
-        $pendetamasyarakat  = Masyarakat::paginate(20);
+        $pendetamasyarakat  = Masyarakat::paginate(5);
         return view('.pendeta.diakonia.indexMasyarakat', ['pendetamasyarakat' => $pendetamasyarakat]);
     }
 

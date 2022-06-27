@@ -14,7 +14,7 @@ class PendetaLansiaController extends Controller
      */
     public function index()
     {
-        $pendetalanjut  = Lanjut::paginate(20);
+        $pendetalanjut  = Lanjut::paginate(5);
         return view('pendeta.marturia.indexLan',['pendetalanjut'=>$pendetalanjut]);
     }
 

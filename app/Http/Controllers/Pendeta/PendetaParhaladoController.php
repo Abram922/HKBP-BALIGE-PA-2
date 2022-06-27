@@ -16,7 +16,7 @@ class PendetaParhaladoController extends Controller
      */
     public function index()
     {
-        $PendetaParhalado = Parhalado::paginate(20);
+        $PendetaParhalado = Parhalado::paginate(4);
         return view('/pendeta.parhalado.indexparhalado', [
             'PendetaParhalado' => $PendetaParhalado
         ]);
