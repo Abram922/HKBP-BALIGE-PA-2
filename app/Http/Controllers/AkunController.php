@@ -99,7 +99,7 @@ class AkunController extends Controller
     public function edit(User $user)
     {
         $role = Role::all();
-        return view('akun.updatelevel', compact('role', 'user'));
+        return view('Akun.updatelevel', compact('role', 'user'));
     }
 
     /**
@@ -119,6 +119,6 @@ class AkunController extends Controller
     public function editprofile(User $user)
     {
         $role = Role::all();
-        return view('akun.profile', compact('role', 'user'));
+        return view('Akun.profile', compact('role', 'user'));
     }
 }
