@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Guest;
 
 use Illuminate\Http\Request;
 use App\Models\Remaja;
-use App\Models\jadwalIbadah;
+use App\Models\JadwalIbadah;
 use App\Models\Sekolah;
 use App\Models\Parompuan;
 use App\Models\Naposo;
