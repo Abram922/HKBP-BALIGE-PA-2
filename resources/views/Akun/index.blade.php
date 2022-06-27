@@ -31,7 +31,7 @@
                                 <th scope="col">ID</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Level</th>
-                                <th colspan="2" class="text-center" scope="col">Action</th>
+                                <th colspan="2" class="text-center" scope="col">Aksi</th>
                             </tr>
                             </tr>
                         </thead>

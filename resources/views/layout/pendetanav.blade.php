@@ -223,7 +223,7 @@
                                     <h1 class="wow fadeIn" style="text-align:center">Sistem Informasi Gereja<br><strong>HKBP BALIGE</strong></h1>
                                     <div class="description wow fadeInLeft">
                                         <h2 style="text-align:center">
-                                            Hasil Kerjasama HKBP BALIGE - Del Institue of Technology (IT DEL)
+                                            Hasil Kerjasama HKBP BALIGE - Institut Teknologi Del (IT DEL)
                                         </h2>
                                     </div>
                                 </div>

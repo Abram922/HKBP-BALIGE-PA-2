@@ -3,11 +3,12 @@
 @section('content')
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="nav-link ">Tambah Berita</h1>
+    </div>
+
     <div class="row">
 
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="nav-link ">Tambah Berita</h1>
-        </div>
 
 
         <form action="{{ route('beritas.store') }}" method="POST" enctype="multipart/form-data">
@@ -40,7 +41,7 @@
 
 
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
         </form>
 
         <script src="https://cdn.ckeditor.com/4.18.0/standard/ckeditor.js"></script>
@@ -48,9 +49,6 @@
 </div>
 
 
-
-@endsection
-@section('ckeditor')
 <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
 <script>
     ClassicEditor
@@ -59,4 +57,7 @@
             console.error(error);
         });
 </script>
+@endsection
+@section('ckeditor')
+
 @endsection

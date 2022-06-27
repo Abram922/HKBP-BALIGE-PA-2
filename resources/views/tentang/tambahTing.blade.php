@@ -38,7 +38,7 @@
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <strong>Image:</strong>
+                                <strong>File:</strong>
                                 <input type="file" name="image" class="form-control" placeholder="image">
                             </div>
                         </div>
@@ -50,7 +50,7 @@
 
                 </form>
 
-				<a href="/ting">
+                <a href="/ting">
                     <button class="btn btn-primary" style="float: right">Kembali</button>
                 </a>
             </div>

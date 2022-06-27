@@ -8,10 +8,6 @@
 <meta name="author" content="">
 
 
-<!-- Custom fonts for this template-->
-
-
-<title>Edit </title>
 <div class="container">
 
     <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
@@ -67,7 +63,7 @@
 
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
             </div>
         </form>
     </div>

@@ -165,8 +165,8 @@
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <p>Selamat Datang BPH HKBP Balige,</p>
+                        <li class="nav-item dropdown no-arrow mx-2 my-4 ">
+                            Selamat Datang BPH HKBP Balige
                         </li>
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
@@ -227,7 +227,7 @@
                                     <h1 class="wow fadeIn" style="text-align:center">Sistem Informasi Gereja<br><strong>HKBP BALIGE</strong></h1>
                                     <div class="description wow fadeInLeft">
                                         <h2 style="text-align:center">
-                                            Hasil Kerjasama HKBP BALIGE - Del Institue of Technology (IT DEL)
+                                            Hasil Kerjasama HKBP BALIGE - Institut Teknologi Del (IT DEL)
                                         </h2>
                                     </div>
                                 </div>
@@ -265,14 +265,14 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
             <a class="btn btn-primary" href="login.html">Logout</a>
         </div>
 
 
-    </div>
+    </div> -->
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>

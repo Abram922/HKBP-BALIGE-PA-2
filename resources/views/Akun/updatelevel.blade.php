@@ -62,7 +62,7 @@
         </div>
         <br>
         <div class="col-3 d-flex justify-content-end">
-            <button class="w-100 btn btn-primary btn-lg " type=" submit">Update</button>
+            <button class="w-100 btn btn-primary btn-lg " type=" submit">Ubah</button>
         </div>
 </div>
 

@@ -83,7 +83,7 @@
                     </div>
 
                     <div class="form-group mt-2 ">
-                        <button type="submit" class="btn btn-success">Kirim</button>
+                        <button type="submit" class="btn btn-success">Simpan</button>
                         <button class="btn btn-primary " href="{{ route('parhalados.index') }}" style="float: right">Kembali</button>
                     </div>
             </div>
