@@ -27,12 +27,10 @@
                             <div class="col-md-4">
                                 <img src="/image/{{ $punguans->image }}" class="card-img" alt="..." style="height:367px; width:550px">
                             </div>
-                            <div class="col-md-6">
                                 <br>
                                 
-                                <h6 class="text" style="font-style=poppins;">{!! $punguans->detail !!}</h6>
+                                <p class="text" >{!! $punguans->detail !!}</p>
 
-                            </div>
                         </div>
                     </div>
                     <br><br>
@@ -70,11 +68,9 @@
         <div class="col-md-4">
             <img src="/image/{{  $punguans->image }}" class="card-img" alt="..." width="500" >
         </div>
-        <div class="col-md-6">
           <br>
-                <h6 class="text" style="font-style=poppins;">{!!  $punguans -> detail !!}</h6>
+                <p class="text" >{!!  $punguans -> detail !!}</p>
             
-        </div>
     </div>
 </div>
 </div>

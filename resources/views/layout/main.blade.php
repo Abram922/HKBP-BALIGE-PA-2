@@ -137,7 +137,7 @@
                 <div class="row ">
                     <!-- Grid column -->
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                        <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Sosial Media</h6>
 
                         <!-- instagram -->
                         <a class="btn btn-primary btn-floating m-1" style="background-color: #5D1A77" href="https://www.instagram.com/naposo_balige/" role="button"><i class="bi bi-instagram"></i></a>
@@ -158,7 +158,7 @@
 
                     <!-- Grid column -->
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                        <h6 class="text-uppercase mb-4 font-weight-bold">Information Link</h6>
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Akses Cepat</h6>
                         <p>
                             <a class="text-white" href="/">Beranda</a>
                         </p>
