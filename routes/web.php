@@ -14,6 +14,7 @@ use App\Http\Controllers\NaposoController;
 use App\Http\Controllers\ParompuanController;
 use App\Http\Controllers\PunguanController;
 use App\Http\Controllers\PendidikanController;
+use App\Http\Controllers\TanggalController;
 use App\Http\Controllers\LanjutController;
 use App\Http\Controllers\TingController;
 use App\Http\Controllers\AutentikasiController;
@@ -46,7 +47,7 @@ use App\Http\Controllers\Pendeta\PendetaNaposoBulungController;
 use App\Http\Controllers\Pendeta\PendetaRemajaController;
 use App\Http\Controllers\Pendeta\PendetaSekolahMingguController;
 use App\Http\Controllers\Pendeta\PendetaSosialController;
-
+use App\Http\Controllers\Pendeta\PendetaTanggalController;
 
 
 
@@ -87,7 +88,8 @@ Route::get('/sendingg', [NormalController::class, 'indexsending']);
 // PARHALADO FRONT
 Route::get('/parhalado', [NormalController::class, 'indexparhalado']);
 
-
+// PARHALADO FRONT
+Route::get('/tanggall', [NormalController::class, 'indextanggal']);
 
 //MARTURIA REMAJA
 Route::resource('remaja', RemajaController::class);
@@ -106,6 +108,8 @@ Route::resource('punguan', PunguanController::class);
 
 //MARTURIA LANSIA
 Route::resource('lanjut', LanjutController::class);
+
+Route::resource('tanggalpenting', TanggalController::class);
 
 
 //TENTANG JADWAL IBADAH
@@ -235,6 +239,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('pendetapunguan', PendetaPunguanController::class);
         //KOINONIA PAROMPUAN
         Route::resource('pendetaparompuan', PendetaParompuanController::class);
+
+        Route::resource('pendetatanggal', PendetaTanggalController::class);
     });
     Route::group(['middleware' => ['Auth_Check:2']], function () {
         Route::get('/dash_bph', [AutentikasiController::class, 'dash_b']);
@@ -256,6 +262,8 @@ Route::group(['middleware' => ['auth']], function () {
         //KOINONIA MUSIK
         Route::resource('musik', MusikController::class);
 
+        Route::resource('tanggal', TanggalController::class);
+
         Route::resource('ting', TingController::class);
         //Aula
         Route::resource('adminaula', AdminAulaController::class);
@@ -275,6 +283,7 @@ Route::group(['middleware' => ['auth']], function () {
         // akun
         //GUEST TENTANG
         Route::get('/usertingting', [UserGuestController::class, 'indexting']);
+        Route::get('/usertanggal', [UserGuestController::class, 'indextanggal']);
         Route::get('/userjadwalIbadah', [UserGuestController::class, 'indexjadwalIbadah']);
 
         //GUEST MARTURIA

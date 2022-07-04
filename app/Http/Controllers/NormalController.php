@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 use App\Models\Ting;
 use App\Models\JadwalIbadah;
 use App\Models\Parhalado;
+use App\Models\Tanggal;
 
 class NormalController extends Controller
 {
     public function index()
     {
-
         $jadwalIbadah  = JadwalIbadah::paginate(20);
         $tingg  = Ting::paginate(20);
         return view('.guest.index', [
@@ -49,6 +49,13 @@ class NormalController extends Controller
         $jadwalIbadah  = JadwalIbadah::paginate(20);
         return view('.guest.tentang.jadwalIbadah', ['jadwalIbadah' => $jadwalIbadah]);
     }
+
+    public function indextanggal()
+    {
+        $tanggal = Tanggal::paginate(20);
+        return view('.guest.tentang.tanggal', ['tanggal' => $tanggal]);
+    }
+
 
     //KOINONIA
     public function indexremaja()

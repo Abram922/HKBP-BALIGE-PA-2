@@ -17,6 +17,7 @@ use App\Models\Masyarakat;
 use App\Models\Ting;
 use App\Models\Kesehatan;
 use App\Models\Pendidikan;
+use App\Models\Tanggal;
 use App\Http\Controllers\Controller;
 
 class UserGuestController extends Controller
@@ -60,6 +61,12 @@ class UserGuestController extends Controller
     {
         $ting  = Ting::paginate(20);
         return view('.UserTerdaftar.tentang.tingting', ['ting' => $ting]);
+    }
+
+    public function indextanggal()
+    {
+        $tanggal= Tanggal::paginate(20);
+        return view('.UserTerdaftar.tentang.tanggal', ['tanggal' => $tanggal]);
     }
 
     public function indexjadwalIbadah()

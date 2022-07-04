@@ -63,6 +63,7 @@
                         <ul class="dropdown-menu">
                             <li> <a class="dropdown-item" href="/parhalado"> Parhalado </a></li>
                             <li><a class="dropdown-item" href="/tingting"> Tingting </a></li>
+                           
                             <li><a class="dropdown-item" href="/jadwalIbadah"> Jadwal Ibadah </a></li>
                         </ul>
                     </li>
@@ -135,6 +136,7 @@
                         <ul class="dropdown-menu">
                             <li> <a class="dropdown-item" href="/parhaladologin"> Parhalado </a></li>
                             <li><a class="dropdown-item" href="/usertingting"> Tingting </a></li>
+                            <li><a class="dropdown-item" href="/usertanggal"> Tanggal Penting </a></li>
                             <li><a class="dropdown-item" href="/userjadwalIbadah"> Jadwal Ibadah </a></li>
                         </ul>
                     </li>

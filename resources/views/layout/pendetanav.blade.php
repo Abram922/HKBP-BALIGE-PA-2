@@ -69,6 +69,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{ route('PendetaParhalado.index') }}">Parhalado</a>
                         <a class="collapse-item" href="{{ route('PendetaTingting.index')}}">Tingting</a>
+                        <a class="collapse-item" href="{{ route('pendetatanggal.index')}}">Tanggal Penting</a>
                         <a class="collapse-item" href="/pendetajadwalibadah">Jadwal Ibadah</a>
 
                     </div>
