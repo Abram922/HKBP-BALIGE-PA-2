@@ -2,11 +2,15 @@
 
 namespace Database\Seeders;
 
-use App\Models\Berita;
 use App\Models\Role;
 use App\Models\User;
-
+use App\Models\Berita;
+use App\Models\gedung;
+use App\Models\StatusPemesanan;
 use Illuminate\Database\Seeder;
+
+use App\Models\metodepembayaran;
+use App\Models\statuspembayaran;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
@@ -34,6 +38,112 @@ class DatabaseSeeder extends Seeder
         foreach ($level as $key => $value) {
             Role::create($value);
         }
+
+        $bayar = [
+            [
+                'kode_metode' => 1,
+                'metodepembayaran' => 'cash'
+            ],
+            [
+                'kode_metode' => 2,
+                'metodepembayaran' => 'credit'
+            ],
+        ];
+        foreach ($bayar as $key => $value) {
+            metodepembayaran::create($value);
+        }
+
+        $status_bayar = [
+            [
+                'status_pembayaran' => 'Belum Mengirim Bukti',
+                'kode_status' => 1
+            ],
+            [
+                'status_pembayaran' => 'Sedang Diperiksa',
+                'kode_status' => 2
+            ],
+            [
+                'status_pembayaran' => 'Lunas',
+                'kode_status' => 3
+            ],
+            [
+                'status_pembayaran' => 'Pembayaran DP Berhasil Lanjutkan Pembayaran Pelunasan',
+                'kode_status' => 4
+            ],
+            [
+                'status_pembayaran' => 'Menunggu Mengirimkan Pelunasan',
+                'kode_status' => 5
+            ],
+            [
+                'status_pembayaran' => 'Menunggu Konfirmasi Pelunasan',
+                'kode_status' => 6
+            ],
+            [
+                'status_pembayaran' => ' Bukti DP Salah, Periksa dan Kirim Kembali!!',
+                'kode_status' => 7
+            ],
+            [
+                'status_pembayaran' => ' Bukti Pelunasan Salah,Periksa dan Kirim Kembali!!',
+                'kode_status' => 8
+            ],
+            [
+                'status_pembayaran' => ' Bukti Pembayaran Salah,Periksa dan Kirim Kembali!!',
+                'kode_status' => 9
+            ],
+            
+            
+        ];
+        foreach ($status_bayar as $key => $value) {
+            statuspembayaran::create($value);
+        }
+        
+        $status_pemesanan = [
+            [
+                'status_pemesanan' => 'New',
+                'kode_status' => 1
+            ],
+            [
+                'status_pemesanan' => 'Approve',
+                'kode_status' => 2
+            ],
+            [
+                'status_pemesanan' => 'Cancel',
+                'kode_status' => 3
+            ],
+            [
+                'status_pemesanan' => 'Lunas',
+                'kode_status' => 4
+            ],
+            [
+                'status_pemesanan' => 'DP',
+                'kode_status' => 5
+            ],
+        ];
+        foreach ($status_pemesanan as $key => $value) {
+            StatusPemesanan::create($value);
+        }
+
+        // $gedung = [
+        //     [
+        //         'Gedung' => 'aula lt 1',
+        //         'Harga_Sewa' => 123,
+        //         'Biaya_Prokes' => 123,
+        //         'Total' =>  246,
+        //         'user_id' => 4
+        //     ],
+        //     [
+        //         'Gedung' => 'gereja bolon',
+        //         'Harga_Sewa' => 123,
+        //         'Biaya_Prokes' => 123,
+        //         'Total' =>  246,
+        //         'user_id' => 4
+        //     ],
+        // ];
+        // foreach ($gedung as $key => $value) {
+        //     gedung::create($value);
+        // }
+
+
 
         $user = [
             [

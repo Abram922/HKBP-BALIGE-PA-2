@@ -16,6 +16,26 @@ class AdminAulaController extends Controller
         ]);
     }
 
+    // public function index()
+    // {
+    //     $adminaula =new  Aula;
+    //     if($adminaula->metode_pembayaran == 1){
+    //         return view('.aula.indexcash', [
+    //         'adminaula' => Aula::latest()->paginate(8)->withQueryString()]);
+    //     }elseif($adminaula->metode_pembayaran == 2) {
+    //         return view('.aula.index', [
+    //             'adminaula' => Aula::latest()->paginate(8)->withQueryString()
+    //         ]);
+    //     }
+    // }
+
+    public function index2()
+    {
+        return view('.aula.index', [
+            'adminaula' => Aula::latest()->paginate(8)->withQueryString()
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -80,20 +100,89 @@ class AdminAulaController extends Controller
         return redirect()->back()->with(['success' => 'Pesanan Dikonfirmasi']);
     }
 
+    // public function approveOrderAdmin($id)
+    // {
+    //     //CARI DATA ORDER BERDASARKAN ID
+    //     $order = Aula::find($id);
+    //     //UBAH STATUSNYA MENJADI 4
+    //     $order->update(['status_id' => 2]);
+    //     //REDIRECT KEMBALI DENGAN MENAMPILKAN ALERT SUCCESS
+    //     return redirect()->back()->with(['success' => 'Pesanan Dikonfirmasi']);
+    // }
     public function approveOrderAdmin($id)
     {
         //CARI DATA ORDER BERDASARKAN ID
         $order = Aula::find($id);
         //UBAH STATUSNYA MENJADI 4
-        $order->update(['status_id' => 2]);
+        if ($order->metode_pembayaran == 1) {
+            $order->update(['status_id' => 2, 'status_pembayaran' => 1]);
+        } elseif ($order->metode_pembayaran == 2) {
+            $order->update(['status_id' => 2, 'status_pembayaran' => 1]);
+        }
         //REDIRECT KEMBALI DENGAN MENAMPILKAN ALERT SUCCESS
         return redirect()->back()->with(['success' => 'Pesanan Dikonfirmasi']);
     }
 
+    public function lunas($id)
+    {
+        //CARI DATA ORDER BERDASARKAN ID
+        $order = Aula::find($id);
+        //UBAH STATUSNYA MENJADI 4
+        $order->update(['status_pembayaran' => 3]);
+        //REDIRECT KEMBALI DENGAN MENAMPILKAN ALERT SUCCESS
+        return redirect()->back()->with(['success' => 'Pesanan Dikonfirmasi']);
+    }
 
+    public function konfirmasipembayaranpertama($id)
+    {
+        //CARI DATA ORDER BERDASARKAN ID
+        $order = Aula::find($id);
+        //UBAH STATUSNYA MENJADI 4
+        $order->update(['status_pembayaran' => 4]);
+        //REDIRECT KEMBALI DENGAN MENAMPILKAN ALERT SUCCESS
+        return redirect()->back()->with(['success' => 'Pesanan Dikonfirmasi']);
+    }
 
+    //metode dp
+    public function tolakbuktipembayaranpertama($id)
+    {
+        //CARI DATA ORDER BERDASARKAN ID
+        $order = Aula::find($id);
+        //UBAH STATUSNYA MENJADI 4
+        $order->update(['status_pembayaran' => 7]);
+        //REDIRECT KEMBALI DENGAN MENAMPILKAN ALERT SUCCESS
+        return redirect()->back()->with(['warning' => 'Bukti Ditolak']);
+    }
 
+    public function approvebuktipembayaranakhir($id)
+    {
+        //CARI DATA ORDER BERDASARKAN ID
+        $order = Aula::find($id);
+        //UBAH STATUSNYA MENJADI 4
+        $order->update(['status_pembayaran' => 3]);
+        //REDIRECT KEMBALI DENGAN MENAMPILKAN ALERT SUCCESS
+        return redirect()->back()->with(['warning' => 'Bukti Ditolak']);
+    }
 
+    public function tolakbuktipembayaranakhir($id)
+    {
+        //CARI DATA ORDER BERDASARKAN ID
+        $order = Aula::find($id);
+        //UBAH STATUSNYA MENJADI 4
+        $order->update(['status_pembayaran' => 8]);
+        //REDIRECT KEMBALI DENGAN MENAMPILKAN ALERT SUCCESS
+        return redirect()->back()->with(['warning' => 'Bukti Ditolak']);
+    }
+
+    public function tolakbuktipembayaran($id)
+    {
+        //CARI DATA ORDER BERDASARKAN ID
+        $order = Aula::find($id);
+        //UBAH STATUSNYA MENJADI 4
+        $order->update(['status_pembayaran' => 9]);
+        //REDIRECT KEMBALI DENGAN MENAMPILKAN ALERT SUCCESS
+        return redirect()->back()->with(['warning' => 'Pesanan Ditolak']);
+    }
 
     /**
      * Remove the specified resource from storage.

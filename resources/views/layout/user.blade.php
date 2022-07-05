@@ -176,7 +176,8 @@
                             Aula
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="{{ route('aula.create') }}">Booking</a></li>
+                            <li><a class="dropdown-item" href="/daftar-gedung">Gedung</a></li>
+                            <!-- <li><a class="dropdown-item" href="{{ route('aula.create') }}">Booking</a></li> -->
                             <li><a class="dropdown-item" href="{{ route('aula.index') }}">History Pemesanan</a></li>
                         </ul>
                     </li>
@@ -184,7 +185,7 @@
                 <ul class="navbar-nav ">
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            <strong>Welcome {{ Auth::user()->name }}</strong>
+                            <strong>Welcome {{ Auth::user()->username }}</strong>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 

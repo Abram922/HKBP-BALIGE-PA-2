@@ -32,6 +32,7 @@ use App\Http\Controllers\TingtingControllerLogin;
 use App\Http\Controllers\UserKoinoniaController;
 use App\Http\Controllers\Guest\UserGuestController;
 use App\Http\Controllers\AfterLoginController;
+use App\Http\Controllers\GedungController;
 use App\Http\Controllers\Pendeta\PendetaJadwalIbadahController;
 use App\Http\Controllers\Pendeta\PendetaParhaladoController;
 use App\Http\Controllers\Pendeta\PendetaTingTingController;
@@ -176,7 +177,7 @@ Route::get('/kesehatann/{kesehatan}', [UserKoinoniaController::class, 'showkeseh
 Route::get('/pendidikann', [UserKoinoniaController::class, 'userpendidikan']);
 Route::get('/pendidikann/{pendidikan}', [UserKoinoniaController::class, 'showpendidikan']);
 
-
+Route::get('/daftar-gedung-guest', [GedungController::class, 'daftargedung2']);
 /*
 
 1 pendeta
@@ -197,6 +198,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/berita-admin/show/{adminberita}', [AdminBeritaController::class, 'show']);
         Route::put('/berita-admin/update/{adminberita}', [AdminBeritaController::class, 'update']);
         Route::delete('/berita-admin/delete/{adminberita}', [AdminBeritaController::class, 'destroy']);
+        Route::get('/detailpemesanan/{detail}', [AulaController::class, 'detailpemesanan']);
 
         Route::resource('pendetaremaja', PendetaRemajaController::class);
 
@@ -267,9 +269,18 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('ting', TingController::class);
         //Aula
         Route::resource('adminaula', AdminAulaController::class);
+        Route::get('/adminaulac', [AdminAulaController::class, 'index2']);
         Route::put('/aula/cancel-admin/{id}', [AdminAulaController::class, 'cancelOrderAdmin']);
         Route::put('/aula/approve-admin/{id}', [AdminAulaController::class, 'approveOrderAdmin']);
-        // akun
+        Route::put('/aula/lunas/{id}', [AdminAulaController::class, 'lunas']);
+        Route::put('/aula/konfirmasi6/{id}', [AdminAulaController::class, 'konfirmasipembayaranpertama']);
+        Route::put('/aula/declinebukti/{id}', [AdminAulaController::class, 'tolakbuktipembayaran']);
+        Route::put('/aula/declinebuktidp/{id}', [AdminAulaController::class, 'tolakbuktipembayaranpertama']);
+        Route::put('/aula/konfirmasipelunasanakhir/{id}', [AdminAulaController::class, 'approvebuktipembayaranakhir']);
+        Route::put('/aula/declinepelunasanakhir/{id}', [AdminAulaController::class, 'tolakbuktipembayaranakhir']);
+
+        // Gedung
+        Route::resource('gedung', GedungController::class);
     });
     Route::group(['middleware' => ['Auth_Check:3']], function () {
         Route::get('/dash_user', [AutentikasiController::class, 'dash_u']);
@@ -313,19 +324,16 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/userparompuann', [AfterLoginController::class, 'indexparompuan']);
         Route::get('/userpunguanama', [AfterLoginController::class, 'indexpunguanama']);
         Route::get('/userlansia', [AfterLoginController::class, 'indexlansia']);
-
-        // Route::get('/userremajaa', [UserGuestController::class, 'userremaja']);
-        // Route::get('/usersekolahminggu', [UserGuestController::class, 'usersekolahminggu']);
-        // Route::get('/usernaposoo', [UserGuestController::class, 'usernaposo']);
-        // Route::get('/userparompuann', [UserGuestController::class, 'userparompuan']);
-        // Route::get('/userpunguanama', [UserGuestController::class, 'userpunguan']);
-        // Route::get('/userlansia', [UserGuestController::class, 'userlansia']);
-
-
+        Route::get('/daftar-gedung', [GedungController::class, 'daftargedung']);
+  
+        Route::post('/kirim', [AulaController::class, 'kirim']);
         Route::get('/invoice/{aula}', [AulaController::class, 'buktipembayaran']);
+        Route::get('/pesan/{gedung}', [AulaController::class, 'tambah']);
         Route::resource('storebukti', BuktiPembayaranAula::class);
 
         //Route::put('/berita-admin/update/{adminberita}', [AdminBeritaController::class, 'update']);
         Route::put('/buktipembayaran/{aula}', [AulaController::class, 'storebukti']);
+        Route::get('/buktipembayaransisa/{aula}', [AulaController::class, 'buktipelunasansisa']);
+        Route::put('/storepembayaransisa/{aula}', [AulaController::class, 'storebuktipelunasan']);
     });
 });

@@ -15,22 +15,30 @@ class status_pemesanan extends Seeder
      */
     public function run()
     {
-        $status_pemesanan = [
-            [
-                'status_pemesanan' => 'New',
-                'kode_status' => 1
-            ],
-            [
-                'status_pemesanan' => 'Approve',
-                'kode_status' => 2
-            ],
-            [
-                'status_pemesanan' => 'Cancel',
-                'kode_status' => 3
-            ],
-        ];
-        foreach ($status_pemesanan as $key => $value) {
-            StatusPemesanan::create($value);
-        }
+        // $status_pemesanan = [
+        //     [
+        //         'status_pemesanan' => 'New',
+        //         'kode_status' => 1
+        //     ],
+        //     [
+        //         'status_pemesanan' => 'Approve',
+        //         'kode_status' => 2
+        //     ],
+        //     [
+        //         'status_pemesanan' => 'Cancel',
+        //         'kode_status' => 3
+        //     ],
+        //     [
+        //         'status_pemesanan' => 'Lunas',
+        //         'kode_status' => 4
+        //     ],
+        //     [
+        //         'status_pemesanan' => 'DP',
+        //         'kode_status' => 5
+        //     ],
+        // ];
+        // foreach ($status_pemesanan as $key => $value) {
+        //     StatusPemesanan::create($value);
+        // }
     }
 }

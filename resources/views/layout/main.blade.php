@@ -102,7 +102,7 @@
                             Aula
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="{{ route('guestaula.index') }}">Booking</a></li>
+                            <li><a class="dropdown-item" href="/daftar-gedung-guest">Gedung</a></li>
                             <li><a class="dropdown-item" href="/login">History Pemesanan</a></li>
                         </ul>
                     </li>

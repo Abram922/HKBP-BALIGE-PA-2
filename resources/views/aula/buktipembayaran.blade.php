@@ -75,9 +75,6 @@
 
     </div>
     <span class="text-success">
-
-
-
         <input class="form-control @error('bukti_pembayaran') is-invalid @enderror" type="file" id="bukti_pembayaran" name="bukti_pembayaran">
         @error('bukti_pembayaran')
         <div class="invalid-feedback">
@@ -85,9 +82,16 @@
         </div>
         @enderror
         <br>
+
+        <input type="hidden" value="2" class="form-control" name="status_pembayaran" id="status_pembayaran" style="visibility: hidden;">
+
+
+
         <div class="col-mb-3 mr-auto" style="margin-right : 20px; float:center">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
+
+
         <br>
         <img height="200" src=" /bukti_pembayaran/{{$aula->bukti_pembayaran}}">
 

@@ -8,7 +8,7 @@
 <div class="container">
     <div class="table-responsive col-lg-8">
         <table class="table table-striped table-sm">
-    
+
             <thead>
                 <tr>
                     <th scope="col">Kode Pemesanan</th>
@@ -16,6 +16,7 @@
                     <th scope="col">Keperluan</th>
                     <th scope="col">Total Harga</th>
                     <th scope="col">Status</th>
+                    <th scope="col">Status Pembayaran</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -28,15 +29,51 @@
                     <td>{{$booking -> total}}</td>
                     <td><label class="label label-success">
                             {{$booking->status_id == 1 ? 'new' : ($booking->status_id == 2 ? 'Approve' : 'Cancel')}}
-                        </label></td>
+                        </label>
+                    </td>
                     <td>
-    
+                        @if($booking->status_id == 1)
+                        <p>-</p>
+
+                        @elseif ($booking->status_id == 2 && $booking->metode_pembayaran == 1)
+                        <p>{{$booking->status_bayar->status_pembayaran}}</p>
+
+                        @elseif ($booking->status_id == 2 && $booking->metode_pembayaran == 2)
+                        <p>{{$booking->status_bayar->status_pembayaran}}</p>
+
+
+                        @elseif ($booking->status_id == 3)
+                        <p>Cancel</p>
+
+                        @endif
+
+                    </td>
+
+
+                    <td>
+
+
                         @if ($booking->status_id == 1)
                         <a href="{{ route('aula.edit',$booking->id) }}" class=" btn btn-warning"><i class="bi bi-pencil-square"></i></a>
+                        @endif
+
+                        @if ($booking->status_id == 2 && $booking->status_pembayaran == 1 || $booking->status_pembayaran == 2 || $booking->status_pembayaran == 9|| $booking->status_pembayaran == 7 )
                         <a href="/invoice/{{$booking->id}}" class=" btn btn-info"><i class="bi bi-credit-card-2-front"></i></a>
                         @endif
-    
-    
+
+                        @if ($booking->status_id == 2 && $booking->status_pembayaran == 4  )
+                        <a href="/buktipembayaransisa/{{$booking->id}}" class=" btn btn-info"><i class="bi bi-credit-card-2-front"></i></a>
+                        @endif
+                        @if ($booking->status_id == 2 && $booking->status_pembayaran == 8 )
+                        <a href="/buktipembayaransisa/{{$booking->id}}" class=" btn btn-info"><i class="bi bi-credit-card-2-front"></i></a>
+                        @endif
+
+
+
+
+
+
+
                         <form action="/aula/cancel/{{$booking->id}}" class="form-inline" onsubmit="return confirm('Kamu Yakin?');" method="post">
                             {{ csrf_field() }}
                             {{ method_field('PUT') }}
@@ -48,16 +85,16 @@
                             @endif
                         </form>
                     </td>
-    
-    
+
+
                 </tr>
-    
+
                 @endforeach
-    
+
             </tbody>
         </table>
         {!! $aula->links() !!}
-    
+
     </div>
 </div>
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>

@@ -75,6 +75,7 @@
                 </div>
             </li>
 
+
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                     <i class="bi bi-union"></i>
@@ -129,10 +130,19 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link" href="{{ route('gedung.index')}}">
+                    <i class="bi bi-building"></i>
+                    <span>Gedung</span></a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link" href="{{ route('adminaula.index')}}">
                     <i class="bi bi-building"></i>
                     <span>Aula</span></a>
             </li>
+
+
+
 
 
 

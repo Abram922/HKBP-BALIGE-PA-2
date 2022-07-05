@@ -31,7 +31,7 @@ class AutentikasiController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'email' => ['required', 'min:8', 'max:30', 'unique:users'],
-            'username' => 'required',
+            'username' => 'required, max:10',
             'phoneno' => 'min:12',
             'password' => 'required|min:5|max:255'
         ]);
@@ -83,7 +83,7 @@ class AutentikasiController extends Controller
         $tingg  = Ting::paginate(20);
         return view('autentikasi.welcomeuser', [
             'jadwalIbadah' => $jadwalIbadah,
-            'ting'=>$tingg
+            'ting' => $tingg
         ]);
     }
 

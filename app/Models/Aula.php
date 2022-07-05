@@ -24,6 +24,10 @@ class Aula extends Model
         'status_id',
         'kode_pemesanan',
         'bukti_pembayaran',
+        'gedung_id',
+        'status_pembayaran',
+        'metode_pembayaran',
+        'pembayaransisa'
     ];
 
     protected $with = ['user'];
@@ -39,8 +43,28 @@ class Aula extends Model
         return $this->belongsTo(status_pemesanan::class, 'status_id');
     }
 
+    public function gedung()
+    {
+        return $this->belongsTo(gedung::class, 'gedung_id');
+    }
+
     public function bayar()
     {
         return $this->belongsTo(BuktiPembayaran::class);
+    }
+
+    public function metode_bayar()
+    {
+        return $this->belongsTo(metodepembayaran::class, 'metode_pembayaran');
+    }
+
+    public function status_bayar()
+    {
+        return $this->belongsTo(statuspembayaran::class, 'status_pembayaran');
+    }
+
+    public function detail()
+    {
+        return $this->hasOne(detailpemesanan::class);
     }
 }

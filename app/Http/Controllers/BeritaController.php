@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Berita;
 use illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Models\BuktiPembayaran;
 
 class BeritaController extends Controller
 {
@@ -202,24 +201,25 @@ class BeritaController extends Controller
             ->with('success', 'Data berhasil diubah');
     }
 
-    public function storebukti(Request $request)
-    {
-        $input_bukti = $request->validate([
-            'bukti_pembayaran' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
+    // public function storebukti(Request $request)
+    // {
+    //     $input_bukti = $request->validate([
+    //         'bukti_pembayaran' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    //     ]);
 
 
-        $input_bukti['no_pemesanan'] = auth()->buktipembayaran->id;
+    //     $input_bukti['no_pemesanan'] = auth()->buktipembayaran->id;
 
-        if ($bukti_pembayaran = $request->file('bukti_pembayaran')) {
-            $destinationPath = 'bukti_pembayaran/';
-            $profileImage = date('YmdHis') . "." . $bukti_pembayaran->getClientOriginalExtension();
-            $bukti_pembayaran->move($destinationPath, $profileImage);
-            $input_bukti['bukti_pembayaran'] = "$profileImage";
-        }
+    //     if ($bukti_pembayaran = $request->file('bukti_pembayaran')) {
+    //         $destinationPath = 'bukti_pembayaran/';
+    //         $profileImage = date('YmdHis') . "." . $bukti_pembayaran->getClientOriginalExtension();
+    //         $bukti_pembayaran->move($destinationPath, $profileImage);
+    //         $input_bukti['bukti_pembayaran'] = "$profileImage";
+    //     }
 
-        BuktiPembayaran::create($input_bukti);
+    //     BuktiPembayaran::create($input_bukti);
 
-        return redirect()->route('aula.index')->with('success', 'Bukti Pembayaran Berhasil di Tambah');
-    }
+    //     return redirect()->route('aula.index')->with('success', 'Bukti Pembayaran Berhasil di Tambah');
+    // }
 }
+ 

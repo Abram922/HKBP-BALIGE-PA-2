@@ -50,6 +50,11 @@ class User extends Authenticatable
         return $this->hasMany(Berita::class);
     }
 
+    public function gedung()
+    {
+        return $this->hasMany(gedung::class);
+    }
+
     public function aula()
     {
         return $this->hasMany(Aula::class);

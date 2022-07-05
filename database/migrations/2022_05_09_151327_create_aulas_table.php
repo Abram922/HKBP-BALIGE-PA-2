@@ -17,11 +17,16 @@ return new class extends Migration
             $table->id();
             $table->string('kode_pemesanan')->unique();
             $table->foreignId('user_id');
+            $table->foreignId('metode_pembayaran');
+            $table->foreignId('status_pembayaran')->default(0);
             $table->foreignId('status_id')->default(1);
+            $table->unsignedBigInteger('gedung_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('name');
             $table->string('email');
             $table->string('nomor_telepon');
             $table->string('bukti_pembayaran')->default('Belum Dikirim');
+            $table->string('pembayaransisa')->default('Belum Dikirim');
             $table->timestamp('tanggal_mulai')->useCurrent();
             $table->timestamp('tanggal_selesai')->useCurrent();
             $table->string('total');
