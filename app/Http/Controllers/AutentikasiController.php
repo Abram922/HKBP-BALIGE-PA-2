@@ -31,7 +31,7 @@ class AutentikasiController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'email' => ['required', 'min:8', 'max:30', 'unique:users'],
-            'username' => 'required, max:10',
+            'username' => 'required', 'max:10',
             'phoneno' => 'min:12',
             'password' => 'required|min:5|max:255'
         ]);
