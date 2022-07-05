@@ -22,8 +22,6 @@
                 <tr>
                     <td>{{$booking -> tanggal_mulai->format('d/m/Y')}} pukul 00.00 WIB - {{$booking -> tanggal_selesai->format('d/m/Y')}} pukul 23.59 WIB</td>
                     <td>{{$booking -> gedung->Gedung }}</td>
-
-
                 </tr>
 
                 @endforeach
@@ -105,10 +103,6 @@
                         <p>Bukti Pelunasan Salah,Periksa dan Kirim Kembali!!</p>
                         @elseif ($booking->status_id == 2 && $booking->metode_pembayaran == 2 && $booking->status_pembayaran == 9)
                         <p>Bukti Pembayaran Salah,Periksa dan Kirim Kembali!</p>
-
-
-
-
 
                         @elseif ($booking->status_id == 3)
                         <p>Cancel</p>
