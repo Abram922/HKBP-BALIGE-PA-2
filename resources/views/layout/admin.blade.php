@@ -146,6 +146,12 @@
                     <span>Aula</span></a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('rekening.index')}}">
+                    <i class="bi bi-credit-card"></i>
+                    <span>Rekening</span></a>
+            </li>
+
 
 
 

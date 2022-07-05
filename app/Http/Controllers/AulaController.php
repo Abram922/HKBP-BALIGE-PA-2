@@ -73,8 +73,8 @@ class AulaController extends Controller
         $validateData['kode_pemesanan'] = $kode_pemesanan;
 
         Aula::create($validateData);
-  
-        
+
+
         return redirect()->route('aula.index')->with('success', 'Pemesanan Berhasil');
     }
 
@@ -183,7 +183,7 @@ class AulaController extends Controller
         //CARI DATA ORDER BERDASARKAN ID
         $order = Aula::find($id);
         //UBAH STATUSNYA MENJADI 4
-        $order->update(['status_id' => 3]);
+        $order->update(['status_id' => 3, 'status_pembayaran' => 10]);
         //REDIRECT KEMBALI DENGAN MENAMPILKAN ALERT SUCCESS
         return redirect()->back()->with(['success' => 'Pesanan Dikonfirmasi']);
     }
@@ -201,7 +201,7 @@ class AulaController extends Controller
     {
         if ($aula->status_pembayaran == 4 || $aula->status_pembayaran == 8) {
             return view('aula.pembayaransisa', compact('aula'));
-        } 
+        }
     }
 
     public function detailpemesanan(detailpemesanan $detail)
@@ -236,7 +236,7 @@ class AulaController extends Controller
             unset($input['bukti_pembayaran']);
         }
 
-        
+
 
 
 

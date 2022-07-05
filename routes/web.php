@@ -50,8 +50,7 @@ use App\Http\Controllers\Pendeta\PendetaSekolahMingguController;
 use App\Http\Controllers\Pendeta\PendetaSosialController;
 
 use App\Http\Controllers\Pendeta\PendetaTanggalController;
-
-
+use App\Http\Controllers\rekeningController;
 
 use App\Http\Controllers\RenunganController;
 
@@ -289,6 +288,7 @@ Route::group(['middleware' => ['auth']], function () {
 
         // Gedung
         Route::resource('gedung', GedungController::class);
+        Route::resource('rekening', rekeningController::class);
     });
     Route::group(['middleware' => ['Auth_Check:3']], function () {
         Route::get('/dash_user', [AutentikasiController::class, 'dash_u']);
@@ -333,7 +333,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/userpunguanama', [AfterLoginController::class, 'indexpunguanama']);
         Route::get('/userlansia', [AfterLoginController::class, 'indexlansia']);
         Route::get('/daftar-gedung', [GedungController::class, 'daftargedung']);
-  
+
         Route::post('/kirim', [AulaController::class, 'kirim']);
         Route::get('/invoice/{aula}', [AulaController::class, 'buktipembayaran']);
         Route::get('/pesan/{gedung}', [AulaController::class, 'tambah']);

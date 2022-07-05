@@ -90,6 +90,11 @@ class DatabaseSeeder extends Seeder
                 'status_pembayaran' => ' Bukti Pembayaran Salah,Periksa dan Kirim Kembali!!',
                 'kode_status' => 9
             ],
+            [
+                'status_pembayaran' => 'di cancel',
+                'kode_status' => 10
+            ],
+            
             
             
         ];
