@@ -39,8 +39,6 @@
                 <label for="body" class="form-label">Body</label>
                 <textarea class="form-control" id="body" rows="10" name="body"></textarea>
 
-
-
                 <button type="submit" class="btn btn-primary">Simpan</button>
         </form>
 

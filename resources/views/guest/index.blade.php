@@ -171,8 +171,80 @@
         {{-- </div> --}}
     </div>
 
+    <div class="container">
+        <h4 style="color:#711A75;"><b>Renungan</b></h4>
+        <hr>
+    
+    @if($renungan->count())
+        {{-- <div class="row my-5">
+            <div class="col-lg-12">
+                <h5 class="my-3">{{$guestberita[0]->title}}</h5>
+                @if($guestberita[0] -> image)
+                <div style="max-height: 550px; overflow:hidden">
+                    <img src="/image/{{$guestberita[0]->image}}" class="img-fluid mt-3" alt="...">
+                </div>
+                @endif
+                <p>
+                    <br>
+                    <small>
+                        By <a href="#">{{$guestberita[0]->user->name}}</a> {{$guestberita[0]->name}}
+                        {{ $guestberita[0]->created_at->diffForHumans()}}
+                    </small>
+                </p>
+                <div style="max-width: 1100px;">
+                    <p class="card-text">{!!$guestberita[0]->excerpt!!}</p>
+                    <a href="/guestshowberita/{{$guestberita[0]->id}}">Baca Selengkapnya</a>
+                </div>
+    
+    
+    
+    
+            </div>
+        </div> --}}
+    
+    
+    
+    
+    
+        
+        
+        {{-- renungan baru --}}
+        <div class="container">
+            <div class="row">
+                @foreach($renungan as $renungans)
+                <div class="col-md-6 pl-lg-2 mb-5" >
+                    <span class=sub-title style='color:#eea412'>Renungan Harian </span>
+                    <h2 class=font-weight-bold text-black mb-5>{{$renungans->title}}</h2>
+                    <p class="card-title">Diposting oleh: {{$renungans->user->name}}, {{ $renungans->created_at->diffForHumans()}}</p>
+                    <div class="mb-2">
+                        <img src="/image/{{ $renungans->image }}" class="card-img" alt="..." width="560" height="315">
+                        {{-- <iframe style='padding:5px !important;' width="560" height="315" src="https://www.youtube.com/embed/vNedRzQeoCc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> --}}
+                    </div>
+                    
+                    <a href="/guestshowrenungan/{{$renungans->id}}">
+                        <button class="btn btn-primary">
+                            Baca Selengkapnya
+                        </button>
+                    </a>
+                    {{-- <a href="/guestshowberita/{{$guestberitas->id}}">Baca Selengkapnya</a> --}}
+                </div>    
+                @endforeach
+                {{-- {{$renungan->links() }} --}}
+            </div> 
+        </div>
 
+        {{-- end renungan --}}
+    
+        <br><br>
+    
+        @else
+        <p>No Post found</p>
+        @endif
+    
+        {{-- {{$renungan->links() }} --}}
+    
+    </div>
 
-    {{-- </body>
-</html> --}}
+    </body>
+</html>
     @endsection

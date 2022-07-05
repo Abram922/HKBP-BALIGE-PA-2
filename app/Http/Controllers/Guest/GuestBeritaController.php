@@ -25,18 +25,22 @@ class GuestBeritaController extends Controller
             "guestberita" => Berita::latest()->filter(request(['search']))->paginate(8)->withQueryString(),
             compact('user')
         ]);
-
-    
     }
 
     public function show(Berita $guestberita)
-
     {
         return view('.guest.berita.beritafull', [
             "title" => "beritafull",
             "guestberita" => $guestberita
         ]);
     }
+
+    // public function show(Renungan $guestRenungan) {
+    //     return view('.guest.renunganfull', [
+    //         "title" => "renungan full",
+    //         "guestRenungan" => $guestRenungan
+    //     ]);
+    // }
 
     public function authorpost(User $user)
     {

@@ -48,9 +48,13 @@ use App\Http\Controllers\Pendeta\PendetaNaposoBulungController;
 use App\Http\Controllers\Pendeta\PendetaRemajaController;
 use App\Http\Controllers\Pendeta\PendetaSekolahMingguController;
 use App\Http\Controllers\Pendeta\PendetaSosialController;
+<<<<<<< Updated upstream
 use App\Http\Controllers\Pendeta\PendetaTanggalController;
 
 
+=======
+use App\Http\Controllers\RenunganController;
+>>>>>>> Stashed changes
 
 /*
 |--------------------------------------------------------------------------
@@ -65,11 +69,13 @@ use App\Http\Controllers\Pendeta\PendetaTanggalController;
 
 //GUEST
 Route::get('/', [NormalController::class, 'index']);
+Route::get('/guestshowrenungan/{id}', [NormalController::class, 'show']);
 Route::resource('guestberita', GuestBeritaController::class);
 Route::get('/gberita', [GuestBeritaController::class, 'index']);
 Route::get('/author/{user}', [GuestBeritaController::class, 'authorpost']);
 Route::get('/guestshowberita/{guestberita}', [GuestBeritaController::class, 'show']);
 Route::resource('guestaula', AulaGuestController::class);
+
 
 // Route::get('/', [NormalController::class, 'jadwalIbadah']);
 //GUEST TENTANG
@@ -249,6 +255,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('/logout', [AutentikasiController::class, 'logout']);
         //BERITA
         Route::resource('beritas', BeritaController::class);
+        // RENUNGAN
+        Route::resource('renungans', RenunganController::class);
         // admin parhalado
         Route::resource('parhalados', ParhaladoController::class);
         //DIAKONIA SOSIAL
