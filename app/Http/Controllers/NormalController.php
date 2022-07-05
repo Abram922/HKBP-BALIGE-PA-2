@@ -21,7 +21,7 @@ class NormalController extends Controller
         $user = User::all();
         $jadwalIbadah  = JadwalIbadah::paginate(20);
         $tingg  = Ting::paginate(20);
-        $renungan = Renungan::latest()->paginate(4)->withQueryString();
+        $renungan = Renungan::latest()->paginate(1)->withQueryString();
         return view('.guest.index', [
             'jadwalIbadah' => $jadwalIbadah,
             'ting' => $tingg,
@@ -30,10 +30,10 @@ class NormalController extends Controller
         ]);
     }
 
-    public function show(Renungan $guestrenungan) {
+    public function show(Renungan $renungan) {
         // return view('.guest.renunganfull', compact('guestrenungan'));
         return view('.guest.renunganfull', [
-            'renungan' => $guestrenungan
+            'renungan' => $renungan
         ]);
     }
     

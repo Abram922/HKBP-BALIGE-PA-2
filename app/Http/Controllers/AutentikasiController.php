@@ -6,6 +6,7 @@ use App\Models\Aula;
 use App\Models\User;
 use App\Models\Berita;
 use App\Models\JadwalIbadah;
+use App\Models\Renungan;
 use App\Models\Ting;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
@@ -79,11 +80,23 @@ class AutentikasiController extends Controller
     }
     public function dash_u()
     {
+        $user = User::all();
         $jadwalIbadah  = JadwalIbadah::paginate(20);
         $tingg  = Ting::paginate(20);
+        $renungan = Renungan::latest()->paginate(1)->withQueryString();
         return view('autentikasi.welcomeuser', [
             'jadwalIbadah' => $jadwalIbadah,
-            'ting' => $tingg
+            'ting' => $tingg,
+            'renungan' => $renungan,
+            compact('user')
+        ]);
+
+    }
+
+    public function show(Renungan $userrenungan) {
+        // return view('.guest.renunganfull', compact('guestrenungan'));
+        return view('.UserTerdaftar.renungan.renunganfull', [
+            'renungan' => $userrenungan
         ]);
     }
 

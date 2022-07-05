@@ -143,32 +143,6 @@
         </table>
 
         <br><br>
-        {{-- <section>
-                    <div class="heading-section mb-4 my-5 my-md-0">
-                        <span class="subheading">About Gereja HKBP Balige</span>
-                        <h2 class="mb-4" style="font-size: -webkit-calc(100% + 30px);">Location</h2>
-                    </div>
-                    <div class="container location row">
-                        <div class="col-md-7 px-4" style="margin-top: 10%;">
-                            <p style="text-align:justify">Tuktuk Siadong is a sub-district located in Simanindo District,
-                                Samosir Regency, North Sumatra Province, Indonesia. Tuktuk Siadong is located between the
-                                villages of Ambarita and Tomok. Geographically, Tuktuk Siadong Village is located on an area
-                                of 245 hectares with a topography in the form of a promontory jutting out towards Lake Toba.
-                            </p>
-                        </div>
-                        <div class="col-lg-12 px-4 mt-5">
-                            <center>
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4127.100027086587!2d99.06506558946438!3d2.3313199338620683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x302e045d386d733f%3A0xf231bb4016871485!2sHKBP%20Balige!5e0!3m2!1sid!2sid!4v1655562911163!5m2!1sid!2sid"
-                                    width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </center>
-                        </div>
-                    </div>
-            </section><br><br> --}}
-        {{-- <div class="container"> --}}
-
-        {{-- </div> --}}
     </div>
 
     <div class="container">
@@ -176,56 +150,29 @@
         <hr>
     
     @if($renungan->count())
-        {{-- <div class="row my-5">
-            <div class="col-lg-12">
-                <h5 class="my-3">{{$guestberita[0]->title}}</h5>
-                @if($guestberita[0] -> image)
-                <div style="max-height: 550px; overflow:hidden">
-                    <img src="/image/{{$guestberita[0]->image}}" class="img-fluid mt-3" alt="...">
-                </div>
-                @endif
-                <p>
-                    <br>
-                    <small>
-                        By <a href="#">{{$guestberita[0]->user->name}}</a> {{$guestberita[0]->name}}
-                        {{ $guestberita[0]->created_at->diffForHumans()}}
-                    </small>
-                </p>
-                <div style="max-width: 1100px;">
-                    <p class="card-text">{!!$guestberita[0]->excerpt!!}</p>
-                    <a href="/guestshowberita/{{$guestberita[0]->id}}">Baca Selengkapnya</a>
-                </div>
-    
-    
-    
-    
-            </div>
-        </div> --}}
-    
-    
-    
-    
-    
-        
         
         {{-- renungan baru --}}
         <div class="container">
             <div class="row">
                 @foreach($renungan as $renungans)
-                <div class="col-md-6 pl-lg-2 mb-5" >
+                <div class="col-md-12 pl-lg-2 mb-5" >
                     <span class=sub-title style='color:#eea412'>Renungan Harian </span>
                     <h2 class=font-weight-bold text-black mb-5>{{$renungans->title}}</h2>
                     <p class="card-title">Diposting oleh: {{$renungans->user->name}}, {{ $renungans->created_at->diffForHumans()}}</p>
                     <div class="mb-2">
-                        <img src="/image/{{ $renungans->image }}" class="card-img" alt="..." width="560" height="315">
+                        <img src="/image/{{ $renungans->image }}" class="card-img" alt="..." width="700" height="315">
                         {{-- <iframe style='padding:5px !important;' width="560" height="315" src="https://www.youtube.com/embed/vNedRzQeoCc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> --}}
                     </div>
-                    
-                    <a href="/guestshowrenungan/{{$renungans->id}}">
+
+                    <div>
+                        <p>{!! $renungans->body !!}</p>
+                    </div>
+                    {{-- <a class="btn btn-info" href="{{ route('isirenungan.show',$renungans->id) }}" class="badge bg-info">Lihat</a> --}}
+                    {{-- <a href="{{ route('isirenungan.show', $renungans->id) }}">
                         <button class="btn btn-primary">
                             Baca Selengkapnya
                         </button>
-                    </a>
+                    </a> --}}
                     {{-- <a href="/guestshowberita/{{$guestberitas->id}}">Baca Selengkapnya</a> --}}
                 </div>    
                 @endforeach

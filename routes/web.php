@@ -33,6 +33,7 @@ use App\Http\Controllers\UserKoinoniaController;
 use App\Http\Controllers\Guest\UserGuestController;
 use App\Http\Controllers\AfterLoginController;
 use App\Http\Controllers\GedungController;
+use App\Http\Controllers\OkeController;
 use App\Http\Controllers\Pendeta\PendetaJadwalIbadahController;
 use App\Http\Controllers\Pendeta\PendetaParhaladoController;
 use App\Http\Controllers\Pendeta\PendetaTingTingController;
@@ -68,13 +69,15 @@ use App\Http\Controllers\RenunganController;
 
 //GUEST
 Route::get('/', [NormalController::class, 'index']);
-Route::get('/guestshowrenungan/{id}', [NormalController::class, 'show']);
+// Route::get('/guestshowrenungan/{id}', [NormalController::class, 'show']);
 Route::resource('guestberita', GuestBeritaController::class);
 Route::get('/gberita', [GuestBeritaController::class, 'index']);
 Route::get('/author/{user}', [GuestBeritaController::class, 'authorpost']);
 Route::get('/guestshowberita/{guestberita}', [GuestBeritaController::class, 'show']);
 Route::resource('guestaula', AulaGuestController::class);
 
+Route::resource('isirenungan', OkeController::class);
+// Route::resource('renungans', RenunganController::class);
 
 // Route::get('/', [NormalController::class, 'jadwalIbadah']);
 //GUEST TENTANG
@@ -298,6 +301,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/authors/{user}', [UserBeritaController::class, 'authorpost']);
         Route::put('/aula/cancel/{id}', [AulaController::class, 'cancelOrder']);
         Route::get('/parhaladologin', [ParhaladoControllerLogin::class, 'index']);
+        Route::get('/usershowrenungan/{id}', [AutentikasiController::class, 'show']);
 
         // akun
         //GUEST TENTANG
