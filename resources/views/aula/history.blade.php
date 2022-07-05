@@ -45,6 +45,7 @@
                 <tr>
                     <th scope="col">Kode Pemesanan</th>
                     <th scope="col">Nama</th>
+                    <th scope="col">Tanggal Reservasi</th>
                     <th scope="col">Keperluan</th>
                     <th scope="col">Total Harga</th>
                     <th scope="col">Status</th>
@@ -57,6 +58,7 @@
                 <tr>
                     <td>{{$booking -> kode_pemesanan}}</td>
                     <td>{{$booking -> name}}</td>
+                    <td>{{$booking -> tanggal_mulai->format('d/m/Y')}} pukul 00.00 WIB - {{$booking -> tanggal_selesai->format('d/m/Y')}} pukul 23.59 WIB</td>
                     <td>{{$booking -> pesan}}</td>
                     <td>{{$booking -> total}}</td>
                     <td><label class="label label-success">
