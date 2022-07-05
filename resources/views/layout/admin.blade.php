@@ -143,14 +143,14 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('adminaula.index')}}">
                     <i class="bi bi-building"></i>
-                    <span>Aula</span></a>
+                    <span>Pemesanan</span></a>
             </li>
-
+            <!-- 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('rekening.index')}}">
                     <i class="bi bi-credit-card"></i>
                     <span>Rekening</span></a>
-            </li>
+            </li> -->
 
 
 

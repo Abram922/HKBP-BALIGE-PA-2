@@ -1,6 +1,7 @@
 @extends('layout.user')
 @section('container')
 
+
 <div class="row g-5 ">
     <div class=" col-md-5 col-lg-4 order-md-last">
         <h4 class="d-flex justify-content-between align-items-center mb-3">
@@ -9,22 +10,11 @@
         <ul class="list-group mb-3">
             <li class="list-group-item d-flex justify-content-between lh-sm">
                 <div>
-                    <h6 class="my-0">BANK BRI</h6>
-                    <small class="text-muted">353901007660502</small>
+                    <h6 class="my-0">BANK BNI</h6>
+                    <small class="text-muted">0699533067</small>
                 </div>
             </li>
-            <li class="list-group-item d-flex justify-content-between lh-sm">
-                <div>
-                    <h6 class="my-0">BANK MANDIRI</h6>
-                    <small class="text-muted">-</small>
-                </div>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-sm">
-                <div>
-                    <h6 class="my-0">BANK SUMUT</h6>
-                    <small class="text-muted">-</small>
-                </div>
-            </li>
+
         </ul>
 
         <br>

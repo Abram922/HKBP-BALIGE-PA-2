@@ -19,10 +19,12 @@
             </thead>
             <tbody>
                 @foreach($aula as $booking)
+                @if($booking->status_id ==2)
                 <tr>
                     <td>{{$booking -> tanggal_mulai->format('d/m/Y')}} pukul 00.00 WIB - {{$booking -> tanggal_selesai->format('d/m/Y')}} pukul 23.59 WIB</td>
                     <td>{{$booking -> gedung->Gedung }}</td>
                 </tr>
+                @endif
 
                 @endforeach
 
