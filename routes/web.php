@@ -48,13 +48,13 @@ use App\Http\Controllers\Pendeta\PendetaNaposoBulungController;
 use App\Http\Controllers\Pendeta\PendetaRemajaController;
 use App\Http\Controllers\Pendeta\PendetaSekolahMingguController;
 use App\Http\Controllers\Pendeta\PendetaSosialController;
-<<<<<<< Updated upstream
+
 use App\Http\Controllers\Pendeta\PendetaTanggalController;
 
 
-=======
+
 use App\Http\Controllers\RenunganController;
->>>>>>> Stashed changes
+
 
 /*
 |--------------------------------------------------------------------------

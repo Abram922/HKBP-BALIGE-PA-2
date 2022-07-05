@@ -130,15 +130,14 @@
             </li>
 
             <li class="nav-item">
-<<<<<<< Updated upstream
-                <a class="nav-link" href="{{ route('gedung.index')}}">
-                    <i class="bi bi-building"></i>
-                    <span>Gedung</span></a>
-=======
                 <a class="nav-link" href="{{ route('renungans.index')}}">
                     <i class="fas fa-dove"></i>
                     <span>Renungan</span></a>
->>>>>>> Stashed changes
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('gedung.index')}}">
+                    <i class="bi bi-building"></i>
+                    <span>Gedung</span></a>
             </li>
 
             <li class="nav-item">

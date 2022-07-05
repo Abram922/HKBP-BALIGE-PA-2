@@ -6,21 +6,19 @@ use Illuminate\Http\Request;
 use App\Models\Ting;
 use App\Models\JadwalIbadah;
 use App\Models\Parhalado;
-<<<<<<< Updated upstream
+
 use App\Models\Tanggal;
-=======
+
 use App\Models\Renungan;
 use App\Models\User;
->>>>>>> Stashed changes
+
 
 class NormalController extends Controller
 {
     public function index()
     {
-<<<<<<< Updated upstream
-=======
+
         $user = User::all();
->>>>>>> Stashed changes
         $jadwalIbadah  = JadwalIbadah::paginate(20);
         $tingg  = Ting::paginate(20);
         $renungan = Renungan::latest()->paginate(4)->withQueryString();
