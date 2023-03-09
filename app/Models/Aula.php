@@ -6,6 +6,10 @@ use Database\Seeders\status_pemesanan;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
+
+// app\Models\Aula
+
 class Aula extends Model
 {
     use HasFactory;
